@@ -17,39 +17,12 @@
 
 <body>
    
-                <!-- Right Side Of Navbar -->
-                <ul class="navbar-nav ml-auto">
-                    <!-- Authentication Links -->
-                    @guest
-                        @if (Route::has('login'))
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li>
-                        @endif
-
-                        @if (Route::has('register'))
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                            </li>
-                        @endif
-                    @else
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ Auth::user()->name }}
-                            </a>
-
-                            
-                        </li>
-                    @endguest
-                </ul>
-            </div>
-        </div>
-    </nav>
+     
     <div id="app">
         <div id="sidebar" class='active'>
             <div class="sidebar-wrapper active">
                 <div class="sidebar-header">
-                    <img src="assets/images/logo/logostar.jpg" style="width: 50%; height: 50%;" alt="Logo StarSoft" srcset="">
+                    <img src="assets/images/logo/gtslogo.jpeg" style="width: 100%; height: 100%; border-radius: 20% " alt="Logo StarSoft" srcset="">
                 </div>
                 <div class="sidebar-menu">
                     <ul class="menu">
@@ -59,7 +32,7 @@
 
 
 
-                        <li class="sidebar-item active ">
+                        <li class="sidebar-item ">
                             <a href="index.html" class='sidebar-link'>
                                 <i data-feather="home" width="20"></i>
                                 <span>Cotizaciones</span>
@@ -150,6 +123,20 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav d-flex align-items-center navbar-light ms-auto">
                     
+                        @guest
+                        @if (Route::has('login'))
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            </li>
+                        @endif
+
+                        @if (Route::has('register'))
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                            </li>
+                        @endif
+                    @else
+                    
                         <li class="dropdown">
                             <a href="#" data-bs-toggle="dropdown"
                                 class="nav-link dropdown-toggle nav-link-lg nav-link-user">
@@ -170,11 +157,9 @@
                                     @csrf
                                 </form>
                             </div>
-                            
-                        
-                            
                         </li>
                     </ul>
+                    @endguest
                 </div>
             </nav>
 
@@ -461,11 +446,11 @@
             <footer>
                 <div class="footer clearfix mb-0 text-muted">
                     <div class="float-start">
-                        <p>2020 &copy; Voler</p>
+                        <p>2021 &copy; StarSoft</p>
                     </div>
                     <div class="float-end">
-                        <p>Crafted with <span class='text-danger'><i data-feather="heart"></i></span> by <a
-                                href="http://ahmadsaugi.com">Ahmad Saugi</a></p>
+                        <p>Desarollado <span class='text-danger'><i data-feather="heart"></i></span> por <a
+                                href="http:/">Company</a></p>
                     </div>
                 </div>
             </footer>

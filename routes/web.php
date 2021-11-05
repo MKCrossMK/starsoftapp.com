@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ClientController;
 use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Support\Facades\Route;
@@ -22,5 +23,13 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::resource('clients', ClientController::class)->names('clients');
+Route::resource('products', ClientController::class)->names('products');
+Route::resource('sales', ClientController::class)->names('sales');
+// Route::resource('cotizaciones', ClientController::class);
+
+
+
 
 
