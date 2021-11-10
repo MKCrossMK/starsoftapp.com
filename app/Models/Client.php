@@ -9,10 +9,10 @@ class Client extends Model
 {
     use HasFactory;
 
-    protected $filliable = [
+    protected $fillable  = [
           'name',
           'lastname',
-          'cedula',
+          'cedula_rnc',
           'address',
           'phone',
           'email'

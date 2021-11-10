@@ -18,8 +18,8 @@ class ClientController extends Controller
      */
     public function index()
     {
-        $clients = Client::all();
-        return view('admin.client.index', compact('clients'));
+        $client = Client::all();
+        return view('admin.clients.index', compact('client'));
     }
 
     /**
@@ -29,7 +29,7 @@ class ClientController extends Controller
      */
     public function create()
     {
-        return view('admin.client.create');
+        return view('admin.clients.create');
     }
 
     /**
@@ -38,7 +38,7 @@ class ClientController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreRequest $request)
+    public function store(Request $request)
     {
         Client::create($request->all());
 
@@ -54,7 +54,7 @@ class ClientController extends Controller
      */
     public function show(Client $client)
     {
-        return view('admin.client.show', compact('client'));
+        return view('admin.clients.show', compact('client'));
     }
 
     /**
@@ -65,7 +65,7 @@ class ClientController extends Controller
      */
     public function edit(Client $client)
     {
-        return view('admin.client.show', compact('client'));
+        return view('admin.clients.edit', compact('client'));
     }
 
     /**
@@ -75,7 +75,7 @@ class ClientController extends Controller
      * @param  \App\Models\Client  $client
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateRequest $request, Client $client)
+    public function update(Request $request, Client $client)
     {
         $client->update($request->all());
 

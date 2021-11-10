@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\Sale\StoreRequest;
 use App\Models\Client;
+use App\Models\Product;
 use App\Models\Sale;
 use App\Models\SaleDetail;
 use Illuminate\Http\Request;
@@ -19,7 +20,7 @@ class SaleController extends Controller
     public function index()
     {
         $sales = Sale::all();
-        return view('admin.sale.index', compact('sales'));
+        return view('admin.sales.index', compact('sales'));
     }
 
     /**
@@ -29,8 +30,8 @@ class SaleController extends Controller
      */
     public function create()
     {
-        $clients =  Client::all();
-        return view('admin.sale.create', compact('clients'));
+
+        return view('admin.sales.create');
     }
 
     /**
@@ -54,7 +55,7 @@ class SaleController extends Controller
             $results[] = array("product_id" => $request->product_id[$key], 
             "product_name" => $request->product_name[$key], 
             "precio" => $request->precio[$key],
-             "cantidad" =>$request->cantidad[$key], "costo" => $request->costo[$key], 
+             "cantidad" =>$request->cantidad[$key], 
              "itbis" => $request->itbis[$key], "descuento" => $request->descuento[$key],
              "total" => $request->descuento[$key], "prod_itbis" => $request->prod_itbis[$key]);
              

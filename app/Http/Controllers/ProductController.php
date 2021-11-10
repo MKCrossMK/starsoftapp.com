@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Client\UpdateRequest as ClientUpdateRequest;
 use App\Http\Requests\Product\StoreRequest;
-use App\Http\Requests\Product\UpdateRequest;
+use App\Http\Requests\Product\UpdateRequest as ProductUpdateRequest;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -18,7 +19,7 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::all();
-        return view('admin.product.index', compact('products'));
+        return view('admin.products.index', compact('products'));
     }
 
     /**
@@ -28,11 +29,11 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('admin.product.create');
+        return view('admin.products.create');
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created rSSesource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -40,7 +41,7 @@ class ProductController extends Controller
     public function store(StoreRequest $request)
     {
         Product::create($request->all());
-        return redirect()->route('product.index');
+        return redirect()->route('products.index');
     }
 
     /**
@@ -51,7 +52,7 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        return view('admin.product.show', compact('product'));
+        return view('admin.products.show', compact('product'));
     }
 
     /**
@@ -62,7 +63,7 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        return view('admin.product.show', compact('product'));
+        return view('admin.products.edit', compact('product'));
     }
 
     /**
@@ -72,10 +73,10 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateRequest $request, Product $product)
+    public function update(Request $request, Product $product)
     {
         $product->update($request->all());
-        return redirect()->route('product.index');
+        return redirect()->route('indexproducto');
     }
 
     /**
