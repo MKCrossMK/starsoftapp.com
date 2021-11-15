@@ -5,13 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Notifications\Notifiable;
 
 class Sale extends Model
 {
-    use HasFactory;
+    use HasFactory, Notifiable;
 
-    protected $filliable = [
-        'user_id'.
+    protected $fillable = [
+        'user_id',
         'tipo_factura',
         'no_factura',
         'documento',
@@ -29,11 +30,11 @@ class Sale extends Model
     ];
 
     public function user(){
-        return $this->BelongsTo(User::class);
+        return $this->BelongsTo(User::class, 'user_id', 'id');
     }
 
     public function client(){
-        return $this->BelongsTo(User::class);
+        return $this->BelongsTo(Client::class);
     }
 
     public function saleDetail(){

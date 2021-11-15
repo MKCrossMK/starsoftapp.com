@@ -10,18 +10,16 @@ class SaleDetail extends Model
     use HasFactory;
 
 
-    protected $filliable = [
+    protected $fillable = [
         'sale_id',
         'tipo_factura',
         'no_factura',
         'documento',
         'fecha',
         'product_id',
-        'product_name',
         'precio',
         'cantidad',
         'costo',
-        'itbis',
         'descuento',
         'total',
         'prod_itbis',

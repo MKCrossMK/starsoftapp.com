@@ -2,7 +2,7 @@
 <x-app-layout>
     <x-slot name="header">
     </x-slot>
-            <a type="btn"  href="{{Route('createsale')}}">Nueva Facturacion</a>
+            <a class="btn btn-info" style="margin-left: 2%" href="{{Route('createsale')}}">Nueva Facturacion</a>
             
             <div style="margin-top: 5%" class="card" id = "stores">
                 <div class="card-header d-flex justify-content-between align-items-center">
@@ -33,9 +33,9 @@
                                     <td>{{ $sale->tipo_factura}}</td>
                                     <td><a href="{{Route('showsale', $sale->id)}}">{{ $sale->no_factura }}</a></td>
                                     <td>{{ $sale->monto}}</td>
-                                    <td>{{ $sale->client()->name}}</td>
-                                    <td>{{ $sale->user()->name}}</td>
-                                    <td> <a href="{{ route('editsale', $cli->id) }}" class="btn btn-info" >Editar</a></td>
+                                    <td>{{ $sale->client->name}}</td>
+                                    <td>{{ $sale->user->name}}</td>
+                                    {{-- <td> <a href="{{ route('editsale', $cli->id) }}" class="btn btn-info" >Editar</a></td> --}}
                                     <td>
                                       
                                 </tr>

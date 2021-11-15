@@ -96,4 +96,5 @@ class ClientController extends Controller
         return redirect()->route('clients.index');
 
     }
+
 }

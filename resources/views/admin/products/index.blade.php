@@ -2,7 +2,7 @@
 <x-app-layout>
     <x-slot name="header">
     </x-slot>
-            <a type="btn"  href="{{Route('createproducto')}}">Nuevo Producto</a>
+            <a class="btn btn-info" style="margin-left: 2%"  href="{{Route('createproducto')}}">Nuevo Producto</a>
             
             <div style="margin-top: 5%" class="card" id = "stores">
                 <div class="card-header d-flex justify-content-between align-items-center">

@@ -23,9 +23,9 @@ class CreateSalesTable extends Migration
             $table->string('tipo_factura');
             $table->string('no_factura');
             $table->string('documento');
-            $table->dateTime('fecha');
+            $table->date('fecha');
             $table->decimal('monto');
-            $table->integer('itbis');
+            $table->decimal('itbis');
             $table->integer('descuento');
             $table->string('t_pago');
             $table->string('t_cobro');
@@ -33,7 +33,6 @@ class CreateSalesTable extends Migration
             $table->unsignedBigInteger('client_id');
             $table->foreign('client_id')->references('id')->on('clients');
 
-            $table->string('client_name');
             $table->string('tipo_ncf');
             $table->string('ncf');
 

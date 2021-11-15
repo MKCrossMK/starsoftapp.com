@@ -67,9 +67,29 @@ Route::get('/editarventa/{sale}', [App\Http\Controllers\SaleController::class, '
 
 Route::patch('/actualizarclientes/{sale}', [App\Http\Controllers\SaleController::class, 'update'])->name('updatesale');
 
-Route::get('get_products_by_id', [ProductController::class, 'get_products_by_id'])->name('get_products_by_id');
+Route::get('/sale/findclient', [App\Http\Controllers\SaleController::class, 'findclient']);
 
-Route::post('/facturas-buscar-cliente', [App\Http\Controllers\SaleController::class, 'buscarCliente'])->name('buscarCliente');
+Route::get('/sale/findproduct', [App\Http\Controllers\SaleController::class, 'findproduct']);
+
+
+
+//Cotizacion rutas
+
+Route::get('/listacotizacion', [App\Http\Controllers\QuotationController::class, 'index'])->name('indexquote');
+
+Route::get('/detallescotizacion/{quotation}', [App\Http\Controllers\QuotationController::class, 'show'])->name('showquote');
+
+Route::get('/creandocotizacion', [App\Http\Controllers\QuotationController::class, 'create'])->name('createquote');
+
+Route::post('/creandocotizacion', [App\Http\Controllers\QuotationController::class, 'store'])->name('storequote');
+
+Route::get('/editarcotizacion/{quotation}', [App\Http\Controllers\QuotationController::class, 'edit'])->name('editquote');
+
+Route::patch('/actualizarcotizacion/{quotation}', [App\Http\Controllers\QuotationController::class, 'update'])->name('updatequote');
+
+Route::get('/cotizacion/findclient', [App\Http\Controllers\QuotationController::class, 'findclient']);
+
+Route::get('/cotizacion/findproduct', [App\Http\Controllers\QuotationController::class, 'findproduct']);
 
 
 

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Product extends Model
 {
@@ -18,4 +19,16 @@ class Product extends Model
         'stock',
         
     ];
+
+    
+    public function findbyname($q){
+                
+        $cliente = DB::table('products')
+        ->where('descripcion', 'like', "%$q%")
+        ->get();
+
+                
+        return $cliente;
+    }
 }
+

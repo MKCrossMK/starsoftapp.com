@@ -21,19 +21,13 @@ class CreateSaleDetailsTable extends Migration
             $table->string('tipo_factura');
             $table->string('no_factura');
             $table->string('documento');
-            $table->dateTime('fecha');
+            $table->date('fecha');
 
             $table->unsignedBigInteger('product_id');
             $table->foreign('product_id')->references('id')->on('products');
 
-
-            $table->string('product_name');
-            $table->string('code_referencia');
-
             $table->decimal('precio');
             $table->integer('cantidad');
-            $table->decimal('costo');
-            $table->integer('itbis');
             $table->integer('descuento');
             $table->decimal('total');
             $table->integer('prod_itbis');

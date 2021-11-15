@@ -10,10 +10,9 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/app.js') }}" ></script>
 
     <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -22,16 +21,17 @@
     {{-- dash --}}
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.css') }}">
 
-    <link rel="stylesheet" href="{{ asset('assets/vendors/chartjs/Chart.min.css') }}">
-
     <link rel="stylesheet" href="{{ asset('assets/vendors/perfect-scrollbar/perfect-scrollbar.css') }}">
 
     <link rel="stylesheet" href="{{ asset('assets/css/app.css') }}">
 
     <link rel="shortcut icon" href="{{ asset('assets/images/logo/logostar.jpg') }}" type="image/x-icon">
 
+    <link rel="stylesheet" href="{{ asset('bower_components\EasyAutocomplete\dist\easy-autocomplete.min.css') }}">
+
 
     
+
   
 
 </head>
@@ -54,7 +54,7 @@
 
 
                         <li class="sidebar-item ">
-                            <a href="#" class='sidebar-link'>
+                            <a href="{{Route('indexquote')}}" class='sidebar-link'>
                                 <i data-feather="home" width="20"></i>
                                 <span>Cotizaciones</span>
                             </a>
@@ -63,7 +63,7 @@
 
 
                         <li class="sidebar-item  ">
-                            <a href="{{Route('createsale')}}" class='sidebar-link'>
+                            <a href="{{Route('indexsale')}}" class='sidebar-link'>
                                 <i data-feather="layout" width="20"></i>
                                 <span>Facturas</span>
                             </a>
@@ -134,7 +134,7 @@
 
 
                         <li class="sidebar-item  ">
-                            <a href="table-datatable.html" class='sidebar-link'>
+                            <a href="{{ route('home') }}" class='sidebar-link'>
                                 <i data-feather="file-plus" width="20"></i>
                                 <span>Dashboard</span>
                             </a>
@@ -258,6 +258,11 @@
 @endsection
 
 
+    <script src="{{ asset('bower_components\jquery\dist\jquery.min.js') }}"></script>
+
+    <script src="bower_components\EasyAutocomplete\dist\jquery.easy-autocomplete.min.js"></script>
+
+
 
     <script src="{{ asset('assets/js/feather-icons/feather.min.js') }}"></script>
     <script src="{{ asset('assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
@@ -265,15 +270,16 @@
 
     <script src="{{ asset('assets/vendors/chartjs/Chart.min.js') }}"></script>
     <script src="{{ asset('assets/vendors/apexcharts/apexcharts.min.js') }}"></script>
-    <script src="{{ asset('assets/js/pages/dashboard.js') }}"></script>
-
     <script src="{{ asset('assets/js/main.js')}}"></script>
 
-    <script src="{{ asset('bower_components\jquery\dist\jquery.min.js') }}"></script>
-
-
-    <script src="{{ asset('js\codigo.js') }}"></script>
-
+     <script src="{{ asset('js\codigo.js') }}"></script>
+     
+     <script>
+         function baseUrl(url){
+             return '{{url('')}}/' + url;
+         }
+     </script>
+  
    
 </body>
 </html>
