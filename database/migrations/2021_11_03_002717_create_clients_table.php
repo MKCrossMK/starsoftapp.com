@@ -15,6 +15,7 @@ class CreateClientsTable extends Migration
     {
         Schema::create('clients', function (Blueprint $table) {
             $table->id();
+            $table->integer('id_erp');
             $table->string('cedula_rnc')->unique();
             $table->string('name');
             $table->string('lastname');

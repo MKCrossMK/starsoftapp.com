@@ -200,4 +200,6 @@ class SaleController extends Controller
         return Sale::latest('id')->first();
     
     }
+
+    
 }

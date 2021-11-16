@@ -7,6 +7,8 @@ use App\Http\Requests\Client\UpdateRequest;
 use App\Models\Client;
 use Facade\Ignition\Exceptions\ViewException;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use PhpParser\Node\Expr\Cast\Array_;
 use Symfony\Component\VarDumper\Dumper\CliDumper;
 
 class ClientController extends Controller
@@ -40,7 +42,22 @@ class ClientController extends Controller
      */
     public function store(Request $request)
     {
-        Client::create($request->all());
+        $id_erp = DB::table('t_secuencias')->get();
+
+        $id_erp = $id_erp[3]->f_secuencia;
+       
+
+       
+
+
+        Client::create($request->all() + [
+            'id_erp' => $id_erp,
+           
+        ]);
+
+        DB::table('t_secuencias')->where('f_id', 6)->update(array(
+            'f_secuencia'=>  $id_erp + 1));
+
 
         return redirect()->route('clients.index');
 

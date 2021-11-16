@@ -11,6 +11,7 @@ class Client extends Model
     use HasFactory;
 
     protected $fillable  = [
+          'id_erp',
           'name',
           'lastname',
           'cedula_rnc',
