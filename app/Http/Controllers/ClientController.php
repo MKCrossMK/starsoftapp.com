@@ -7,6 +7,7 @@ use App\Http\Requests\Client\UpdateRequest;
 use App\Models\Client;
 use Facade\Ignition\Exceptions\ViewException;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use PhpParser\Node\Expr\Cast\Array_;
 use Symfony\Component\VarDumper\Dumper\CliDumper;
@@ -31,7 +32,15 @@ class ClientController extends Controller
      */
     public function create()
     {
-        return view('admin.clients.create');
+        $id_erp = DB::table('t_ncf')->get();
+
+        $id_consumo = $id_erp[0]->f_codigo;
+        $id_fiscal = $id_erp[1]->f_codigo;
+
+
+
+
+        return view('admin.clients.create', compact('id_consumo', 'id_fiscal'));
     }
 
     /**
@@ -52,7 +61,8 @@ class ClientController extends Controller
 
         Client::create($request->all() + [
             'id_erp' => $id_erp,
-           
+            'tipo_registro' => 'Pagina Web',
+            'vendedor' => Auth::user()->id_erp, 
         ]);
 
         DB::table('t_secuencias')->where('f_id', 6)->update(array(

@@ -42,16 +42,36 @@
                         <input type="text" name="address" class="form-control oval" placeholder="Direccion"  required/>
                     </div>
                 </div>
+                
             </div>
     
             <div class="row">
                 <div class="col">
-
+                        <div class="form-group padding-top">
+                            <input type="email" name="email" class="form-control oval" placeholder="Correo Electronico"  required />
+                        </div>
                 </div>
                 <div class="col">
-                    <div class="form-group padding-top">
-                        <input type="email" name="email" class="form-control oval" placeholder="Correo Electronico"  required />
-                    </div>
+                    <label for="tipo_comprobante" style="color: black; font: bold">Tipo de Comprobante</label>
+                      <select class="form-control" name="tipo_comprobante"  id="tipo_comprobante">
+                      <option disabled>Tipo de Comprobante</option>
+                      <option  value="{{$id_consumo}}">FACTURA DE CONSUMO</option>     
+                      <option value="{{$id_fiscal}}">FACTURA VALIDA CREDITO FISCAL</option>                     
+                     </select>      
+                </div>
+            </div>
+            <div class="row" style="margin-top: 1%">
+                <div class="col">
+                </div>
+                <div class="col">
+                    <label for="tipo_pago" style="color: black; font: bold">Tipo de pago</label>
+                      <select class="form-control" name="tipo_pago"  id="tipo_pago">
+                      <option disabled>Tipo de Pago</option>
+                      <option  value="Efectivo" >Efectivo</option>     
+                      <option value="Transferencia">Transferencia</option>    
+                      <option value="Cheque">Cheque</option>     
+                      <option value="Tarjeta de Credito">Tarjeta de Credito</option>                      
+                     </select>      
                 </div>
             </div>
             

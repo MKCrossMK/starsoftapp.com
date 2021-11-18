@@ -43,9 +43,10 @@ class SaleController extends Controller
     public function create()
     {
         $dt = Carbon::now('America/Santo_Domingo')->format('Y-m-d');
-        
-       
 
+        
+
+       
 
         return view('admin.sales.create', compact('dt'));
     }
@@ -201,5 +202,5 @@ class SaleController extends Controller
     
     }
 
-    
+
 }

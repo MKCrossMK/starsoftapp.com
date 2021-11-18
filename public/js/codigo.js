@@ -29,6 +29,7 @@ function buscarClientes(){
               var selectedItemValue3 = $("#cedula_rnc").getSelectedItemData().id;
               document.getElementById("cliente_id").value = selectedItemValue3;
 
+          
 
              
 

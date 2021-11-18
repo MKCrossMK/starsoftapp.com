@@ -15,6 +15,8 @@
                     
                         <a class="btn btn-info"  style="color: black;" href="https://www.google.es" >Lista de ventas</a>
                     </div>
+
+                    
         
         
         
@@ -244,34 +246,15 @@
                                 <tfoot>
                                     <tr>
                                         <th colspan="2">
+
+                                            <select name="tipo_pago" id="tipo_pago">
+                                                <option value="">Efectivo</option>
+                                                <option value="">Transferencia</option>
+                                                <option value="">Tarjeta de Credito</option>
+
+
+                                            </select>
                                         
-                                            <fieldset id="group2">
-                                                <h5>Tipo de Pago</h5><br>
-                                                
-
-                                                <div>
-                                                <input type="radio" value="Efectivo" name="group2">
-                                                <label for="">Efectivo</label>
-
-                                                </div>
-
-                                                <div>
-                                                <input type="radio" value="Transferencia" name="group2">
-                                                <label for="">Transferencia</label>
-                                                </div>
-
-                                                <div>
-                                                <input type="radio" value="Cheque" name="group2">
-                                                <label for="">Cheque</label>
-                                                </div>
-
-                                                <div>
-                                                <input type="radio" value="Tarjeta" name="group2">
-                                                <label for="">Tarjeta de Credito</label>
-
-                                                </div>
-
-                                              </fieldset>
                                            
                                         </th>
                                          

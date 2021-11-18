@@ -17,7 +17,10 @@ class Client extends Model
           'cedula_rnc',
           'address',
           'phone',
-          'email'
+          'email',
+          'tipo_comprobante',
+          'tipo_pago',
+        
     ];
 
 

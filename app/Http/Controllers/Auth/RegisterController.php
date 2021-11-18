@@ -6,8 +6,10 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use PhpParser\Node\Stmt\Return_;
 
 class RegisterController extends Controller
 {
@@ -47,7 +49,7 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
-    protected function validator(array $data)
+    public function validator(array $data)
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
@@ -62,12 +64,29 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\Models\User
      */
-    protected function create(array $data)
+    public function create(array $data)
     {
-        return User::create([
+        $id_erp = DB::table('t_secuencias')->get();
+
+        $id_erp = $id_erp[4]->f_secuencia;
+
+        
+        $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'id_erp' =>  $id_erp, 
+
+           
+         
         ]);
+        DB::table('t_secuencias')->where('f_id', 7)->update(array(
+            'f_secuencia'=>  $id_erp + 1));
+
+
+
+        return $user;
     }
+
+ 
 }
