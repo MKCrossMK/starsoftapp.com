@@ -20,9 +20,9 @@ class CreateQuotationsTable extends Migration
             $table->foreign('user_id')->references('id')->on('users');
 
 
-            $table->string('tipo_quote');
-            $table->string('no_quote');
-            $table->string('documento');
+            $table->string('tipo_quote')->nullable();
+            $table->string('no_quote')->nullable();
+            $table->string('documento')->nullable();
             $table->date('fecha');
             $table->decimal('monto');
             $table->decimal('itbis');

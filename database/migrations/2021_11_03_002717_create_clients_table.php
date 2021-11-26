@@ -22,9 +22,9 @@ class CreateClientsTable extends Migration
             $table->string('address')->nullable();
             $table->string('phone');
             $table->string('email')->nullable()->unique();
-            $table->integer('tipo_comprobante')->nullable();
+            $table->string('tipo_comprobante')->nullable();
             $table->integer('vendedor')->nullable();
-            $table->integer('forma_pago')->nullable();
+            $table->string('tipo_pago')->nullable();
             $table->decimal('balance')->nullable();
             $table->string('tipo_registro')->nullable();
             $table->timestamps();

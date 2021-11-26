@@ -2,6 +2,8 @@
 <x-app-layout>
     <x-slot name="header">
     </x-slot>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
             <a class="btn btn-info" style="margin-left: 2%" href="{{Route('createsale')}}">Nueva Facturacion</a>
             
             <div style="margin-top: 5%" class="card" id = "stores">
@@ -12,7 +14,7 @@
                     </div>
                 </div>
                 <div class="card-body px-0 pb-0">
-                    <div class="table-responsive">
+                    <div class="table-responsive" >
                         <table class='table mb-0' id="table1">
                             <thead>
                                 <tr>
@@ -26,6 +28,7 @@
                                     {{-- @endif --}}
                                 </tr>
                             </thead>
+                            
                             <tbody>
                                 @if(!empty($sales))
                                 @foreach($sales as $sale)
@@ -33,11 +36,14 @@
                                     <td>{{ $sale->tipo_factura}}</td>
                                     <td><a href="{{Route('showsale', $sale->id)}}">{{ $sale->no_factura }}</a></td>
                                     <td>{{ $sale->monto}}</td>
-                                    <td>{{ $sale->client->name}}</td>
+                                    <td>{{ $sale->client->name . " " . $sale->client->lastname}}</td>
                                     <td>{{ $sale->user->name}}</td>
-                                    {{-- <td> <a href="{{ route('editsale', $cli->id) }}" class="btn btn-info" >Editar</a></td> --}}
                                     <td>
-                                      
+                                    <a href="{{ route('showsale', $sale->id) }}" ><abbr title="Ver factura"><i  data-feather="eye" width="30"></i></abbr></a>
+                                    <a href="{{ route('pdfsale', $sale->id) }}" ><abbr title="Imprimir PDF" ><i data-feather="printer" width="30"></i></abbr></a>
+                                    
+                                   
+                                    </td> 
                                 </tr>
                                 @endforeach
                                 @else
@@ -47,6 +53,7 @@
                                     
                                 @endif
                             </tbody>
+                        </div>
                         </table>
                     </div>
                 </div>

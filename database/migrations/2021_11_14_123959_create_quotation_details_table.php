@@ -18,9 +18,10 @@ class CreateQuotationDetailsTable extends Migration
             $table->unsignedBigInteger('quotation_id');
             $table->foreign('quotation_id')->references('id')->on('quotations');
 
-            $table->string('tipo_quote');
-            $table->string('no_quote');
-            $table->string('documento');
+            $table->string('tipo_quote')->nullable();
+            $table->string('no_quote')->nullable();
+            $table->string('documento')->nullable();
+            
             $table->date('fecha');
 
             $table->unsignedBigInteger('product_id');

@@ -66,9 +66,9 @@ class RegisterController extends Controller
      */
     public function create(array $data)
     {
-        $id_erp = DB::table('t_secuencias')->get();
+        $id_erp = DB::table('t_secuencias')->select('f_secuencia')->where('f_id', 7)->first()->f_secuencia;
 
-        $id_erp = $id_erp[4]->f_secuencia;
+     
 
         
         $user = User::create([

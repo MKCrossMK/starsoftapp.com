@@ -11,9 +11,9 @@ class Quotation extends Model
 
     protected $fillable = [
         'user_id',
-        'tipo_quote',
-        'no_quote',
-        'documento',
+        // 'tipo_quote',
+        // 'no_quote',
+        // 'documento',
         'fecha',
         'monto',
         'itbis',

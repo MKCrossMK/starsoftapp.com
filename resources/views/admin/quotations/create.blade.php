@@ -102,13 +102,13 @@
                                         <td width='50px'>
                                             <div class="form-group" >
                                             <label for="product_id">id</label>
-                                            <input type="text"  id="product_id"  class="form-control" required>
+                                            <input type="text"  id="product_id"  class="form-control" >
                                           </div>
                                         </td>
                                         <td width='300px'>
                                             <div class="form-group" >
                                             <label for="product_name">Producto</label>
-                                            <input type="text"  id="product_name"  class="form-control" required>
+                                            <input type="text"  id="product_name"  class="form-control" >
                                           </div>
                                         </td>
                                         <td >
@@ -126,14 +126,14 @@
                                         <td>
                                             <div class="form-group">
                                                     <label for="price">Precio </label>
-                                                    <input type="text" class="form-control"  id="precio" disabled required>
+                                                    <input type="text" class="form-control"  id="precio" disabled >
                                                 </div>
                                             </div>
                                         </td>
                                         <td width="70px">
                                             <div class="form-group">
                                                 <label for="">Cantidad</label>
-                                                <input type="number" class="form-control"  id="cantidad" min="0" max="100" value="1" required>
+                                                <input type="number" class="form-control"  id="cantidad" min="0" max="100" value="1" >
                                             </div>
                                         </td>
 
@@ -142,9 +142,9 @@
                                                 <label for="itbis">ITBIS </label>
                                                 <select class="form-control"  id="itbis">
                                                     <option disabled>ITBIS</option>
-                                                    <option value="18" selected>ITBIS (18 %)</option>
+                                                    <option value="18">ITBIS (18 %)</option>
                                                     <option value="16">ITBIS (16 %)</option>
-                                                    <option value="0">ITBIS (0 $)</option>
+                                                    <option value="0" selected>ITBIS (0 $)</option>
                                                   </select>        
                                             </div>
                                         </td>
@@ -238,7 +238,7 @@
                                             <p align="right">TOTAL IMPUESTO:</p>
                                         </th>
                                         <th>
-                                            <p align="right"><span id="total_impuesto">DOP $ 0.00</span></p>
+                                            <p align="right"><span id="total_impuesto">DOP $ 0.00</span><input  type="hidden" id="imp_itbis" name="imp_itbis"></p>
                                         </th>
                                     </tr>
                                     <tr>

@@ -28,7 +28,7 @@ class CreateSaleDetailsTable extends Migration
 
             $table->decimal('precio');
             $table->integer('cantidad');
-            $table->integer('descuento');
+            $table->decimal('descuento');
             $table->decimal('total');
             $table->integer('prod_itbis');
 

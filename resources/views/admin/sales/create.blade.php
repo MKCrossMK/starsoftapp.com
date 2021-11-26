@@ -13,33 +13,89 @@
                     <div class="row justify-content-between text-left">
                         <div class="form-group col-sm-2">
                     
-                        <a class="btn btn-info"  style="color: black;" href="https://www.google.es" >Lista de ventas</a>
+                        <a class="btn btn-info"  style="color: black;" href="{{ route('indexsale') }}" >Lista de ventas</a>
                     </div>
 
-                    
+                    <div class="col-12">
+                    <div class="row " style="margin-top: 5%" >
+                        <div class="form-group col-sm-6 flex-column d-flex">
         
+                              <div class="col" style="margin-bottom: 1%">
+                                <div class="row">
+                                    <div class="col-3">
+                                        <h6>Nº de Factura</h6>
+                                    </div>
+                                    <div class="col-6">
+                                        <input type="text" class="form-control" placeholder="Nª de factura" name="no_factura"   id="no_factura" readonly>
+                                    </div>
+                                  </div>
+                                </div>
+                             </div>
         
-        
-                         <div class="form-group col-sm-5 flex-column d-flex"> 
+                         <div class="form-group col-sm-6 flex-column d-flex"> 
         
                             <div class="col" style="margin-bottom: 1%">
                                 <div class="row">
                                     <div class="col-3">
-                                        <h1 class="col-sm-6 col-form-label><label for="ncf">NCF:</h1>
+                                        <h1 class="col-sm-6 col-form-label">NCF:</h1>
                                     </div>
                                     <div class="col-6">
-                                        <input type="text" class="form-control" placeholder="NCF" name="ncf" value="B01111"  id="ncf" readonly>
+                                        <input type="text" class="form-control" placeholder="NCF" name="ncf" id="ncf" style="color: red" readonly>
+                                        <input hidden type="text" class="form-control"  name="ncf"  id="sigConsumo" value="{{$sigConsumo}}" readonly>
+                                        <input hidden type="text" class="form-control"  name="ncf"  id="sigFiscal" value="{{$sigFiscal}}" readonly>
                                     </div>
                                   </div>
                                 </div>
-        
-        
-                
+                            </div>
+                        </div> 
+                    </div>
+
+                    <div class="col-12">
+                        <div class="row "  >
+                            <div class="form-group col-sm-6 flex-column d-flex">
+            
+                                  <div class="col" style="margin-bottom: 1%">
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <h6> Tipo de factura :</h6>
+                                        </div>
+                                        <div class="col-6">
+                                            <input hidden type="text" class="form-control" placeholder="documento" name="documento"  id="documento" readonly>
+                                            <input hidden type="text" class="form-control" placeholder="tipo_fac" name="tipo_fac"  id="tipo_fac" readonly>
+                                            <select class="form-control" name="tipo_factura" id="tipo_factura"  required>
+                                                <option disabled selected> Elige tipo de factura...</option>
+                                                <option value="{{$fc}}">Factura Contado</option>
+                                                <option value="{{$fcr}}">Factura Credito</option>
+                                            </select>                                       
+                                         </div>
+                                      </div>
+                                    </div>
+                                 </div>
+            
+                             <div class="form-group col-sm-6 flex-column d-flex"> 
+            
+                                <div class="col" style="margin-bottom: 1%">
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <h6> Tipo de NCF :</h6>
+                                        </div>
+                                        <div class="col-6">
+                                            <select class="form-control" name="tipo_ncf" id="tipo_ncf"  required>
+                                                <option disabled selected> Elige tipo de nfc...</option>
+                                                <option value="{{$consumo}}">Factura de consumo</option>
+                                                <option value="{{$fiscal}}">Factura valida credito fiscal</option>
+                                            </select>                                       
+                                         </div>
+                                      </div>
+                                    </div>
+                                </div>
+                            </div> 
                         </div>
-                    
+            
         
-                    
-        
+                        
+                       
+                
         
                     <div class="row justify-content-between text-left" style="margin-top: 5%" >
                         <div class="form-group col-sm-6 flex-column d-flex">
@@ -99,9 +155,6 @@
                                     </div>
                                   </div>
                                 </div>
-        
-        
-                    
                         </div>
                     
         {{-- Product Detail --}}
@@ -119,16 +172,16 @@
                                 <tbody>
                                     
                                     <tr>
-                                        <td width='50px'>
+                                        <td hidden width='50px'>
                                             <div class="form-group" >
                                             <label for="product_id">id</label>
-                                            <input type="text"  id="product_id"  class="form-control" required>
+                                            <input type="text"  id="product_id"  class="form-control" >
                                           </div>
                                         </td>
                                         <td width='300px'>
                                             <div class="form-group" >
                                             <label for="product_name">Producto</label>
-                                            <input type="text"  id="product_name"  class="form-control" required>
+                                            <input type="text"  id="product_name"  class="form-control" >
                                           </div>
                                         </td>
                                         <td >
@@ -146,14 +199,14 @@
                                         <td>
                                             <div class="form-group">
                                                     <label for="price">Precio </label>
-                                                    <input type="text" class="form-control"  id="precio" disabled required>
+                                                    <input type="text" class="form-control"  id="precio" disabled >
                                                 </div>
                                             </div>
                                         </td>
                                         <td width="70px">
                                             <div class="form-group">
                                                 <label for="">Cantidad</label>
-                                                <input type="number" class="form-control"  id="cantidad" min="0" max="100" value="1" required>
+                                                <input type="number" class="form-control"  id="cantidad" min="0" max="100" value="1" >
                                             </div>
                                         </td>
 
@@ -162,9 +215,9 @@
                                                 <label for="itbis">ITBIS </label>
                                                 <select class="form-control"  id="itbis">
                                                     <option disabled>ITBIS</option>
-                                                    <option value="18" selected>ITBIS (18 %)</option>
+                                                    <option value="18">ITBIS (18 %)</option>
                                                     <option value="16">ITBIS (16 %)</option>
-                                                    <option value="0">ITBIS (0 $)</option>
+                                                    <option value="0" selected>ITBIS (0 $)</option>
                                                   </select>        
                                             </div>
                                         </td>
@@ -247,16 +300,31 @@
                                     <tr>
                                         <th colspan="2">
 
-                                            <select name="tipo_pago" id="tipo_pago">
-                                                <option value="">Efectivo</option>
-                                                <option value="">Transferencia</option>
-                                                <option value="">Tarjeta de Credito</option>
-
+                                            <select class="form-control" name="tipo_pago" id="tipo_pago">
+                                                <option value="Efectivo">Efectivo</option>
+                                                <option value="Transferencia">Transferencia</option>
+                                                <option value="Tarjeta de Credito">Tarjeta de Credito</option>
+                                                <option value="Cheque">Cheque</option>
 
                                             </select>
-                                        
-                                           
                                         </th>
+
+                                        <th colspan="2">
+                                            
+                                            <div>
+                                                <select class="form-control" name="banco_cheque" id="banco_cheque" >
+                                                    <option selected disabled>Nombre de Banco</option>
+                                                    @foreach($bancos as $banco)
+                                                    <option value="{{$banco->f_nombre}}">{{$banco->f_nombre}}</option>
+                                                    @endforeach
+                                          
+                                                </select>
+                                            </div>
+                                            
+                                            <input class="form-control" placeholder="Nº de Cheque" type="text" id="no_cheque" name="no_cheque" style="margin-top: 1%">
+                                        </th>
+                                    
+
                                          
                                     </tr>
                                     <tr>
@@ -272,7 +340,7 @@
                                             <p align="right">TOTAL IMPUESTO:</p>
                                         </th>
                                         <th>
-                                            <p align="right"><span id="total_impuesto">DOP $ 0.00</span></p>
+                                            <p align="right"><span id="total_impuesto">DOP $ 0.00</span><input  type="hidden" id="imp_itbis" name="imp_itbis"></p>
                                         </th>
                                     </tr>
                                     <tr>
@@ -280,8 +348,7 @@
                                             <p align="right">TOTAL PAGAR:</p>
                                         </th>
                                         <th>
-                                            <p align="right"><span align="right" id="total_pagar_html">DOP $  0.00</span> <input type="hidden"
-                                                     id="total_pagar" name="monto"></p>
+                                            <p align="right"><span align="right" id="total_pagar_html">DOP $  0.00</span> <input type="hidden" id="total_pagar" name="monto"></p>
                                         </th>
                                     </tr>
                                 </tfoot>

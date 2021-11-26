@@ -21,12 +21,12 @@ class CreateSalesTable extends Migration
 
 
             $table->string('tipo_factura');
-            $table->string('no_factura');
+            $table->integer('no_factura');
             $table->string('documento');
             $table->date('fecha');
             $table->decimal('monto');
             $table->decimal('itbis');
-            $table->integer('descuento');
+            $table->decimal('descuento');
             $table->string('t_pago');
             $table->string('t_cobro');
 
@@ -35,6 +35,9 @@ class CreateSalesTable extends Migration
 
             $table->string('tipo_ncf');
             $table->string('ncf');
+
+            $table->string('no_cheque')->nullable();
+            $table->string('banco_cheque')->nullable();
 
 
             $table->timestamps();

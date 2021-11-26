@@ -51,13 +51,11 @@ class ClientController extends Controller
      */
     public function store(Request $request)
     {
-        $id_erp = DB::table('t_secuencias')->get();
-
-        $id_erp = $id_erp[3]->f_secuencia;
+        
        
+        $id_erp = DB::table('t_secuencias')->select('f_secuencia')->where('f_id', 6)->first()->f_secuencia;
 
-       
-
+    
 
         Client::create($request->all() + [
             'id_erp' => $id_erp,

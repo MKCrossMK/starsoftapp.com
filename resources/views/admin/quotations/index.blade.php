@@ -15,11 +15,11 @@
                     <div class="table-responsive">
                         <table class='table mb-0' id="table1">
                             <thead>
-                                <tr>
+                                <tr>  
+                                    <th>Cliente</th>
                                     <th>Tipo de factura</th>
                                     <th>Numero de factura</th>
                                     <th>Monto</th>
-                                    <th>Cliente</th>
                                     <th>Vendedor</th>
                                     {{-- @if ( Auth::user()->role_id == 1) --}}
                                     <th>Acciones</th>
@@ -27,13 +27,13 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @if(!empty($quotation))
-                                @foreach($quotation as $quote)
+                                @if(!empty($quotes))
+                                @foreach($quotes as $quote)
                                 <tr>
+                                    <td>{{ $quote->client->name . " " . $quote->client->lastname}}</td>
                                     <td>{{ $quote->tipo_factura}}</td>
                                     <td><a href="{{Route('showquote', $quote->id)}}">{{ $quote->no_quote }}</a></td>
                                     <td>{{ $quote->monto}}</td>
-                                    <td>{{ $quote->client->name}}</td>
                                     <td>{{ $quote->user->name}}</td>
                                     {{-- <td> <a href="{{ route('editsale', $cli->id) }}" class="btn btn-info" >Editar</a></td> --}}
                                     <td>

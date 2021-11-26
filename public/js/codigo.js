@@ -6,6 +6,7 @@ $(document).ready(function() {
     buscarClientes();
     buscarProductos();
 
+
 });
 
 
@@ -40,7 +41,7 @@ function buscarClientes(){
         $("#cedula_rnc").easyAutocomplete(options); 
 }
 
-
+//Buscar Productos
 function buscarProductos(){
     var options = {
         url: function(q) {
@@ -116,14 +117,14 @@ function agregar() {
             var fila = '<tr class="selected" id="fila' + cont + '"><td><button type="button" class="btn btn-danger btn-sm" onclick="eliminar(' 
             + cont + ');"><i class="fa fa-times fa-2x"></i>X</button></td> <td><input type="hidden" name="product_id[]" value="' + product_id + '">'
             + product_name + ' <input type="hidden" name="product_name[]" value="'+ product_name 
-            + '">  <td> <input type="hidden" name="code_referencia[]" value="' + code + '"> <input type="text" name="code_referencia[]" value="'
+            + '">  <td> <input type="hidden" name="code_referencia[]" value="' + code + '"> <input class="form-control" type="text" name="code_referencia[]" value="'
             + code + '"disabled> </td> <td> <input type="hidden" name="precio[]" value="' + parseFloat(price).toFixed(2) 
             + '"> <input class="form-control" type="number" value="' + parseFloat(price).toFixed(2)
             + '" disabled> </td> <td> <input type="hidden" name="descuento[]" value="' + parseFloat(discount) 
             + '"> <input class="form-control" type="number" value="' + parseInt(discount) + '" disabled> </td> <td> <input type="hidden" name="cantidad[]" value="' 
-            + quantity + '"> <input type="number" value="' + quantity + '" class="form-control" disabled> </td> <td> <input type="hidden" name="prod_itbis[]" value="' 
-            + impuesto + '"> <input type="number" value="' + impuesto + '" class="form-control" disabled> </td> <td> <input type="hidden" name="descuento[]" value="' 
-            + descuento + '"> <input type="number" value="' + descuento + '" class="form-control" disabled> </td>  <input type="hidden" name="total[]" value="' 
+            + quantity + '"> <input type="number" value="' + quantity + '" class="form-control" disabled> </td> <td> <input type="hidden" id="prod_itbis" name="prod_itbis[]" value="' 
+            + impuesto + '"> <input type="number" value="' + impuesto + '" class="form-control" disabled> </td> <td>  <input type="number" value="' + descuento 
+            + '" class="form-control" disabled> </td>  <input type="hidden" name="total[]" value="' 
             +  parseFloat(subtotal[cont]).toFixed(2) + '"> <td align="right">DOP$' + parseFloat(subtotal[cont]).toFixed(2) + '</td></tr>';
             cont++;
             limpiar();
@@ -144,17 +145,27 @@ function agregar() {
     }
 }
 function limpiar() {
-    $("#quantity").val("");
-    $("#discount").val("0");
+    $("#product_name").val("");
+    $("#code_referencia").val("");
+    $("#stock").val("");
+    $("#precio").val("");
+    $("#cantidad").val("1");
 }
 function totales() {
     $("#total").html("DOP" + "$" + " " + total.toFixed(2));
+
+    //Calculo de itbis incorrecto
+  
+
+    
+    
 
     total_impuesto = total * impuesto / 100;
     total_pagar = total + total_impuesto;
     $("#total_impuesto").html("DOP" + "$" + " " +  total_impuesto.toFixed(2));
     $("#total_pagar_html").html("DOP" + "$"  + " " +  total_pagar.toFixed(2));
     $("#total_pagar").val(total_pagar.toFixed(2));
+    $("#imp_itbis").val(total_impuesto.toFixed(2));
 }
 function evaluar() {
     if (total > 0) {
@@ -174,3 +185,80 @@ function eliminar(index) {
     $("#fila" + index).remove();
     evaluar();
 }
+
+//Tipo de factura
+
+jQuery(document).ready(function($) {
+    // Change es un evento que se ejecuta cada vez que se cambia el valor de un elemento (input, select, etc).
+    $('#tipo_factura').change(function(e) {
+
+     var valf = $('#no_factura').val($('#tipo_factura option:selected').val());
+     var textf = $('#tipo_factura option:selected').text();
+     if (textf === "Factura Contado"){
+        $('#documento').val("FC" + $('#no_factura').val());
+        $('#tipo_fac').val("FC");
+     }
+      else  if (textf === "Factura Credito"){
+        $('#documento').val("FCR" + $('#no_factura').val());
+        $('#tipo_fac').val("FCR");
+     }
+ 
+    });
+  });
+
+  
+//ncf
+
+  const selectElement = document.querySelector('#tipo_ncf');
+
+selectElement.addEventListener('change', (event) => {
+   const seleccionado = event.target.value;
+
+   //Factura consumo
+   if (seleccionado === 'B02') {
+    $("#sigConsumo").prop('disabled', false); 
+    $('#ncf').val($('#tipo_ncf option:selected').val() + $('#sigConsumo').val() )
+    $("#sigFiscal").prop('disabled', true);
+   }
+   // Factura fiscal
+   else if (seleccionado === 'B01') {
+    $("#sigFiscal").prop('disabled', false);
+    $('#ncf').val($('#tipo_ncf option:selected').val() + $('#sigFiscal').val())
+    $("#sigConsumo").prop('disabled', true);
+    
+    
+   }
+   else{
+    $('#ncf').val('Nª de factura')
+   }
+});
+
+
+//Banco cheque inpuet y select option
+
+$(document).ready(function(){
+    $("#banco_cheque").hide();
+    $("#no_cheque").hide();
+
+    $("#banco_cheque").prop('disabled', true);
+    $("#no_cheque").prop('disabled', true);
+
+    $('#tipo_pago').on('change',function(){
+      if (this.value === "Cheque") {
+        $("#banco_cheque").prop('disabled', false);
+        $("#no_cheque").prop('disabled', false);
+       
+        $("#banco_cheque").show();
+        $("#no_cheque").show();
+
+      } else { 
+        $("#banco_cheque").prop('disabled', true);
+        $("#no_cheque").prop('disabled', true);
+        $("#banco_cheque").hide();
+        $("#no_cheque").hide();
+      }  
+    })
+  });
+
+
+

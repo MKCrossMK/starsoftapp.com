@@ -53,15 +53,21 @@ class QuotationController extends Controller
     {
         $userid = Auth::user()->id;
 
+        for($i = 0; $i < count($request['product_id']); $i++){
+            $d[] = $request['precio'][$i] * $request['descuento'][$i]  / 100;      
+         }
+ 
+         $total_descuento = array_sum($d);
+
         $Sale = Quotation::create([
              'user_id' => Auth::id(),
-             'tipo_quote' => 'B01',
-             'no_quote' => '00001',
-             'documento' => 'B010001',
+            //  'tipo_quote' => 'B01',
+            //  'no_quote' => '00001',
+            //  'documento' => 'B010001',
              'fecha' => $request->input('fecha'),
              'monto' => $request->input('monto'),
-             'itbis' => '50',
-             'descuento' => '25',
+             'itbis' => $request->input('imp_itbis'),
+             'descuento' =>  $total_descuento,
              'client_id' => $request->input('client_id'),
              'created_at' => now(),
              'updated_at' => now(),
@@ -71,10 +77,10 @@ class QuotationController extends Controller
          
          for($i = 0; $i < count($request['product_id']); $i++){
              $data[] = array(
-             'quote_id'=> $lastquote, 
-             'tipo_quote' => 'B01',
-             'no_quote' => '00001',
-             'documento' => 'B010001',
+             'quotation_id'=> $lastquote, 
+            //  'tipo_quote' => 'B01',
+            //  'no_quote' => '00001',
+            //  'documento' => 'B010001',
              'fecha' => $request->input('fecha'),
              'product_id' => $request['product_id'][$i], 
              'cantidad' => $request['cantidad'][$i], 

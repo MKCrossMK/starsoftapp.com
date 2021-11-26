@@ -59,6 +59,8 @@ Route::get('/listaventas', [App\Http\Controllers\SaleController::class, 'index']
 
 Route::get('/detallesventas/{sale}', [App\Http\Controllers\SaleController::class, 'show'])->name('showsale');
 
+Route::get('/pdf/{sale}', [App\Http\Controllers\SaleController::class, 'pdf'])->name('pdfsale');
+
 Route::get('/creandoventa', [App\Http\Controllers\SaleController::class, 'create'])->name('createsale');
 
 Route::post('/creandoventa', [App\Http\Controllers\SaleController::class, 'store'])->name('storesale');
