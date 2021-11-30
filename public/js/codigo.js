@@ -109,6 +109,7 @@ function agregar() {
     price = $("#precio").val();
     stock = $("#stock").val();
     impuesto = $("#itbis").val();
+  
     descuento = $('#descuento').val();
     if (product_id != "" && quantity != "" && quantity > 0 && discount != "" && price != "") {
         if (parseInt(stock) >= parseInt(quantity)) {
@@ -261,4 +262,7 @@ $(document).ready(function(){
   });
 
 
-
+  function myFunction() {
+    var element = document.getElementById("sidebar");
+    element.classList.remove("active");
+  }

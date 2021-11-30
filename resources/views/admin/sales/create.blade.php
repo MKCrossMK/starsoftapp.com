@@ -64,8 +64,10 @@
                                             <input hidden type="text" class="form-control" placeholder="tipo_fac" name="tipo_fac"  id="tipo_fac" readonly>
                                             <select class="form-control" name="tipo_factura" id="tipo_factura"  required>
                                                 <option disabled selected> Elige tipo de factura...</option>
-                                                <option value="{{$fc}}">Factura Contado</option>
+                                                <option value="{{$fc}}" selected>Factura Contado</option>
                                                 <option value="{{$fcr}}">Factura Credito</option>
+                                                
+                                                {{-- Agregar variable con tipo de factura desde clients BD Table --}}
                                             </select>                                       
                                          </div>
                                       </div>
@@ -215,9 +217,11 @@
                                                 <label for="itbis">ITBIS </label>
                                                 <select class="form-control"  id="itbis">
                                                     <option disabled>ITBIS</option>
-                                                    <option value="18">ITBIS (18 %)</option>
-                                                    <option value="16">ITBIS (16 %)</option>
-                                                    <option value="0" selected>ITBIS (0 $)</option>
+                                                    <option value="18" selected>ITBIS (18 %)</option>
+                                                    {{-- <option value="16">ITBIS (16 %)</option>
+                                                    <option value="0" selected>ITBIS (0 $)</option> --}}
+
+                                                    {{-- Definir campo itbis en BD --}}
                                                   </select>        
                                             </div>
                                         </td>

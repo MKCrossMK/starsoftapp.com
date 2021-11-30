@@ -13,16 +13,13 @@
                         <a href="#"><i data-feather="download"></i></a>
                     </div>
                 </div>
-                <div class="card-body px-0 pb-0">
+                <div  class="card-body px-0 pb-0">
                     <div class="table-responsive" >
-                        <table class='table mb-0' id="table1">
+                        <table style=" margin-left:auto; margin-right: auto;" class='table' id="table1">
+                           
                             <thead>
                                 <tr>
-                                    <th>Tipo de factura</th>
-                                    <th>Numero de factura</th>
-                                    <th>Monto</th>
-                                    <th>Cliente</th>
-                                    <th>Vendedor</th>
+                                    <th width="400px" style="text-align: center">Facturas</th>
                                     {{-- @if ( Auth::user()->role_id == 1) --}}
                                     <th>Acciones</th>
                                     {{-- @endif --}}
@@ -33,11 +30,32 @@
                                 @if(!empty($sales))
                                 @foreach($sales as $sale)
                                 <tr>
-                                    <td>{{ $sale->tipo_factura}}</td>
-                                    <td><a href="{{Route('showsale', $sale->id)}}">{{ $sale->no_factura }}</a></td>
-                                    <td>{{ $sale->monto}}</td>
-                                    <td>{{ $sale->client->name . " " . $sale->client->lastname}}</td>
-                                    <td>{{ $sale->user->name}}</td>
+                                    <td>
+                                        <a style="width: 300px" class="btn" href="{{Route('showsale', $sale->id)}}">
+                                        <div class="rpw">
+                                            <div class="col">
+                                            <p> {{$sale->client->name . " " . $sale->client->lastname}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col">
+                                            <p>Tipo Factura: {{$sale->tipo_factura}}</p>
+                                            </div>
+                                            <div class="col">
+                                            <p>Nª Factura: {{ $sale->no_factura }}</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col">
+                                            <h6> Monto: {{$sale->monto}}</h6>
+                                            </div>
+                                          
+                                        </div>
+
+                                        </a>
+                                    </td>
+        
                                     <td>
                                     <a href="{{ route('showsale', $sale->id) }}" ><abbr title="Ver factura"><i  data-feather="eye" width="30"></i></abbr></a>
                                     <a href="{{ route('pdfsale', $sale->id) }}" ><abbr title="Imprimir PDF" ><i data-feather="printer" width="30"></i></abbr></a>

@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'GTS-Starsoft.com') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" ></script>
@@ -43,7 +43,7 @@
     @if ( Auth::user())
     
     <div id="app">
-        <div id="sidebar" class='active'>
+        <div id="sidebar" class=''>
             <div class="sidebar-wrapper active">
                 <div class="sidebar-header">
                     <img src="{{asset('assets/images/logo/gtslogo.jpeg') }}" style="width: 100%; height: 100%; border-radius: 20% " alt="Logo StarSoft" srcset="">
@@ -179,9 +179,9 @@
                 <a class="sidebar-toggler" href="#"><span class="navbar-toggler-icon"></span></a>
                 <button class="btn navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                    aria-expanded="true" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"> </button></span>
+               
                 @endif
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav d-flex align-items-center navbar-light ms-auto">
@@ -227,12 +227,14 @@
             </nav>
        
     
-
+  <div onclick="myFunction()">
         <main class="py-4">
             @yield('content')
         </main>
-
-        {{$slot}}
+       
+            {{$slot}}
+        </div>
+ 
 
 
       

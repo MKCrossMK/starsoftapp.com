@@ -179,7 +179,7 @@ hr {
                                 <div class="my-1">
                                     <i class="fa fa-phone fa-flip-horizontal text-secondary"></i>  {{$sale->client->phone}}
                                 </div>
-                                <span class="text-sm text-grey-m2 align-middle">RNC:</span>
+                                <span class="text-sm text-grey-m2 align-middle">Cedula o RNC:</span>
                                 <span class="my-1"><i class="text-600 text-110 fa-flip-horizontal text-secondary align-middle"></i> <b class="">{{$sale->client->cedula_rnc}}</b></span>
                             </div>
                         </div>
