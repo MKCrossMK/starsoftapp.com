@@ -25,12 +25,12 @@
             <div class="row">
                 <div class="col">
                     <div class="form-group padding-top">
-                        <input class="form-control ovl" type="number" name="precio" placeholder="Precio de Venta"  required>
+                        <input class="form-control ovl" type="number" name="precio" placeholder="Precio de Venta" onkeypress="return isNumber(event)" required>
                     </div>
                 </div>
                 <div class="col">
                     <div class="form-group padding-top">
-                        <input type="number" name="costo" class="form-control oval" placeholder="Costo"  required/>
+                        <input type="number" name="costo" class="form-control oval" placeholder="Costo" onkeypress="return isNumber(event)" required/>
                     </div>
                 </div>
             </div>
@@ -39,7 +39,7 @@
                 <div class="col"></div>
                 <div class="col">
                     <div class="form-group padding-top">
-                        <input type="text" name="stock" class="form-control oval" placeholder="Stock" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Stock'" required />
+                        <input type="text" name="stock" class="form-control oval" placeholder="Stock" onkeypress="return isNumber(event)" required />
                     </div>
                 </div>
             </div>

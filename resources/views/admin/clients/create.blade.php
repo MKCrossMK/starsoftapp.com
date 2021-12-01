@@ -14,7 +14,7 @@
              
                 <div class="col">
                     <div class="form-group padding-top">
-                        <input type="text" name="cedula_rnc" class="form-control oval" placeholder="Cedula o RNC"  required>
+                        <input type="text" name="cedula_rnc" class="form-control oval" placeholder="Cedula o RNC" onkeypress="return isNumber(event)" required>
                     </div>
                 </div>
                 <div class="col"></div>
@@ -34,7 +34,7 @@
             <div class="row">
                 <div class="col">
                     <div class="form-group padding-top">
-                        <input class="form-control ovl" type="text" name="phone" placeholder="Telefono"  required>
+                        <input class="form-control ovl" type="text" name="phone" id="phone" placeholder="Telefono" maxlength="10" onkeypress="return isNumber(event)" required>
                     </div>
                 </div>
                 <div class="col">

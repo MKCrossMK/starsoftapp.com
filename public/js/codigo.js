@@ -5,6 +5,7 @@ var self = this;
 $(document).ready(function() {
     buscarClientes();
     buscarProductos();
+    evaluar();
 
 
 });
@@ -84,6 +85,7 @@ function buscarProductos(){
 $(document).ready(function () {
     $("#agregarproducto").click(function () {
         agregar();
+        evaluar();
     });
 });
 
@@ -170,9 +172,9 @@ function totales() {
 }
 function evaluar() {
     if (total > 0) {
-        $("#guardar").show();
+        $("#facturar").prop('disabled', false);
     } else {
-        $("#guardar").hide();
+        $("#facturar").prop('disabled', true);
     }
 }
 function eliminar(index) {
@@ -245,7 +247,7 @@ $(document).ready(function(){
     $("#no_cheque").prop('disabled', true);
 
     $('#tipo_pago').on('change',function(){
-      if (this.value === "Cheque") {
+      if (this.value === "Cheque" ||  this.value === "Transferencia") {
         $("#banco_cheque").prop('disabled', false);
         $("#no_cheque").prop('disabled', false);
        
@@ -266,3 +268,14 @@ $(document).ready(function(){
     var element = document.getElementById("sidebar");
     element.classList.remove("active");
   }
+
+
+  function isNumber(evt) {
+    evt = (evt) ? evt : window.event;
+    var charCode = (evt.which) ? evt.which : evt.keyCode;
+    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+        return false;
+    }
+    return true;
+  }
+ 

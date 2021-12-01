@@ -8,6 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'GTS-Starsoft.com') }}</title>
+    
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" ></script>
@@ -30,6 +31,10 @@
     <link rel="stylesheet" href="{{ asset('bower_components\EasyAutocomplete\dist\easy-autocomplete.min.css') }}">
     
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
+    {{-- Imask --}}
+    <script src="https://unpkg.com/imask"></script>
+
 
 
 
@@ -92,12 +97,12 @@
                                 <li>
                                     <a href="{{Route('indexproducto')}}">Productos</a>
                                 </li>
-                                <li>
+                                {{-- <li>
                                     <a href="#">Otro</a>
                                 </li>
                                 <li>
                                     <a href="#">Mas</a>
-                                </li>
+                                </li> --}}
                             </ul>
 
                         </li>
@@ -113,12 +118,12 @@
                                 <li>
                                     <a href="{{Route('indexcliente')}}">Clientes</a>
                                 </li>
-                                <li>
+                                {{-- <li>
                                     <a href="#">Otro</a>
                                 </li>
                                 <li>
                                     <a href="#">Mas</a>
-                                </li>
+                                </li> --}}
                             </ul>
 
                         </li>
@@ -276,6 +281,7 @@
     <script src="{{ asset('assets/vendors/chartjs/Chart.min.js') }}"></script>
     <script src="{{ asset('assets/vendors/apexcharts/apexcharts.min.js') }}"></script>
     <script src="{{ asset('assets/js/main.js')}}"></script>
+  
 
      <script src="{{ asset('js\codigo.js') }}"></script>
      

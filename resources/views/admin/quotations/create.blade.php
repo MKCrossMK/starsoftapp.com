@@ -30,7 +30,7 @@
                                         <label for="cedula_rnc" class="col-sm-6 col-form-label">Datos </label>
                                     </div>
                                     <div class="col-6">
-                                        <input class="form-control" name="cedula_rnc" placeholder="Cedula o RNC"  id="cedula_rnc" required>
+                                        <input class="form-control" name="cedula_rnc" placeholder="Cedula o RNC"  id="cedula_rnc" onkeypress="return isNumber(event)" required>
                                     </div>
                                   </div>
                                 </div>
@@ -58,7 +58,7 @@
                                         <label for="phone" class="col-sm-6 col-form-label" >Telefono</label>
                                     </div>
                                     <div class="col-5">
-                                        <input type="text" class="form-control" name="phone" placeholder="Telefono" id="phone" required>
+                                        <input type="text" class="form-control" name="phone" placeholder="Telefono" onkeypress="return isNumber(event)" id="phone" required>
                                     </div>
                                 </div>
                             </div>

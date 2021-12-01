@@ -108,7 +108,7 @@
                                         <label for="cedula_rnc" class="col-sm-6 col-form-label">Datos </label>
                                     </div>
                                     <div class="col-6">
-                                        <input class="form-control" name="cedula_rnc" placeholder="Cedula o RNC"  id="cedula_rnc" required>
+                                        <input class="form-control" name="cedula_rnc" placeholder="Cedula o RNC"  id="cedula_rnc" onkeypress="return isNumber(event)" required>
                                     </div>
                                   </div>
                                 </div>
@@ -325,7 +325,7 @@
                                                 </select>
                                             </div>
                                             
-                                            <input class="form-control" placeholder="Nº de Cheque" type="text" id="no_cheque" name="no_cheque" style="margin-top: 1%">
+                                            <input class="form-control" placeholder="Nº de Cheque" type="text" id="no_cheque"  name="no_cheque" style="margin-top: 1%" onkeypress="return isNumber(event)">
                                         </th>
                                     
 

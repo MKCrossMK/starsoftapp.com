@@ -35,7 +35,7 @@
                     <div class="row">
                         <div class="col">
                             <div class="form-group padding-top">
-                                <input class="form-control ovl" type="text" name="phone" placeholder="Telefono" value="{{$client->phone}}"   required>
+                                <input class="form-control ovl" type="text" name="phone" placeholder="Telefono" value="{{$client->phone}}" maxlength="10" onkeypress="return isNumber(event)" required>
                             </div>
                         </div>
                         <div class="col">
