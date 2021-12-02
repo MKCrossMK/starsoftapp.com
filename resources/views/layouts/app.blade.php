@@ -242,7 +242,7 @@
         </main>
        
             {{$slot}}
-        </div>
+    
  
 
 
@@ -258,6 +258,7 @@
             </div>
         </div>
     </footer>
+</div>
 </div>
 </div>
 
