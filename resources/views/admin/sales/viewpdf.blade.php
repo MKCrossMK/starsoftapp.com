@@ -52,6 +52,9 @@
             .mb-4, .my-4 {
                 margin-bottom: 1.5rem!important;
             }
+            .total{
+                font-size: 24px;
+            }
             
             hr {
                 margin-top: 1rem;
@@ -142,7 +145,7 @@
             <h1 class="page-title text-secondary-d1">
                 Factura
                 <small class="page-info">
-                    <i class="fa fa-angle-double-right text-80"></i>
+                    >> 
                     Nº Factura : # {{$sale->no_factura}}
                 </small>
             </h1>
@@ -153,13 +156,14 @@
             </div>
         </div>
     
+  
         <div class="container px-0">
             <div class="row mt-4">
                 <div class="col-12 col-lg-10 offset-lg-1">
                     <div class="row">
                         <div class="col-12">
                             <div class="text-center text-150">
-                                <i class="fa fa-book fa-2x text-success-m2 mr-1"></i>
+                                <br><br>
                                 <span class="text-default-d3">GTS</span>
                             </div>
                         </div>
@@ -190,15 +194,32 @@
                         <div class="text-95 col-sm-6 align-self-start d-sm-flex justify-content-end">
                             <hr class="d-sm-none" />
                             <div class="text-grey-m2">
-                                <div class="mt-1 mb-2 text-secondary-m1 text-600 text-125">
-                                    Factura
+    
+                                <div class="my-2">
+                                    <table>
+<th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th><th></th><th></th><th></th><th>
+</th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th>
+<th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th></th><th></th><th>
+</th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th>  
+<th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th>
+<th></th><th></th><th></th><th><th></th><th></th><th></th><th></th></th><th></th></th><th><th></th><th></th><th></th><th>                                            
+                                    <i class="fa fa-circle text-blue-m2 text-xs mr-1"></i> <span class="text-600 text-90">Fecha :</span> {{$sale->fecha}}
+                                    </th>
+                                </table>
                                 </div>
     
-                                <div class="my-2"><i class="fa fa-circle text-blue-m2 text-xs mr-1"></i> <span class="text-600 text-90">Nº Factura:</span> {{$sale->no_factura}}</div>
-    
-                                <div class="my-2"><i class="fa fa-circle text-blue-m2 text-xs mr-1"></i> <span class="text-600 text-90">Fecha :</span> {{$sale->fecha}}</div>
-    
-                                <div class="my-2"><i class="fa fa-circle text-blue-m2 text-xs mr-1"></i> <span class="text-600 text-90">Status:</span> <span class="badge badge-success badge-pill px-25">Facturado</span></div>
+                                <div class="my-2">
+                                    <table>
+<th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th><th></th><th></th><th></th><th>
+</th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th>
+<th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th></th><th></th><th>
+</th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th>  
+<th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th>
+<th></th><th></th><th></th><th><th></th><th></th><th></th><th></th></th><th></th></th><th><th></th><th></th><th></th><th>       
+                                     <i class="fa fa-circle text-blue-m2 text-xs mr-1"></i> <span class="text-600 text-90">Status:</span> <span class="badge badge-success badge-pill px-25">Facturado</span>
+                                        </th>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                         <!-- /.col -->
@@ -219,13 +240,14 @@
                                 <th width="140">SubTotal</th>
                             </tr>
                         </thead>
+                    <br>
+                    <br>
     
                         <tbody class="text-95 text-secondary-d3" style="height: 10px !important; overflow: scroll; ">
-                            <tr></tr>
+                            
                       
                             @foreach($saleDetails as $saleDetail)
                             <tr>
-                                
                                 <td></td>
                                 <td>{{$saleDetail->product->descripcion}}</td>
                                 <td>{{$saleDetail->cantidad}}</td>
@@ -240,53 +262,75 @@
                     </table>
                 </div>
     
+
+                <table>
+            
+                </table>
     
                         <div class="row">
-                            <div class="col-12 col-sm-7 text-grey-d2 text-95 mt-2 mt-lg-0">
-                               
-                            </div>
-    
+                          
                             <div class="col-12 col-sm-5 text-90 order-first order-sm-last">
                                 <div class="row my-2">
-                                    <div class="col-7 text-right">
-                                        SubTotal:
+                                    <div >
+                                        <table>
+<th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th><th></th><th></th><th></th><th>
+</th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th>
+<th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th></th><th></th><th>
+</th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th>  
+<th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th>
+    <th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th>                                       
+         <span class="col-7 text-right"> SubTotal:</span> <span class="text-120 text-secondary-d1">$ {{$subtotal}}</span>
+                                            </th>
+                                        </table>
+
                                     </div>
-                                    <div class="col-5">
-                                        <span class="text-120 text-secondary-d1">$ {{$subtotal}}</span>
-                                    </div>
+                                   
                                 </div>
     
                                 <div class="row my-2">
-                                    <div class="col-7 text-right">
-                                        ITBIS Total:
+                                    <div >
+                                        <table>
+<th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th><th></th><th></th><th></th><th>
+</th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th>
+<th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th></th><th></th><th>
+</th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th>  
+<th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th>
+<th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th>   
+                <span class="col-7 text-right"> ITBIS Total: </span> <span class="text-110 text-secondary-d1">$ {{$sale->itbis}}</span>
+                </th>
+
+                                        </table>
                                     </div>
-                                    <div class="col-5">
-                                        <span class="text-110 text-secondary-d1">$ {{$sale->itbis}}</span>
-                                    </div>
+                                
                                 </div>
     
                                 <div class="row my-2 align-items-center bgc-primary-l3 p-2">
                                     <div class="col-7 text-right">
-                                       <h1>Total:</h1> 
+                                        <table>
+<th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th>
+<th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th></th><th></th><th>
+</th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th>
+     
+                                        <span class="total">Total: <span class="text-success-d3 opacity-2">{{$sale->monto}}</span></span>
+                                        </th>
+                                        </table>
+                                    
                                     </div>
-                                    <div class="col-5">
-                                       <h1> <span class="text-success-d3 opacity-2">{{$sale->monto}}</span></h1>
-                                    </div>
+                               
                                 </div>
                             </div>
                         </div>
     
                       
-    
+    <br><br><br>
                         <div>
-                            <span class="text-secondary-d1 text-105">Tipo Factura:</span>
-                            <h5>{{$sale->tipo_factura}}</h5>
+                            <span class="text-secondary-d1 text-105">Tipo Factura: {{$sale->tipo_factura}}</span>
+                            <br>
+                            <span class="text-secondary-d1 text-105">Pago en: {{$sale->t_pago}}</span>
+                          
                         </div>
                         
-                        <div>
-                            <span class="text-secondary-d1 text-105">Pago en:</span>
-                            <h5>{{$sale->t_pago}}</h5>
-                        </div>
+                       
                     </div>
                 </div>
             </div>

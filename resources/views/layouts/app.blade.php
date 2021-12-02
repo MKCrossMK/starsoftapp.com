@@ -29,13 +29,15 @@
     <link rel="shortcut icon" href="{{ asset('assets/images/logo/logostar.jpg') }}" type="image/x-icon">
 
     <link rel="stylesheet" href="{{ asset('bower_components\EasyAutocomplete\dist\easy-autocomplete.min.css') }}">
+
+
     
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 
     {{-- Imask --}}
     <script src="https://unpkg.com/imask"></script>
 
-
+  
 
 
     
@@ -169,7 +171,9 @@
                         
                  
                 </div>
-                <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
+                <div style="text-align: center">
+                <button class="sidebar-toggler btn btn-danger x" style="width: 100%"><i data-feather="x"></i></button>
+              </div>
             </div>
         </div>
 
