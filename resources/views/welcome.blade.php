@@ -11,12 +11,33 @@
         <script src="https://unpkg.com/animejs@3.0.1/lib/anime.min.js"></script>
         <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
 
-        <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.css') }}">
+        <script src="{{ asset('js/app.js') }}" ></script>
 
-        <link rel="stylesheet" href="{{ asset('assets/vendors/perfect-scrollbar/perfect-scrollbar.css') }}">
+    <!-- Fonts -->
+
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+
+    {{-- dash --}}
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('assets/vendors/perfect-scrollbar/perfect-scrollbar.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('assets/css/app.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('assets/css/styles.css') }}">
+
+    <link rel="shortcut icon" href="{{ asset('assets/images/logo/logostar.jpg') }}" type="image/x-icon">
+
     
-        <link rel="stylesheet" href="{{ asset('assets/css/app.css') }}">
-        <link rel="stylesheet" href="{{ asset('assets/css/styles.css') }}">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
+    {{-- Imask --}}
+    <script src="https://unpkg.com/imask"></script>
+
+  
+        
 
         
         <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -35,20 +56,9 @@
             }
         </style>
     </head>
-    <body class="antialiased">
-            <div id="app">            
-    @if (Auth::user())
-    <div id="main">
-        @endif
+    <body class="antialiased">           
         <nav class="navbar navbar-header navbar-expand navbar-light">
-            @if (Auth::user())
-            <a class="sidebar-toggler" href="#"><span class="navbar-toggler-icon"></span></a>
-            <button class="btn navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                aria-expanded="true" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"> </button></span>
-           
-            @endif
+         
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav d-flex align-items-center navbar-light ms-auto">
                 
@@ -65,28 +75,30 @@
                         </li>
                     @endif
                 @else
-                
-                    <li class="dropdown">
-                        <a href="#" data-bs-toggle="dropdown"
-                            class="nav-link dropdown-toggle nav-link-lg nav-link-user">
-                            <div class="avatar me-1">
-                                <img src="{{asset('assets/images/avatar.jpg') }}" alt="" srcset="">
-                            </div>
-                            <div class="d-none d-md-block d-lg-inline-block">Bienvenido,  {{ Auth::user()->name }}</div>
-                        </a>
-                        
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ route('logout') }}"
-                               onclick="event.preventDefault();
-                                             document.getElementById('logout-form').submit();">
-                              <i data-feather="log-out"></i>  {{ __('Logout') }}
-                            </a>
-
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                @csrf
-                            </form>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('home') }}">Home</a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" data-bs-toggle="dropdown"
+                        class="nav-link dropdown-toggle nav-link-lg nav-link-user">
+                        <div class="avatar me-1">
+                            <img src="{{asset('assets/images/avatar.jpg') }}" alt="" srcset="">
                         </div>
-                    </li>
+                        <div class="d-none d-md-block d-lg-inline-block">Bienvenido,  {{ Auth::user()->name }}</div>
+                    </a>
+                    
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                           onclick="event.preventDefault();
+                                         document.getElementById('logout-form').submit();">
+                          <i data-feather="log-out"></i>  {{ __('Logout') }}
+                        </a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                    </div>
+                </li>
                 </ul>
                 @endguest
             </div>

@@ -29,20 +29,12 @@
     <link rel="shortcut icon" href="{{ asset('assets/images/logo/logostar.jpg') }}" type="image/x-icon">
 
     <link rel="stylesheet" href="{{ asset('bower_components\EasyAutocomplete\dist\easy-autocomplete.min.css') }}">
-
-
     
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 
     {{-- Imask --}}
     <script src="https://unpkg.com/imask"></script>
 
-  
-
-
-    
-
-  
 
 </head>
 <body>
@@ -208,7 +200,7 @@
                             </li>
                         @endif
                     @else
-                    
+                  
                         <li class="dropdown">
                             <a href="#" data-bs-toggle="dropdown"
                                 class="nav-link dropdown-toggle nav-link-lg nav-link-user">
@@ -242,7 +234,7 @@
         </main>
        
             {{$slot}}
-    
+        </div>
  
 
 
@@ -258,7 +250,6 @@
             </div>
         </div>
     </footer>
-</div>
 </div>
 </div>
 
