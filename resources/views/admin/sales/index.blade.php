@@ -19,10 +19,8 @@
                            
                             <thead>
                                 <tr>
-                                    <th width="400px" style="text-align: center">Facturas</th>
-                                    {{-- @if ( Auth::user()->role_id == 1) --}}
-                                    <th>Acciones</th>
-                                    {{-- @endif --}}
+                                    <th>Facturas</th>
+                
                                 </tr>
                             </thead>
                             
@@ -31,37 +29,21 @@
                                 @foreach($sales as $sale)
                                 <tr>
                                     <td>
-                                        <a style="width: 300px" class="btn" href="{{Route('showsale', $sale->id)}}">
-                                        <div class="rpw">
-                                            <div class="col">
-                                            <p> {{$sale->client->name . " " . $sale->client->lastname}}</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col">
-                                            <p>Tipo Factura: {{$sale->tipo_factura}}</p>
-                                            </div>
-                                            <div class="col">
-                                            <p>Nª Factura: {{ $sale->no_factura }}</p>
-                                            </div>
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="col">
-                                            <h6> Monto: {{$sale->monto}}</h6>
-                                            </div>
-                                          
-                                        </div>
+                                        <a  class="btn" href="{{Route('showsale', $sale->id)}}">
+                                            <div id="content">
+                                                <div id="left">
+                                                   <div id="object1"><p> {{$sale->client->name . " " . $sale->client->lastname}}</p></div>
+                                                   <div id="object2"><p>Tipo Factura: {{$sale->tipo_factura}}</p></div>
+                                                </div>
+                                              
+                                                <div id="right">
+                                                   <div id="object3"><p>Nª Factura: {{ $sale->no_factura }}</p></div>
+                                                   <div id="object4"> <h6> Monto: {{$sale->monto}}</h6></div>
+                                                </div>
+                                              </div>
 
                                         </a>
                                     </td>
-        
-                                    <td>
-                                    <a href="{{ route('showsale', $sale->id) }}" ><abbr title="Ver factura"><i  data-feather="eye" width="30"></i></abbr></a>
-                                    <a href="{{ route('pdfsale', $sale->id) }}" ><abbr title="Imprimir PDF" ><i data-feather="printer" width="30"></i></abbr></a>
-                                    
-                                   
-                                    </td> 
                                 </tr>
                                 @endforeach
                                 @else

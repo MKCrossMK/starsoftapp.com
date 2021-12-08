@@ -26,6 +26,8 @@
 
     <link rel="stylesheet" href="{{ asset('assets/css/app.css') }}">
 
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+
     <link rel="shortcut icon" href="{{ asset('assets/images/logo/logostar.jpg') }}" type="image/x-icon">
 
     <link rel="stylesheet" href="{{ asset('bower_components\EasyAutocomplete\dist\easy-autocomplete.min.css') }}">
