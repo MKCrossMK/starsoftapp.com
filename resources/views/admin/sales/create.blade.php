@@ -23,7 +23,7 @@
                               <div class="col" style="margin-bottom: 1%" >
                                 <div class="row">
                                     <div class="col-3">
-                                        <h6>Nº de Factura</h6>
+                                        <h6 hidden>Nº de Factura</h6>
                                     </div>
                                     <div class="col-6">
                                         <input type="text" class="form-control" placeholder="Nª de factura" name="no_factura"   id="no_factura" hidden >
@@ -37,7 +37,7 @@
                             <div class="col" style="margin-bottom: 1%" >
                                 <div class="row">
                                     <div class="col-3">
-                                        <h1 class="col-sm-6 col-form-label">NCF:</h1>
+                                        <h1 class="col-sm-6 col-form-label" hidden>NCF:</h1>
                                     </div>
                                     <div class="col-6">
                                         <input type="text" class="form-control" placeholder="NCF" name="ncf" id="ncf" style="color: red" hidden  >
