@@ -60,9 +60,9 @@
                             <div class="col-md-6">
                                 <select class="form-control name="role">
                                     <option value="" disabled selected>Rol, tipo de usuario</option>
-                                    {{-- @foreach ($roles as $role)
+                                    @foreach ($roles as $role)
                                     <option value="{{$role->id}}">{{$role->name}}</option>
-                                    @endforeach --}}
+                                    @endforeach
                                 </select>
                             </div>
                         </div>
