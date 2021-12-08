@@ -139,11 +139,8 @@ hr {
     
             <div class="page-tools">
                 <div class="action-buttons">
-                    <a class="btn" href="#" data-title="Print">
-                        <i class="mr-1 fa fa-print text-primary-m1 text-120 w-2"></i>
-                        Imprimir
-                    </a>
-                    <a class="btn " href="#" data-title="PDF">
+                  
+                    <a class="btn " href="{{ route('pdfsale', $sale->id) }}"data-title="PDF">
                         <i class="mr-1 fa fa-file-pdf-o text-danger-m1 text-120 w-2"></i>
                         PDF
                     </a>

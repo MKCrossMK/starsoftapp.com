@@ -20,13 +20,13 @@
                     <div class="row " style="margin-top: 5%" >
                         <div class="form-group col-sm-6 flex-column d-flex">
         
-                              <div class="col" style="margin-bottom: 1%" hidden>
+                              <div class="col" style="margin-bottom: 1%" >
                                 <div class="row">
                                     <div class="col-3">
                                         <h6>Nº de Factura</h6>
                                     </div>
                                     <div class="col-6">
-                                        <input type="text" class="form-control" placeholder="Nª de factura" name="no_factura"   id="no_factura" readonly >
+                                        <input type="text" class="form-control" placeholder="Nª de factura" name="no_factura"   id="no_factura" readonly hidden>
                                     </div>
                                   </div>
                                 </div>
@@ -34,13 +34,13 @@
         
                          <div class="form-group col-sm-6 flex-column d-flex"> 
         
-                            <div class="col" style="margin-bottom: 1%" hidden>
+                            <div class="col" style="margin-bottom: 1%" >
                                 <div class="row">
                                     <div class="col-3">
                                         <h1 class="col-sm-6 col-form-label">NCF:</h1>
                                     </div>
                                     <div class="col-6">
-                                        <input type="text" class="form-control" placeholder="NCF" name="ncf" id="ncf" style="color: red" readonly >
+                                        <input hidden type="text" class="form-control" placeholder="NCF" name="ncf" id="ncf" style="color: red" readonly  >
                                         <input hidden type="text" class="form-control"  name="ncf"  id="sigConsumo" value="{{$sigConsumo}}" readonly>
                                         <input hidden type="text" class="form-control"  name="ncf"  id="sigFiscal" value="{{$sigFiscal}}" readonly>
                                     </div>
