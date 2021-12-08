@@ -10,7 +10,6 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use PhpParser\Node\Stmt\Return_;
-use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
@@ -65,7 +64,7 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\Models\User
      */
-    public function create(array $data,  Request $request)
+    public function create(array $data)
     {
         $id_erp = DB::table('t_secuencias')->select('f_secuencia')->where('f_id', 7)->first()->f_secuencia;
 
@@ -77,7 +76,7 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'id_erp' =>  $id_erp, 
-            'role' =>  $request->input('role'), 
+            'role' =>  $data['role'], 
 
            
          
