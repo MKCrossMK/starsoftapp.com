@@ -26,7 +26,7 @@
                                         <h6>Nº de Factura</h6>
                                     </div>
                                     <div class="col-6">
-                                        <input type="text" class="form-control" placeholder="Nª de factura" name="no_factura"   id="no_factura" readonly hidden>
+                                        <input type="text" class="form-control" placeholder="Nª de factura" name="no_factura"   id="no_factura" readonly >
                                     </div>
                                   </div>
                                 </div>
@@ -40,7 +40,7 @@
                                         <h1 class="col-sm-6 col-form-label">NCF:</h1>
                                     </div>
                                     <div class="col-6">
-                                        <input hidden type="text" class="form-control" placeholder="NCF" name="ncf" id="ncf" style="color: red" readonly  >
+                                        <input type="text" class="form-control" placeholder="NCF" name="ncf" id="ncf" style="color: red" readonly  >
                                         <input hidden type="text" class="form-control"  name="ncf"  id="sigConsumo" value="{{$sigConsumo}}" readonly>
                                         <input hidden type="text" class="form-control"  name="ncf"  id="sigFiscal" value="{{$sigFiscal}}" readonly>
                                     </div>
