@@ -58,7 +58,7 @@
                             <label for="password" class="col-md-4 col-form-label text-md-right">Role</label>
 
                             <div class="col-md-6">
-                                <select class="form-control name="role">
+                                <select class="form-control" name="role" id="role">
                                     <option value="" disabled selected>Rol, tipo de usuario</option>
                                     @foreach ($roles as $role)
                                     <option value="{{$role->id}}">{{$role->name}}</option>
