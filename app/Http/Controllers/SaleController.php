@@ -34,8 +34,18 @@ class SaleController extends Controller
      */
     public function index()
     {
-        $userid = Auth::user()->id;
-        $sales = Sale::all()->where('user_id', $userid);
+    
+        if (Auth::user()->name === 'admin'){
+            $sales = Sale::all();
+        }
+        else
+        {
+            $userid = Auth::user()->id;
+            $sales = Sale::all()->where('user_id', $userid);
+        }
+
+     
+     
         return view('admin.sales.index', compact('sales'));
     }
 

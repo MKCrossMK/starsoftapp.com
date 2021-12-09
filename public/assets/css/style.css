@@ -13,3 +13,8 @@
   
   #left  { float:left;  }
   #right { float:right; } 
+
+
+  .expander:focus{
+    width: 400px;
+  }

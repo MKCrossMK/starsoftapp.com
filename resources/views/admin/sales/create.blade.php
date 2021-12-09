@@ -26,7 +26,7 @@
                                         <h6 hidden>Nº de Factura</h6>
                                     </div>
                                     <div class="col-6">
-                                        <input type="text" class="form-control" placeholder="Nª de factura" name="no_factura"   id="no_factura" hidden >
+                                        <input type="text" class="form-control" placeholder="Nª de factura" name="no_factura"   id="no_factura" hidden oninvalid="alert('Elegir Tipo de Factura');" required >
                                     </div>
                                   </div>
                                 </div>
@@ -40,7 +40,7 @@
                                         <h1 class="col-sm-6 col-form-label" hidden>NCF:</h1>
                                     </div>
                                     <div class="col-6">
-                                        <input type="text" class="form-control" placeholder="NCF" name="ncf" id="ncf" style="color: red" hidden  >
+                                        <input type="text" class="form-control" placeholder="NCF" name="ncf" id="ncf" style="color: red" hidden  oninvalid="alert('Elegir Tipo NCF');"  required>
                                         <input hidden type="text" class="form-control"  name="ncf"  id="sigConsumo" value="{{$sigConsumo}}" readonly>
                                         <input hidden type="text" class="form-control"  name="ncf"  id="sigFiscal" value="{{$sigFiscal}}" readonly>
                                     </div>
@@ -60,11 +60,11 @@
                                             <h6> Tipo de factura :</h6>
                                         </div>
                                         <div class="col-6">
-                                            <input hidden type="text" class="form-control" placeholder="documento" name="documento"  id="documento" readonly>
-                                            <input hidden type="text" class="form-control" placeholder="tipo_fac" name="tipo_fac"  id="tipo_fac" readonly>
+                                            <input hidden type="text" class="form-control" placeholder="documento" name="documento"  id="documento" readonly  required>
+                                            <input hidden type="text" class="form-control" placeholder="tipo_fac" name="tipo_fac"  id="tipo_fac" readonly required>
                                             <select class="form-control" name="tipo_factura" id="tipo_factura"  required>
                                                 <option disabled selected> Elige tipo de factura...</option>
-                                                <option value="{{$fc}}" selected>Factura Contado</option>
+                                                <option value="{{$fc}}">Factura Contado</option>
                                                 <option value="{{$fcr}}">Factura Credito</option>
                                                 
                                                 {{-- Agregar variable con tipo de factura desde clients BD Table --}}
@@ -183,7 +183,7 @@
                                         <td width='300px'>
                                             <div class="form-group" >
                                             <label for="product_name">Producto</label>
-                                            <input type="text"  id="product_name"  class="form-control" >
+                                            <input type="text"  id="product_name"  class="form-control expander" >
                                           </div>
                                         </td>
                                         <td >

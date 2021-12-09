@@ -82,6 +82,14 @@
                             </a>
 
                         </li>
+
+                        <li class="sidebar-item  ">
+                            <a href="table-datatable.html" class='sidebar-link'>
+                                <i data-feather="shopping-cart" width="20"></i>
+                                <span>Despacho</span>
+                            </a>
+
+                        </li>
                         
                    
                         <li class="sidebar-item  has-sub">
@@ -153,13 +161,7 @@
 
                         </li>
 
-                        <li class="sidebar-item  ">
-                            <a href="table-datatable.html" class='sidebar-link'>
-                                <i data-feather="alert-circle" width="20"></i>
-                                <span>Ayuda</span>
-                            </a>
-
-                        </li>
+                     
 
                     </ul>
                         
