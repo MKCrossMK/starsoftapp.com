@@ -201,7 +201,7 @@
                                         <td>
                                             <div class="form-group">
                                                     <label for="price">Precio </label>
-                                                    <input type="text" class="form-control"  id="precio" disabled >
+                                                    <input type="text" class="form-control precio"  id="precio" disabled >
                                                 </div>
                                             </div>
                                         </td>
@@ -215,9 +215,9 @@
                                         <td width="100px">
                                             <div class="form-group" >
                                                 <label for="itbis">ITBIS </label>
-                                                <select class="form-control"  id="itbis">
+                                                <select class="form-control itbis"  id="itbis">
                                                     <option disabled>ITBIS</option>
-                                                    <option value="18" selected>ITBIS (18 %)</option>
+                                                    <option value="18" selected>18 %</option>
                                                     {{-- <option value="16">ITBIS (16 %)</option>
                                                     <option value="0" selected>ITBIS (0 $)</option> --}}
 
@@ -311,22 +311,20 @@
                                                 <option value="Cheque">Cheque</option>
 
                                             </select>
-                                        </th>
 
-                                        <th colspan="2">
-                                            
-                                            <div>
+                                            <div style="margin-top: 20px">
                                                 <select class="form-control" name="banco_cheque" id="banco_cheque" >
                                                     <option selected disabled>Nombre de Banco</option>
                                                     @foreach($bancos as $banco)
                                                     <option value="{{$banco->f_nombre}}">{{$banco->f_nombre}}</option>
                                                     @endforeach
-                                          
                                                 </select>
                                             </div>
                                             
                                             <input class="form-control" placeholder="Nº de Cheque" type="text" id="no_cheque"  name="no_cheque" style="margin-top: 1%" onkeypress="return isNumber(event)">
                                         </th>
+
+                                     
                                     
 
                                          

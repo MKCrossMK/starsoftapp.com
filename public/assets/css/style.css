@@ -15,6 +15,14 @@
   #right { float:right; } 
 
 
-  .expander:focus{
-    width: 400px;
+  .form-control.expander{
+    width: 120px;
+  }
+
+  .form-control.precio{
+    width: 80px;
+  }
+
+  .form-control.itbis{
+    width: 60px;
   }
