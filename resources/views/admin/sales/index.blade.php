@@ -4,9 +4,14 @@
     </x-slot>
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 
-            <a class="btn btn-info" style="margin-left: 2%" href="{{Route('createsale')}}">Nueva Facturacion</a>
+            <a class="btn btn-info" style="margin-left: 2%" href="{{Route('createsale')}}">Nueva Factura</a>
+            <div class="btn-flotante">
+                <a class="btn linkflotante" style="margin-left: 0%" href="{{Route('createsale')}}">+</a>
+            </div>
+           
+
             
-            <div style="margin-top: 2%" class="card" id = "stores">
+            <div style="margin-top: 1%" class="card" id = "stores">
                 <div class="card-header d-flex justify-content-between align-items-center" style="background: #00b19d">
                     <h3 style="font: bold; color: white; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">Ventas - Facturaciones</h3>
                     <div class="d-flex ">
