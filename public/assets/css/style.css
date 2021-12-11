@@ -1,18 +1,18 @@
 #content { 
     overflow:auto; 
-    width: 600px; 
-    display: flex;
+    width: 300px; 
+  display: flex;
+
 
   } 
   
   #left, #right { 
-    width: 25%; 
-    margin:5px; 
-    padding: 1em; 
+    width: 50%; 
+   
   } 
   
-  #left  { float:left;  }
-  #right { float:right; } 
+  #left  { }
+  #right { } 
 
 
   .form-control.expander{
