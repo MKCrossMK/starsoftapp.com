@@ -6,9 +6,9 @@
 
             <a class="btn btn-info" style="margin-left: 2%" href="{{Route('createsale')}}">Nueva Facturacion</a>
             
-            <div style="margin-top: 5%" class="card" id = "stores">
+            <div style="margin-top: 2%" class="card" id = "stores">
                 <div class="card-header d-flex justify-content-between align-items-center" style="background: #00b19d">
-                    <h3 style="font: bold; color: white;">Ventas - Facturaciones</h3>
+                    <h3 style="font: bold; color: white; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">Ventas - Facturaciones</h3>
                     <div class="d-flex ">
                         <a href="#"><i data-feather="download"></i></a>
                     </div>
@@ -32,7 +32,7 @@
                                         <a  class="btn" href="{{Route('showsale', $sale->id)}}">
                                             <div id="content">
                                                 <div id="left">
-                                                   <div id="object1"><p> {{$sale->client->name . " " . $sale->client->lastname}}</p></div>
+                                                   <div id="object1" ><h6> {{$sale->client->name . " " . $sale->client->lastname}}</h6></div>
                                                    <div id="object2"><p>Tipo Factura: {{$sale->tipo_factura}}</p></div>
                                                 </div>
                                               
