@@ -8,7 +8,7 @@
             
             <div style="margin-top: 5%" class="card" id = "stores">
                 <div class="card-header d-flex justify-content-between align-items-center" style="background: #00b19d">
-                    <h3 style="font: bold; color: white;">Venta</h3>
+                    <h3 style="font: bold; color: white;">Ventas - Facturaciones</h3>
                     <div class="d-flex ">
                         <a href="#"><i data-feather="download"></i></a>
                     </div>
@@ -19,7 +19,7 @@
                            
                             <thead>
                                 <tr>
-                                    <th>Facturas</th>
+                                   
                 
                                 </tr>
                             </thead>
