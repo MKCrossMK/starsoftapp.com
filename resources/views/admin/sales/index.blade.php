@@ -38,7 +38,7 @@
                                             <div id="content">
                                                 <div id="left">
                                                    <div id="object1" ><h6> {{$sale->client->name . " " . $sale->client->lastname}}</h6></div>
-                                                   <div id="object2"><p>Tipo Factura: {{$sale->tipo_factura}}</p></div>
+                                                   <div id="object2"><p>{{$sale->fecha}}</p></div>
                                                 </div>
                                               
                                                 <div id="right">
