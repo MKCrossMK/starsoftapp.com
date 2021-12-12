@@ -130,7 +130,6 @@ hr {
     <div class="page-content container">
         <div class="page-header text-blue-d2">
             <h1 class="page-title text-secondary-d1">
-                Factura
                 <small class="page-info">
                     <i class="fa fa-angle-double-right text-80"></i>
                     Nº Factura : # {{$sale->no_factura}}

@@ -2,13 +2,23 @@
     overflow:auto; 
     width: 290px; 
   display: flex;
+  height: 65px;
+
+  } 
+
+@media screen and (min-width : 358px) {
+  #content { 
+    overflow:auto; 
+    width: 240px; 
+  display: flex;
 
 
   } 
+}
   
   #left, #right { 
     width: 50%; 
-   
+  
   } 
   
   #left  { }
