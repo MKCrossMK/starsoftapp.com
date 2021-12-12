@@ -313,7 +313,7 @@
                                             </select>
 
                                             <div style="margin-top: 20px">
-                                                <select class="form-control" name="banco_cheque" id="banco_cheque" >
+                                                <select class="form-control" name="banco_cheque" id="banco_cheque" required>
                                                     <option selected disabled>Nombre de Banco</option>
                                                     @foreach($bancos as $banco)
                                                     <option value="{{$banco->f_nombre}}">{{$banco->f_nombre}}</option>
@@ -321,7 +321,7 @@
                                                 </select>
                                             </div>
                                             
-                                            <input class="form-control" placeholder="Nº de Cheque" type="text" id="no_cheque"  name="no_cheque" style="margin-top: 1%" onkeypress="return isNumber(event)">
+                                            <input required class="form-control" placeholder="Nº de Cheque" type="text" id="no_cheque"  name="no_cheque" style="margin-top: 1%" onkeypress="return isNumber(event)">
                                         </th>
 
                                      

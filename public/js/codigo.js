@@ -135,16 +135,19 @@ function agregar() {
             evaluar();
             $('#detalles').append(fila);
         } else {
-            Swal.fire({
-                type: 'error',
-                text: 'La cantidad a vender supera el stock.',
-            })
+
+          alert("La cantidad a vender supera el stock.")
+            // Swal.fire({
+            //     type: 'error',
+            //     text: 'La cantidad a vender supera el stock.',
+            // })
         }
     } else {
-        Swal.fire({
-            type: 'error',
-            text: 'Rellene todos los campos del detalle de la venta.',
-        })
+      alert("Rellene todos los campos del detalle de la venta.")
+        // Swal.fire({
+        //     type: 'error',
+        //     text: 'Rellene todos los campos del detalle de la venta.',
+        // })
     }
 }
 function limpiar() {
