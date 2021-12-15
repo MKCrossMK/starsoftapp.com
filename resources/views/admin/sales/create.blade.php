@@ -140,9 +140,6 @@
                                     </div>
                                 </div>
                             </div>
-        
-                          
-                       
                     </div>
         
                          <div class="form-group col-sm-6 flex-column d-flex"> 
@@ -174,13 +171,13 @@
                                 <tbody>
                                     
                                     <tr>
-                                        <td hidden width='50px'>
+                                        <td hidden>
                                             <div class="form-group" >
                                             <label for="product_id">id</label>
                                             <input type="text"  id="product_id"  class="form-control" >
                                           </div>
                                         </td>
-                                        <td width='300px'>
+                                        <td >
                                             <div class="form-group" >
                                             <label for="product_name">Producto</label>
                                             <input type="text"  id="product_name"  class="form-control expander" >
@@ -189,7 +186,7 @@
                                         <td >
                                             <div class="form-group">
                                             <label for="code_referencia">Referencia</label>
-                                            <input type="text"  id="code_referencia"  class="form-control" disabled>
+                                            <input type="text"  id="code_referencia"  class="form-control" >
                                           </div>
                                         </td>
                                         <td>
@@ -205,14 +202,14 @@
                                                 </div>
                                             </div>
                                         </td>
-                                        <td width="70px">
+                                        <td>
                                             <div class="form-group">
                                                 <label for="">Cantidad</label>
                                                 <input type="number" class="form-control"  id="cantidad" min="0" max="100" value="1" >
                                             </div>
                                         </td>
 
-                                        <td width="100px">
+                                        <td >
                                             <div class="form-group" >
                                                 <label for="itbis">ITBIS </label>
                                                 <select class="form-control itbis"  id="itbis">
@@ -264,17 +261,7 @@
                                 </tbody>
                             </table>
 
-                            
-                  
-                    
-                    </div>
-
-                  
-
-                    
-                    
-                    
-                    
+                                 
                     <div class="form-group">
                         <h4 class="card-title">Detalles de venta</h4>
                         <div class="table-responsive">
@@ -359,6 +346,16 @@
                             </table>
                         </div>
                     </div>
+                  
+                    
+                    </div>
+
+                  
+
+                    
+                    
+                    
+               
 
                     <div class="card-footer text-muted">
                         <button type="submit" id="facturar" class="btn btn-success float-right">Realizar Factura</button>

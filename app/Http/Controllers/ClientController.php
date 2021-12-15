@@ -90,7 +90,12 @@ class ClientController extends Controller
      */
     public function edit(Client $client)
     {
-        return view('admin.clients.edit', compact('client'));
+        $id_erp = DB::table('t_ncf')->get();
+
+        $id_consumo = $id_erp[0]->f_codigo;
+        $id_fiscal = $id_erp[1]->f_codigo;
+
+        return view('admin.clients.edit', compact('client', 'id_consumo', 'id_fiscal'));
     }
 
     /**

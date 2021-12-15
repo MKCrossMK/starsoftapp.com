@@ -23,6 +23,7 @@ class SaleController extends Controller
     public function __construct()
     {
         $this->buscaCliente = new Client();
+
         $this->buscaProducto= new Product();
     }
 
@@ -138,6 +139,15 @@ class SaleController extends Controller
             'descuento' => $request['precio'][$i] * $request['descuento'][$i] / 100
         );
 
+        $prod_id = $data[$i]['product_id'];
+        $cantidadproduct = $data[$i]['cantidad'];
+        
+      $stockproduct = DB::table('products')->select('stock')->where('id', $prod_id)->first()->stock;
+
+      DB::table('products')->where('id', $prod_id)->update(array(
+        'stock' =>  $stockproduct - $cantidadproduct));
+   
+
 
 
         }
@@ -238,6 +248,7 @@ class SaleController extends Controller
 
     public function findclient(Request $request){
      
+     
         
         return $this->buscaCliente
                           ->findbyname($request->input('q'));
@@ -268,7 +279,6 @@ class SaleController extends Controller
 
         $pdf = PDF::loadView('admin.sales.viewpdf', compact('sale', 'saleDetails', 'subtotal'))->setOptions(['defaultFont' => 'sans-serif']);
 
-    
 
         return $pdf->download('Facturacion_'. $sale->client->name. '>ID:' . $sale->id .'.pdf');
 

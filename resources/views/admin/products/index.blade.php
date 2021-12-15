@@ -2,13 +2,13 @@
 <x-app-layout>
     <x-slot name="header">
     </x-slot>
-            <a class="btn btn-info" style="margin-left: 2%"  href="{{Route('createproducto')}}">Nuevo Producto</a>
             
-            <div style="margin-top: 5%" class="card" id = "stores">
-                <div class="card-header d-flex justify-content-between align-items-center">
-                    <h3 style="font: bold">Productos</h3>
+            
+            <div style="margin-top: 1%" class="card" id = "stores">
+                <div class="card-header d-flex justify-content-between align-items-center" style="background: #00b19d">
+                    <h3 style="font: bold; color: white">Productos</h3>
                     <div class="d-flex ">
-                        <a href="#"><i data-feather="download"></i></a>
+                        <a class="btn btn-info" style="font-size: 25px"  href="{{Route('createproducto')}}">&#x271a;</a>
                     </div>
                 </div>
                 <div class="card-body px-0 pb-0">

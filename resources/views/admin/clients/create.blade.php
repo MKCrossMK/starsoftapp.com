@@ -46,11 +46,15 @@
             </div>
     
             <div class="row">
+                <div class="col"></div>
                 <div class="col">
                         <div class="form-group padding-top">
                             <input type="email" name="email" class="form-control oval" placeholder="Correo Electronico"  required />
                         </div>
                 </div>
+              
+            </div>
+            <div class="row" style="margin-top: 1%">
                 <div class="col">
                     <label for="tipo_comprobante" style="color: black; font: bold">Tipo de Comprobante</label>
                       <select class="form-control" name="tipo_comprobante"  id="tipo_comprobante">
@@ -59,10 +63,7 @@
                       <option value="{{$id_fiscal}}">FACTURA VALIDA CREDITO FISCAL</option>                     
                      </select>      
                 </div>
-            </div>
-            <div class="row" style="margin-top: 1%">
-                <div class="col">
-                </div>
+                
                 <div class="col">
                     <label for="tipo_pago" style="color: black; font: bold">Tipo de pago</label>
                       <select class="form-control" name="tipo_pago"  id="tipo_pago">

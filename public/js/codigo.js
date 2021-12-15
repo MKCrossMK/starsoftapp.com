@@ -5,6 +5,8 @@ var self = this;
 $(document).ready(function() {
     buscarClientes();
     buscarProductos();
+ buscarProductosRef();
+
     evaluar();
 
 
@@ -68,7 +70,6 @@ function buscarProductos(){
 
 
              
-
               $("#product_name").val($("#product_name").getSelectedItemData().descripcion).trigger("change");
             }
           }
@@ -76,6 +77,37 @@ function buscarProductos(){
         $("#product_name").easyAutocomplete(options); 
 }
 
+function buscarProductosRef(){
+  var options = {
+      url: function(q) {
+          return baseUrl('sale/findproduct?q=' + q);
+      },
+
+        getValue: "code",
+        list: {  
+          onSelectItemEvent: function() {
+
+            
+            var selectedItemValue = $("#code_referencia").getSelectedItemData().precio;
+            document.getElementById("precio").value = selectedItemValue;
+
+            var selectedItemValue2 = $("#code_referencia").getSelectedItemData().stock;
+            document.getElementById("stock").value = selectedItemValue2;
+            
+            var selectedItemValue3 = $("#code_referencia").getSelectedItemData().id;
+            document.getElementById("product_id").value = selectedItemValue3;
+
+            var selectedItemValue4 = $("#code_referencia").getSelectedItemData().descripcion;
+            document.getElementById("product_name").value = selectedItemValue4;
+
+
+
+            $("#code_referencia").val($("#code_referencia").getSelectedItemData().code).trigger("change");
+          }
+        }
+  };
+      $("#code_referencia").easyAutocomplete(options); 
+}
 
 
 

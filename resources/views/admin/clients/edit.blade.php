@@ -56,29 +56,29 @@
                         </div>
                     </div>
 
-                    <div class="col">
-                        <label for="tipo_comprobante" style="color: black; font: bold">Tipo de Comprobante</label>
-                          <select class="form-control" name="tipo_comprobante"  id="tipo_comprobante">
-                          <option disabled>Tipo de Comprobante</option>
-                          <option value="{{$id_consumo}}">FACTURA DE CONSUMO</option>     
-                          <option value="{{$id_fiscal}}">FACTURA VALIDA CREDITO FISCAL</option>                     
-                         </select>      
+                    <div class="row">
+                        <div class="col">
+                            <label for="tipo_comprobante" style="color: black; font: bold">Tipo de Comprobante</label>
+                              <select class="form-control" name="tipo_comprobante"  id="tipo_comprobante">
+                              <option disabled>Tipo de Comprobante</option>
+                              <option value="{{$id_consumo}}" {{$client->tipo_comprobante === $id_consumo ? 'selected' : ''}}>FACTURA DE CONSUMO</option>     
+                              <option value="{{$id_fiscal}}" {{$client->tipo_comprobante === $id_fiscal ? 'selected' : ''}} >FACTURA VALIDA CREDITO FISCAL</option>                     
+                             </select>      
+                        </div>
+
+                        <div class="col">
+                            <label for="tipo_pago" style="color: black; font: bold">Tipo de pago</label>
+                              <select class="form-control" name="tipo_pago"  id="tipo_pago">
+                              <option disabled>Tipo de Pago</option>
+                              <option value="Efectivo" {{$client->tipo_pago === "Efectivo" ? 'selected' : ''}}>Efectivo</option>     
+                              <option value="Transferencia" {{$client->tipo_pago === "Transferencia" ? 'selected' : ''}}>Transferencia</option>    
+                              <option value="Cheque" {{$client->tipo_pago === "Cheque" ? 'selected' : ''}}>Cheque</option>     
+                              <option value="Tarjeta de Credito" {{$client->tipo_pago === "Tarjeta de Credito" ? 'selected' : ''}}>Tarjeta de Credito</option>                      
+                             </select>      
+                        </div>
                     </div>
-                </div>
-                <div class="row" style="margin-top: 1%">
-                    <div class="col">
-                    </div>
-                    <div class="col">
-                        <label for="tipo_pago" style="color: black; font: bold">Tipo de pago</label>
-                          <select class="form-control" name="tipo_pago"  id="tipo_pago">
-                          <option disabled>Tipo de Pago</option>
-                          <option value="Efectivo">Efectivo</option>     
-                          <option value="Transferencia">Transferencia</option>    
-                          <option value="Cheque">Cheque</option>     
-                          <option value="Tarjeta de Credito">Tarjeta de Credito</option>                      
-                         </select>      
-                    </div>
-                </div>
+
+              
                     
                     <div class="row padding-top" style="margin-top: 10%">
                         <div class="col text-center">
