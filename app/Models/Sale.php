@@ -23,7 +23,6 @@ class Sale extends Model
         't_pago',
         't_cobro',
         'client_id',
-        'client_name',
         'tipo_ncf',
         'ncf',
 
@@ -40,6 +39,9 @@ class Sale extends Model
     public function saleDetail(){
         return $this->hasMany(SaleDetail::class);
     }
+
+
+  
 
 
 }

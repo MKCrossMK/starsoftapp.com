@@ -33,21 +33,25 @@ class SaleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
     
-        if (Auth::user()->name === 'admin'){
-            $sales = Sale::all();
-        }
-        else
-        {
-            $userid = Auth::user()->id;
-            $sales = Sale::all()->where('user_id', $userid);
-        }
 
+
+
+    
+    
+         if (Auth::user()->name === 'admin'){
+             $sales = Sale::all();
+         }
+         else
+         {
+             $userid = Auth::user()->id;
+             $sales = Sale::all()->where('user_id', $userid);
+        }
+    
      
-     
-        return view('admin.sales.index', compact('sales'));
+        return view('admin.sales.index', compact('sales',));
     }
 
     /**

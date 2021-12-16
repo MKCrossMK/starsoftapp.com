@@ -62,3 +62,16 @@
     font-weight: bold; /* Fuente en negrita o bold */
     color: #ffffff; /* Color del texto */
   }
+
+.dataTables_filter Label {
+    padding: 5% !important;
+    width: 300px !important; 
+    background-color: #00b19d  !important;
+    color: white
+}
+.dataTables_length Label{
+  padding: 5% !important;
+    width: 300px !important; 
+    background-color: #00b19d  !important;
+    color: white;
+}
