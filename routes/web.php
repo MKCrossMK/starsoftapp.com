@@ -81,6 +81,8 @@ Route::get('/listacotizacion', [App\Http\Controllers\QuotationController::class,
 
 Route::get('/detallescotizacion/{quotation}', [App\Http\Controllers\QuotationController::class, 'show'])->name('showquote');
 
+Route::get('/pdf/cotizacion/{quotation}', [App\Http\Controllers\QuotationController::class, 'pdf'])->name('pdfquote');
+
 Route::get('/creandocotizacion', [App\Http\Controllers\QuotationController::class, 'create'])->name('createquote');
 
 Route::post('/creandocotizacion', [App\Http\Controllers\QuotationController::class, 'store'])->name('storequote');

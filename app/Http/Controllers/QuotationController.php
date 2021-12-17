@@ -9,6 +9,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+use Barryvdh\DomPDF\Facade as PDF;
 class QuotationController extends Controller
 {
 
@@ -105,7 +106,13 @@ class QuotationController extends Controller
      */
     public function show(quotation $quotation)
     {
-        return view('admin.quotations.show', compact('sale'));
+        
+        $subtotal = 0;
+        $quoteDetails = $quotation->quoteDetail;
+        foreach ($quoteDetails as $quoteDetail) {
+            $subtotal += $quoteDetail->cantidad * $quoteDetail->precio - $quoteDetail->descuento;
+        }
+        return view('admin.quotations.show', compact('quotation', 'quoteDetails', 'subtotal'));
 
     }
 
@@ -162,5 +169,23 @@ class QuotationController extends Controller
     public function lastsale(){
         return Quotation::latest('id')->first();
     
+    }
+
+    public function pdf(Quotation $quotation)
+    
+    {
+
+        $subtotal = 0;
+        $quoteDetails = $quotation->quoteDetail;
+        foreach ($quoteDetails as $quoteDetail) {
+            $subtotal += $quoteDetail->cantidad * $quoteDetail->precio - $quoteDetail->descuento;
+        }
+        
+
+        $pdf = PDF::loadView('admin.quotations.viewpdf', compact('quotation', 'quoteDetails', 'subtotal'))->setOptions(['defaultFont' => 'sans-serif']);
+
+
+        return $pdf->download('Cotizacion_'. $quotation->client->name. '>ID:' . $quotation->id .'.pdf');
+
     }
 }

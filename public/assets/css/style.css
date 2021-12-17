@@ -64,14 +64,24 @@
   }
 
 .dataTables_filter Label {
-    padding: 5% !important;
+    padding-right: 5% !important;
     width: 300px !important; 
     background-color: #00b19d  !important;
     color: white
 }
 .dataTables_length Label{
-  padding: 5% !important;
-    width: 300px !important; 
+    width: 100% !important; 
     background-color: #00b19d  !important;
     color: white;
+    display: none;
 }
+
+.dataTables_length input{
+  margin-top: 10px;
+  width: 100% !important; 
+  background-color: #00b19d  !important;
+  color: white !important;
+  display: none;
+}
+
+

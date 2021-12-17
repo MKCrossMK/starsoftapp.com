@@ -2,8 +2,33 @@
 <x-app-layout>
     <x-slot name="header">
     </x-slot>
+
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js" defer></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css" defer>
+    
+    <script>
+        $(document).ready(function() {
+    $('#quoteTable').DataTable({
+        "language": {
+            "search":         "Buscar:",
+            "lengthMenu":     "Mostrar _MENU_ entradas",
+            "zeroRecords":    "No se encontraron registros coincidentes",
+            "emptyTable":     "No hay datos disponibles en la tabla",
+            "info":           "Mostrando _START_ to _END_ of _TOTAL_ entradas",
+            "searchPlaceholder" : "Buscar factura",
+            "paginate": {
+        "first":      "Primero",
+        "last":       "Ultimo",
+        "next":       "Siguiente",
+        "previous":   "Anterior"
+    },            
+        }
+    });
+});
+
+    </script>
+
           
-            
             <div style="margin-top: 1%" class="card" id = "stores">
                 <div class="card-header d-flex justify-content-between align-items-center" style="background: #00b19d">
                     <h3 style="font: bold; color: white">Cotizacion</h3>
@@ -13,30 +38,31 @@
                 </div>
                 <div class="card-body px-0 pb-0">
                     <div class="table-responsive">
-                        <table class='table mb-0' id="table1">
+                        <table class='table mb-0' id="quoteTable">
                             <thead>
-                                <tr>  
+                                <tr hidden>  
                                     <th>Cliente</th>
-                                    <th>Tipo de factura</th>
-                                    <th>Numero de factura</th>
-                                    <th>Monto</th>
-                                    <th>Vendedor</th>
-                                    {{-- @if ( Auth::user()->role_id == 1) --}}
-                                    <th>Acciones</th>
-                                    {{-- @endif --}}
                                 </tr>
                             </thead>
                             <tbody>
                                 @if(!empty($quotes))
                                 @foreach($quotes as $quote)
                                 <tr>
-                                    <td>{{ $quote->client->name . " " . $quote->client->lastname}}</td>
-                                    <td>{{ $quote->tipo_factura}}</td>
-                                    <td><a href="{{Route('showquote', $quote->id)}}">{{ $quote->no_quote }}</a></td>
-                                    <td>{{ $quote->monto}}</td>
-                                    <td>{{ $quote->user->name}}</td>
-                                    {{-- <td> <a href="{{ route('editsale', $cli->id) }}" class="btn btn-info" >Editar</a></td> --}}
                                     <td>
+                                        <a  class="btn" href="{{Route('showquote', $quote->id)}}">
+                                            <div id="content">
+                                                <div id="left">
+                                                   <div id="object1" ><h6> {{$quote->client->name . " " . $quote->client->lastname}}</h6></div>
+                                                   <div id="object2"><p>{{$quote->fecha}}</p></div>
+                                                </div>
+                                              
+                                                <div id="right">
+                                                   <div id="object3"><p>Nª Cotizacion: {{$quote->no_quote }}</p></div>
+                                                   <div id="object4"> <h6> Monto: {{$quote->monto}}</h6></div>
+                                                </div>
+                                              </div>
+                                        </a>
+                                    </td>
                                       
                                 </tr>
                                 @endforeach
