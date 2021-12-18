@@ -187,6 +187,8 @@ hr {
                                 <div class="mt-1 mb-2 text-secondary-m1 text-600 text-125">
                                     Factura
                                 </div>
+                                
+                                <div class="my-2"><i class="fa fa-circle text-blue-m2 text-xs mr-1"></i> <span class="text-600 text-90">Vendedor:</span> {{$sale->}}</div>
     
                                 <div class="my-2"><i class="fa fa-circle text-blue-m2 text-xs mr-1"></i> <span class="text-600 text-90">Nº Factura:</span> {{$sale->no_factura}}</div>
     
