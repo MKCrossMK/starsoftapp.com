@@ -57,6 +57,8 @@ Route::patch('/actualizarclientes/{client}', [ClientController::class, 'update']
 
 Route::get('/listaventas', [App\Http\Controllers\SaleController::class, 'index'])->name('indexsale');
 
+Route::get('/listarecibos', [App\Http\Controllers\SaleController::class, 'indexpayment'])->name('indexpaysale');
+
 Route::get('/detallesventas/{sale}', [App\Http\Controllers\SaleController::class, 'show'])->name('showsale');
 
 Route::get('/pdf/{sale}', [App\Http\Controllers\SaleController::class, 'pdf'])->name('pdfsale');
@@ -67,7 +69,7 @@ Route::post('/creandoventa', [App\Http\Controllers\SaleController::class, 'store
 
 Route::get('/editarventa/{sale}', [App\Http\Controllers\SaleController::class, 'edit'])->name('editsale');
 
-Route::patch('/actualizarclientes/{sale}', [App\Http\Controllers\SaleController::class, 'update'])->name('updatesale');
+Route::patch('/recibo/{sale}', [App\Http\Controllers\SaleController::class, 'updatePay'])->name('updatepaysale');
 
 Route::get('/sale/findclient', [App\Http\Controllers\SaleController::class, 'findclient']);
 

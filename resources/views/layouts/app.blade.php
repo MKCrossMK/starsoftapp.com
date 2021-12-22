@@ -78,7 +78,7 @@
 
 
                         <li class="sidebar-item  ">
-                            <a href="form-layout.html" class='sidebar-link'>
+                            <a href="{{ Route('indexpaysale') }}" class='sidebar-link'>
                                 <i data-feather="layout" width="20"></i>
                                 <span>Recibos</span>
                             </a>

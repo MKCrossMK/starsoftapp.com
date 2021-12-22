@@ -36,10 +36,6 @@ class SaleController extends Controller
     public function index(Request $request)
     {
     
-
-
-
-    
     
          if (Auth::user()->name === 'admin'){
              $sales = Sale::all();
@@ -52,6 +48,23 @@ class SaleController extends Controller
     
      
         return view('admin.sales.index', compact('sales',));
+    }
+
+    public function indexpayment(Request $request)
+    {
+    
+    
+         if (Auth::user()->name === 'admin'){
+             $sales = Sale::all()->where('tipo_factura', 'FCR');
+         }
+         else
+         {
+             $userid = Auth::user()->id;
+             $sales = Sale::all()->where('user_id', $userid)->where('tipo_factura', 'FCR');
+        }
+    
+     
+        return view('admin.sales.payment', compact('sales',));
     }
 
     /**
@@ -234,9 +247,15 @@ class SaleController extends Controller
      * @param  \App\Models\Sale  $sale
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Sale $sale)
+    public function updatePay(Request $request, Sale $sale)
     {
-        //
+        $balance = Sale::all()->id;
+        dd($balance);
+        $sale->update([
+
+            'balance' => $request->input('balance')
+
+        ]);
     }
 
     /**
