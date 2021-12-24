@@ -77,7 +77,9 @@
                                               
                                                 <div id="right">
                                                    <div id="object3"><p>Nª Factura: {{ $sale->no_factura }}</p></div>
-                                                   <div id="object4"> <h6> Monto: {{$sale->monto}}</h6></div>
+                                                   <div id="object4"> <h6> Deuda: {{$sale->balance}}</h6></div>
+                                                   
+                                                   
                                                 </div>
                                               </div>
 
@@ -105,7 +107,7 @@
                                         <div class="row">
                                             <div class="col">
                                                 <div class="form-group padding-top">
-                                                    <input type="text" name="code" class="form-control oval" placeholder="Total a pagar" required/>
+                                                    <input type="text" name="balance" class="form-control oval" placeholder="Total a pagar" required/>
                                                 </div>
                                             </div>
                                         

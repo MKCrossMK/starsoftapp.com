@@ -109,6 +109,14 @@ class SaleController extends Controller
      */
     public function store(Request $request)
     {
+        $balance = 0;
+        if( $request->input('tipo_fac') === 'FCR'){
+            $balance = $request->input('monto');
+        }else{
+            $balance = 0;
+        }
+      
+
         $userid = Auth::user()->id;
 
         
@@ -135,6 +143,8 @@ class SaleController extends Controller
             'client_id' => $request->input('client_id'),
             'tipo_ncf' => $request->tipo_ncf,
             'ncf' => $request->input('ncf'),
+            'balance' => $balance,
+
             'created_at' => now(),
             'updated_at' => now(),
         ]);
@@ -249,13 +259,18 @@ class SaleController extends Controller
      */
     public function updatePay(Request $request, Sale $sale)
     {
-        $balance = Sale::all()->id;
-        dd($balance);
+        $balance = $sale->balance;
+        
+        
+        $pago = $balance -  $request->input('balance');
+
         $sale->update([
 
-            'balance' => $request->input('balance')
+            'balance' =>   $pago,
 
         ]);
+
+        return redirect()->route('indexpaysale');
     }
 
     /**

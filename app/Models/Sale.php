@@ -25,6 +25,7 @@ class Sale extends Model
         'client_id',
         'tipo_ncf',
         'ncf',
+        'balance'
 
     ];
 

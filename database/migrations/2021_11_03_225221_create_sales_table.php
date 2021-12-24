@@ -38,6 +38,7 @@ class CreateSalesTable extends Migration
 
             $table->string('no_cheque')->nullable();
             $table->string('banco_cheque')->nullable();
+            $table->decimal('balance');
 
 
             $table->timestamps();
