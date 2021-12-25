@@ -193,6 +193,7 @@
                         <div class="text-95 col-sm-6 align-self-start d-sm-flex justify-content-end">
                             <hr class="d-sm-none" />
                             <div class="text-grey-m2">
+                            
 
                                 <div class="my-2">
                                     <table>

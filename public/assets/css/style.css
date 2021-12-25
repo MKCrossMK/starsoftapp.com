@@ -3,6 +3,7 @@
     width: 290px; 
   display: flex;
   height: 65px;
+  margin-left: -40px;
 
   } 
 
@@ -23,6 +24,12 @@
   
   #left  { }
   #right { } 
+
+.contenido{display: flex;}
+
+
+
+
 
 
   .form-control.expander{

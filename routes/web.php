@@ -59,6 +59,8 @@ Route::get('/listaventas', [App\Http\Controllers\SaleController::class, 'index']
 
 Route::get('/listarecibos', [App\Http\Controllers\SaleController::class, 'indexpayment'])->name('indexpaysale')->middleware(['auth']);
 
+Route::get('/listadespachos', [App\Http\Controllers\DispatchController::class, 'index'])->name('indexdispatches')->middleware(['auth']);
+
 Route::get('/detallesventas/{sale}', [App\Http\Controllers\SaleController::class, 'show'])->name('showsale')->middleware(['auth']);
 
 Route::get('/pdf/{sale}', [App\Http\Controllers\SaleController::class, 'pdf'])->name('pdfsale')->middleware(['auth']);

@@ -86,7 +86,7 @@
                         </li>
 
                         <li class="sidebar-item  ">
-                            <a href="table-datatable.html" class='sidebar-link'>
+                            <a href="{{ route('indexdispatches')}}" class='sidebar-link'>
                                 <i data-feather="shopping-cart" width="20"></i>
                                 <span>Despacho</span>
                             </a>
