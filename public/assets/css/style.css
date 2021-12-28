@@ -3,9 +3,18 @@
     width: 290px; 
   display: flex;
   height: 65px;
-  margin-left: -40px;
+  margin-left: -30px;
 
   } 
+  #content2 { 
+    overflow:auto; 
+    width: 290px; 
+  display: flex;
+  height: 65px;
+  margin-left: -25px;
+
+  } 
+
 
 @media screen and (min-width : 358px) {
   #content { 
@@ -25,10 +34,13 @@
   #left  { }
   #right { } 
 
-.contenido{display: flex;}
+.contenido{display: flex; }
 
+.izquierda {
+  width: 320px;
+  
 
-
+}
 
 
 

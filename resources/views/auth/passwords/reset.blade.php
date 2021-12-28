@@ -1,6 +1,6 @@
-@extends('layouts.app')
-
-@section('content')
+<x-app-layout>
+    <x-slot name="header">
+    </x-slot>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -62,4 +62,5 @@
         </div>
     </div>
 </div>
-@endsection
+
+</x-app-layout>

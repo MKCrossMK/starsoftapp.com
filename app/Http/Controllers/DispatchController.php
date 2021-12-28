@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Dispatch;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class DispatchController extends Controller
 {
@@ -14,7 +15,12 @@ class DispatchController extends Controller
      */
     public function index()
     {
-        return view('admin.sales.dispatches');
+        
+        // $dispatches = Dispatch::all();
+        $dispa = Dispatch::all();
+
+        
+        return view('admin.sales.dispatches', compact('dispa'));
     }
 
     /**
@@ -46,7 +52,9 @@ class DispatchController extends Controller
      */
     public function show(Dispatch $dispatch)
     {
-        //
+        
+        return view('admin.sales.showdispatch', compact('dispatch'));
+        
     }
 
     /**
@@ -69,7 +77,10 @@ class DispatchController extends Controller
      */
     public function update(Request $request, Dispatch $dispatch)
     {
-        //
+        $dispatch->update([
+            'status' => $request->input('status'),
+        ]);
+        return redirect()->route('indexdispatches');
     }
 
     /**

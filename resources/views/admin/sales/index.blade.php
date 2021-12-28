@@ -36,8 +36,8 @@
             <div class="btn-flotante">
                 <a class="btn linkflotante" style="margin-left: 0%" href="{{Route('createsale')}}">+</a>
             </div>
-           
 
+           
             
             <div style="margin-top: 1%" class="card" id = "stores">
                 <div class="card-header" style="background: #00b19d">

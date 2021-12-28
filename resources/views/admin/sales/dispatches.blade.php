@@ -33,12 +33,6 @@
     </script>
 
 
-            <div class="btn-flotante">
-                <a class="btn linkflotante" style="margin-left: 0%" href="{{Route('createsale')}}">+</a>
-            </div>2
-           
-
-            
             <div style="margin-top: 1%" class="card" id = "stores">
                 <div class="card-header" style="background: #00b19d">
                 <div class="d-flex justify-content-between align-items-center" >
@@ -64,77 +58,53 @@
                             </thead>
                             
                             <tbody>
-
+                                @if(!empty($dispa))
+                                @foreach($dispa as $sale)
                                 <tr>
-                                    <td>
+                                    <td style="height: 70px">
+                                        <div class="contenido" >
 
-                                        <div class="contenido">
+                                            <div class="izquierda" >
+                                            <a  class="btn btnlink" style="border: solid #00b19d 2px; background-color: white" href="{{Route('showdispatch', $sale->id)}}" >
+                                                <div id="content2" style="padding: 1%">
+                                                    <div id="left">
+                                                        <div id="object1" ><h6> {{$sale->name_cliente}}</h6></div>
+                                                    </div>
+                                                    <div id="right">
+                                                         <div id="object2">Factura : <h6>{{$sale->no_factura}}</h6></div> 
+                                                    </div>
+                                                  
+                                                  </div>
 
-                                        <div class="izquierda">
-                                        <a  class="btn" >
-                                            <div id="content">
-                                                <div id="left">
-                                                   <div id="object1" ><h6> E: Fulano X</h6></div>
-                                                   <div id="object3"><p>Nª Factura: 25</p></div>
-                                                </div>
-                                              
-                                                <div id="right">
-                                                   
-                                                   <div id="object4"> <h6>Direccion: Calle 2, Los Cacaos, La Romana </h6></div>
-                                                   
-                                                   
-                                                </div>
-                                              </div>
-                                              
-                                        </a>
+                                <div id="object4" style="width: 100%"><p style="color: black">{{$sale->address_municipio .
+                                              " " . $sale->address_sector .  " " .  $sale->address_provincia  }} </p></div>
+                                                  
+                                            </a>
+                                        </div>
+                                        <di class="derecha" style="margin: 2%">
+    
+                                            <form action="{{ route('updatedispatch', $sale->id) }}" method="POST">
+                                                @csrf
+                                                @method('PATCH')
+                                            <input type="radio" id="entregado{{$sale->id}}" onchange="this.form.submit();"
+                                             name="status" {{$sale->status === "Entregado" ? "disabled" : " "}} value="Entregado">
+
+                                            <label for="entregado{{$sale->id}}">Entregado</label><br>
+                                            
+                                            </form>
+
+                                            <ps style="color: black">Estado:  {{$sale->status}}</p>
+                                        </div>
                                     </div>
-                                    <div class="derecha">
-
-
-                                        <form action="/action_page.php">
-                                        <input type="radio" id="salido" name="status" value="Salido">
-                                        <label for="salido">Salido</label><br>
-                                        <input type="radio" id="entregado" name="status" value="Entregao">
-                                        <label for="entregado">Entregado</label><br>
-                                        </form>
-                                    </div>
-                                </div>
-                                
-                                    
-
-                                     </td>
-                                   
+                                    </td>
                                 </tr>
-                                {{-- @if(!empty($sales))
-                                @foreach($sales as $sale)
-                                <tr> --}}
-                                   
-                                        {{-- <a  class="btn" href="{{Route('showsale', $sale->id)}}">
-                                            <div id="content">
-                                                <div id="left">
-                                                   <div id="object1" ><h6> {{$sale->client->name . " " . $sale->client->lastname}}</h6></div>
-                                                   <div id="object2"><p>{{$sale->fecha}}</p></div>
-                                                </div>
-                                              
-                                                <div id="right">
-                                                   <div id="object3"><p>Nª Factura: {{ $sale->no_factura }}</p></div>
-                                                   <div id="object4"> <h6> Deuda: {{$sale->balance}}</h6></div>
-                                                   
-                                                   
-                                                </div>
-                                              </div>
-
-                                        </a> --}}
-                                </td>
-                                </tr>
-{{--                            
                                 @endforeach
                                 @else
 
                                 <h1 style="text-align: center">No hay datos</h1>
 
                                     
-                                @endif --}}
+                                @endif
                             </tbody>
                         </div>
                         </table>
@@ -145,5 +115,3 @@
         
 </x-app-layout>
 
-
-     

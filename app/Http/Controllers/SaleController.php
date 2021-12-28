@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\Sale\StoreRequest;
 use App\Models\Client;
+use App\Models\Dispatch;
 use App\Models\Product;
 use App\Models\Sale;
 use App\Models\SaleDetail;
@@ -45,9 +46,10 @@ class SaleController extends Controller
              $userid = Auth::user()->id;
              $sales = Sale::all()->where('user_id', $userid);
         }
+
     
      
-        return view('admin.sales.index', compact('sales',));
+        return view('admin.sales.index', compact('sales', ));
     }
 
     public function indexpayment(Request $request)
@@ -65,6 +67,16 @@ class SaleController extends Controller
     
      
         return view('admin.sales.payment', compact('sales',));
+    }
+
+    public function indexDispatches()
+    {
+        
+        // $dispatches = Dispatch::all();
+        $dispat = Dispatch::all();
+
+        
+        return view('admin.sales.dispatches', compact('dispat'));
     }
 
     /**

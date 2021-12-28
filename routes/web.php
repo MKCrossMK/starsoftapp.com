@@ -59,8 +59,6 @@ Route::get('/listaventas', [App\Http\Controllers\SaleController::class, 'index']
 
 Route::get('/listarecibos', [App\Http\Controllers\SaleController::class, 'indexpayment'])->name('indexpaysale')->middleware(['auth']);
 
-Route::get('/listadespachos', [App\Http\Controllers\DispatchController::class, 'index'])->name('indexdispatches')->middleware(['auth']);
-
 Route::get('/detallesventas/{sale}', [App\Http\Controllers\SaleController::class, 'show'])->name('showsale')->middleware(['auth']);
 
 Route::get('/pdf/{sale}', [App\Http\Controllers\SaleController::class, 'pdf'])->name('pdfsale')->middleware(['auth']);
@@ -98,6 +96,15 @@ Route::patch('/actualizarcotizacion/{quotation}', [App\Http\Controllers\Quotatio
 Route::get('/cotizacion/findclient', [App\Http\Controllers\QuotationController::class, 'findclient'])->middleware(['auth']);
 
 Route::get('/cotizacion/findproduct', [App\Http\Controllers\QuotationController::class, 'findproduct'])->middleware(['auth']);
+
+//Despachos
+
+Route::get('/listadespachos', [App\Http\Controllers\DispatchController::class, 'index'])->name('indexdispatches')->middleware(['auth']);
+
+Route::patch('/actualizardespachos/{dispatch}', [App\Http\Controllers\DispatchController::class, 'update'])->name('updatedispatch')->middleware(['auth']);
+
+Route::get('/detallesdespacho/{dispatch}', [App\Http\Controllers\DispatchController::class, 'show'])->name('showdispatch')->middleware(['auth']);
+
 
 
 
