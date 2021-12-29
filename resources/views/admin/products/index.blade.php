@@ -8,7 +8,7 @@
                 <div class="card-header d-flex justify-content-between align-items-center" style="background: #00b19d">
                     <h3 style="font: bold; color: white">Productos</h3>
                     <div class="d-flex ">
-                        <a class="btn btn-info" style="font-size: 25px"  href="{{Route('createproducto')}}">&#x271a;</a>
+                        <a class="btn " style="font-size: 25px; color: white"  href="{{Route('createproducto')}}">&#x271a;</a>
                     </div>
                 </div>
                 <div class="card-body px-0 pb-0">
