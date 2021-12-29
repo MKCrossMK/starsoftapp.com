@@ -3,7 +3,7 @@
             
             <div style="margin-top: 5%" class="card" id = "stores">
               
-                <div class="card-header d-flex justify-content-between align-items-center">
+                <div class="card-header d-flex">
                     <h3 style="font: bold">Detalle de Clientes</h3>
                     <div class="row">
                         <div class="col">
