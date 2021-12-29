@@ -105,16 +105,16 @@
                                             <input type="text"  id="product_id"  class="form-control" >
                                           </div>
                                         </td>
-                                        <td width='300px'>
+                                        <td >
                                             <div class="form-group" >
                                             <label for="product_name">Producto</label>
-                                            <input type="text"  id="product_name"  class="form-control" >
+                                            <input type="text"  id="product_name"  class="form-control expander" >
                                           </div>
                                         </td>
                                         <td >
-                                            <div  width='200Px' class="form-group">
+                                            <div class="form-group">
                                             <label for="code_referencia">Referencia</label>
-                                            <input type="text"  id="code_referencia"  class="form-control" disabled>
+                                            <input type="text"  id="code_referencia"  class="form-control" >
                                           </div>
                                         </td>
                                         <td>
@@ -126,25 +126,27 @@
                                         <td>
                                             <div class="form-group">
                                                     <label for="price">Precio </label>
-                                                    <input type="text" class="form-control"  id="precio" disabled >
+                                                    <input type="text" class="form-control precio"  id="precio" disabled >
                                                 </div>
                                             </div>
                                         </td>
-                                        <td width="70px">
+                                        <td>
                                             <div class="form-group">
                                                 <label for="">Cantidad</label>
                                                 <input type="number" class="form-control"  id="cantidad" min="0" max="100" value="1" >
                                             </div>
                                         </td>
 
-                                        <td width="100px">
+                                        <td >
                                             <div class="form-group" >
                                                 <label for="itbis">ITBIS </label>
-                                                <select class="form-control"  id="itbis">
+                                                <select class="form-control itbis"  id="itbis">
                                                     <option disabled>ITBIS</option>
-                                                    <option value="18">ITBIS (18 %)</option>
-                                                    <option value="16">ITBIS (16 %)</option>
-                                                    <option value="0" selected>ITBIS (0 $)</option>
+                                                    <option value="18" selected>18 %</option>
+                                                    {{-- <option value="16">ITBIS (16 %)</option>
+                                                    <option value="0" selected>ITBIS (0 $)</option> --}}
+
+                                                    {{-- Definir campo itbis en BD --}}
                                                   </select>        
                                             </div>
                                         </td>
