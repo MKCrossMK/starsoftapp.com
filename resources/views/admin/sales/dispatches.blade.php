@@ -37,9 +37,7 @@
                 <div class="card-header" style="background: #00b19d">
                 <div class="d-flex justify-content-between align-items-center" >
                     <h3 style="font: bold; color: white; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">Despachos</h3>
-                    <div class="d-flex ">
-                        <a class="btn " style="font-size: 20px; color: white" href="{{Route('createsale')}}">&#x271a;</a>
-                    </div>
+                  
                 </div>
 
                </div>

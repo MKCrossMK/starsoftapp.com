@@ -103,4 +103,7 @@
   display: none;
 }
 
-
+.eac-item{
+  font-family: Verdana,Arial,sans-serif;
+  font-size: 12px !important;
+}

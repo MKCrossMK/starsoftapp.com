@@ -99,7 +99,7 @@
                                 <tbody>
                                     
                                     <tr>
-                                        <td width='50px'>
+                                        <td hidden>
                                             <div class="form-group" >
                                             <label for="product_id">id</label>
                                             <input type="text"  id="product_id"  class="form-control" >
@@ -112,7 +112,7 @@
                                           </div>
                                         </td>
                                         <td >
-                                            <div class="form-group">
+                                            <div  width='200Px' class="form-group">
                                             <label for="code_referencia">Referencia</label>
                                             <input type="text"  id="code_referencia"  class="form-control" disabled>
                                           </div>
