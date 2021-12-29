@@ -3,11 +3,11 @@
             
             <div style="margin-top: 5%" class="card" id = "stores">
               
-                <div class="card-header d-flex justify-content-between align-items-center">
+                <div class="card-header ">
                     <h3 style="font: bold">Detalle de Productos</h3>
                     <div class="row">
                         <div class="col">
-                            <div class="card" style="width:400px; height: 317px;">
+                            <div class="card" style="width:350px; height: 317px;">
                                 <div class="card-header" style="text-align: center"><h5>Informacion</h5></div>
                                 <div class="card-body">
                                   <h1 class="card-title" >{{$product->descripcion}}</h1>
@@ -20,7 +20,7 @@
                               </div>
                         </div>
                         <div class="col">
-                            <div class="card" style="width:400px ;">
+                            <div class="card" style="width:350px ;">
 
                                 <img src="{{asset('assets/images/productshow.png') }}" style="width:400px; alt="Imagen X producto">
                                 
