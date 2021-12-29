@@ -112,7 +112,7 @@
                                           </div>
                                         </td>
                                         <td >
-                                            <div class="form-group">
+                                            <div style="width: 200px" class="form-group">
                                             <label for="code_referencia">Referencia</label>
                                             <input type="text"  id="code_referencia"  class="form-control" >
                                           </div>
