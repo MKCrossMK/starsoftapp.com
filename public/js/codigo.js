@@ -23,11 +23,8 @@ function buscarClientes(){
           list: {  
             onSelectItemEvent: function() {
 
-                var selectedItemValue2 = $("#cedula_rnc").getSelectedItemData().name;
+                var selectedItemValue2 = $("#cedula_rnc").getSelectedItemData().name + " " + $("#cedula_rnc").getSelectedItemData().lastname ;
                 document.getElementById("clientename").value = selectedItemValue2;
-
-              var selectedItemValue = $("#cedula_rnc").getSelectedItemData().phone;
-              document.getElementById("phone").value = selectedItemValue;
 
                      
               var selectedItemValue3 = $("#cedula_rnc").getSelectedItemData().id;
@@ -59,7 +56,7 @@ function buscarProductos(){
               var selectedItemValue = $("#product_name").getSelectedItemData().precio;
               document.getElementById("precio").value = selectedItemValue;
 
-              var selectedItemValue2 = $("#product_name").getSelectedItemData().stock;
+              var selectedItemValue2 = $("#product_name").getSelectedItemData().stock ;
               document.getElementById("stock").value = selectedItemValue2;
               
               var selectedItemValue3 = $("#product_name").getSelectedItemData().id;
@@ -80,7 +77,7 @@ function buscarProductos(){
 function buscarProductosRef(){
   var options = {
       url: function(q) {
-          return baseUrl('sale/findproduct?q=' + q);
+          return baseUrl('sale/findproductr?q=' + q);
       },
 
         getValue: "code",

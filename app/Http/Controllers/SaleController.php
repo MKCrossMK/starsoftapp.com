@@ -20,6 +20,9 @@ use Barryvdh\DomPDF\Facade as PDF;
 class SaleController extends Controller
 {
     private $buscaCliente = null;
+    private $buscaProducto = null;
+  
+
 
     public function __construct()
     {
@@ -309,6 +312,14 @@ class SaleController extends Controller
         
         return $this->buscaProducto
                           ->findbyname($request->input('q'));
+
+    }
+    
+    public function findproductr(Request $request){
+     
+        
+        return $this->buscaProducto
+                          ->findbyref($request->input('q'));
 
     }
 

@@ -30,5 +30,16 @@ class Product extends Model
                 
         return $cliente;
     }
+    
+    public function findbyref($q){
+                
+        $cliente = DB::table('products')
+        ->where('code', 'like', "%$q%")
+        ->get();
+
+                
+        return $cliente;
+    }
+    
 }
 
