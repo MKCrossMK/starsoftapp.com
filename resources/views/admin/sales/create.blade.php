@@ -2,6 +2,8 @@
 <body >
         
             <div class="card">
+            <a class="btn btn-info"  style="color: white;font-weight: bold" href="{{ route('indexsale') }}" >Lista de ventas</a>
+
         <div class="card-body">
             <h2 style="text-align: center; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">Nueva Factura</h2>  </div>
         </div>
@@ -13,7 +15,6 @@
                     <div class="row justify-content-between text-left">
                         <div class="form-group col-sm-2">
                     
-                        <a class="btn btn-info"  style="color: black;" href="{{ route('indexsale') }}" >Lista de ventas</a>
                     </div>
 
                     <div class="col-12">
