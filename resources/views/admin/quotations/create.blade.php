@@ -2,6 +2,8 @@
 <body >
         
             <div class="card">
+                <a class="btn btn-info"  style="color: white; font-weight: bold" href="{{route('indexquote')}}"" >Lista de Cotizaciones</a>
+
         <div class="card-body">
             <h2 style="text-align: center; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">Nueva Cotización</h2>  </div>
         </div>
@@ -10,15 +12,10 @@
               <form action="{{ route('storequote') }}" method="POST" autocomplete="off">
                 @csrf
         
-                    <div class="row justify-content-between text-left">
-                        <div class="form-group col-sm-2">
-                    
-                        <a class="btn btn-info"  style="color: black;" href="{{route('indexquote')}}"" >Lista de Cotizaciones</a>
-                    </div>
 
                     {{-- Card  --}}
 
-                    <div class="card" style="width: 100%" >
+                    <div class="card" style="width: 100%; padding: 1%" >
 
                         <div class="form-inline">
                             <label style="color: #000;" for="cedula_rnc">Contacto </label>
@@ -105,7 +102,7 @@
         
         {{-- Product Detail --}}
 
-        <div class="card" style="width: 100%;" >
+        <div class="card" style="width: 100%;padding: 1%" >
             <div style="background: #00b19d;">
                 <h6 style="font: bold; color: white"> <span style="font-size: 20px">&#x1f3f7;</span> Productos a facturar</h6>
             </div>
