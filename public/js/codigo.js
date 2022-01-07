@@ -155,7 +155,7 @@ function agregar() {
             + '<div class="form-row"><div class="col" style="display: flex"><input type="hidden" name="cantidad[]" value="'+ quantity + '"> <input type="number" value="' + quantity
             + '" class="form-control" style="width: 50px;border: 0px; text-align: center;background-color: white"  disabled><span style="padding: 1%; margin: 0% auto;font-size: 20px;  ">x </span><input type="hidden" name="precio[]" value="' + parseFloat(price).toFixed(2) 
             + '"> <input class="form-control" type="number" value="' + parseFloat(price).toFixed(2) + '" style="border: 0px;background-color: white" disabled></div><div class="col" style="display: flex; align-items: center; justify-content: center;">' 
-            + '<span>ITBIS </span><input type="hidden" id="prod_itbis" name="prod_itbis[]" value="' + impuesto + '"> <input type="number" value="' + impuesto + '" class="form-control" style="border: 0px; text-align: cente;background-color: white" disabled>%</div></div></td></tr>';
+            + '<span>ITBIS </span><input type="hidden" id="prod_itbis" name="prod_itbis[]" value="' + impuesto + '"> <input type="number" value="' + impuesto + '" class="form-control" style="border: 0px; text-align: center;background-color: white" disabled>%</div></div></td></tr>';
 
     //     <div class="form-row" style="display: flex;">
     //         <div class="col" style="display: flex; align-items: center; justify-content: center;">
