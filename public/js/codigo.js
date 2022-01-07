@@ -160,8 +160,6 @@ function agregar() {
             + ' <input type="hidden" name="descuento[]" value="' + parseFloat(discount) + '"> <input class="form-control" type="text" value="' + parseInt(discount) + '" style="border: 0px; text-align: center;width: 50px;background-color:white;" disabled> % </div>'
             + '<div class="col" style="display: flex; align-items: center; justify-content: center;font-weight: bold;background-color: aliceblue"><span>RD$</span>'
             + '<input type="hidden" name="total[]" value="'+  parseFloat(subtotal[cont]).toFixed(2) + '"><input type="text"  class="form-control"  value="'+  parseFloat(subtotal[cont]).toFixed(2) + '" style="border: 0px; text-align: center;background-color: aliceblue"></div></div></td></tr>';
-
-            
            
 
             // var fila = '<tr class="selected" id="fila' + cont + '"><td><button type="button" class="btn btn-danger btn-sm" onclick="eliminar(' 

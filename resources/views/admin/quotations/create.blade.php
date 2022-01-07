@@ -127,7 +127,7 @@
 
 
 
-    <div class="card" style="width: 100%; padding: 2%; border-top-color:#00b19d; border-top: 10px solid" >
+    <div class="card" style="width: 100%; padding: 2%;" >
         
     <div class="form-row">
             <div class="col" style="display: flex; justify-content: space-between">
