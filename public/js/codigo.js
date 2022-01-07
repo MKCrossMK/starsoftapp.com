@@ -149,9 +149,10 @@ function agregar() {
 
             var fila = '<tr class="selected" id="fila' + cont + '"><td style="padding:0px;"><button class="btn btn-danger delete" onclick="eliminar(' 
             + cont + ');">&#x1f5d1;</button></td><td><div class="form-row"><div class="col"> <input type="hidden" name="product_id[]" value="' + product_id + '">'
-            + product_name + '><input type="hidden" name="code_referencia[]" value="' + code + '"></div></td></tr>';
+            + product_name + '><input type="hidden" name="code_referencia[]" value="' + code 
+            + '"></div><span style="font-size: 25px; margin: 0px auto;">(</span><div class="col"><input type="hidden" name="code_referencia[]" value="' + code
+            + '"> <input class="form-control" type="text" name="code_referencia[]" value="'+ code + '"disabled></div><span style="font-size: 25px; margin: 0px auto">)</span></div></td></tr>';
 
-            
             cont++;
             limpiar();
             totales();
