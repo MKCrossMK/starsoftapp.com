@@ -157,15 +157,9 @@ function agregar() {
             + '"> <input class="form-control" type="number" value="' + parseFloat(price).toFixed(2) + '" style="border: 0px;background-color: white" disabled></div><div class="col" style="display: flex; align-items: center; justify-content: center;">' 
             + '<span>ITBIS </span><input type="hidden" id="prod_itbis" name="prod_itbis[]" value="' + impuesto + '"> <input type="number" value="' + impuesto + '" class="form-control" style="border: 0px; text-align: center;background-color: white" disabled>%</div></div>'
             + '<div class="form-row" style="display: flex;"><div class="col" style="display: flex; align-items: center; justify-content: center;"><span>DESC </span> ' 
-            + ' <input type="hidden" name="descuento[]" value="' + parseFloat(discount) + '"> <input class="form-control" type="number" value="' + parseInt(discount) + '" style="border: 0px; text-align: center;width: 50px;" disabled> % </div> </td></tr>';
-            
-    //         <div class="col" style="display: flex; align-items: center; justify-content: center;font-weight: bold;background-color: aliceblue">
-    //         <span>RD$</span> 
-    //             <input type="text"  id="product_name"  class="form-control" value="473" style="border: 0px; text-align: center;background-color: aliceblue">
-    //         </div>
-    //     </div>
-    // </td>
-  
+            + ' <input type="hidden" name="descuento[]" value="' + parseFloat(discount) + '"> <input class="form-control" type="number" value="' + parseInt(discount) + '" style="border: 0px; text-align: center;width: 50px;" disabled> % </div>'
+            + '<div class="col" style="display: flex; align-items: center; justify-content: center;font-weight: bold;background-color: aliceblue"><span>RD$</span>'
+            + '<input type="hidden" name="total[]" value="'+  parseFloat(subtotal[cont]).toFixed(2) + '"><input type="text"  class="form-control"  value="'+  parseFloat(subtotal[cont]).toFixed(2) + '" style="border: 0px; text-align: center;background-color: aliceblue"></div></div></td></tr>';
 
             
            
