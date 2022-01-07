@@ -125,62 +125,39 @@
 
     </div>
 
+
+
+    <div class="card" style="width: 100%; padding: 2%; border-top-color:#00b19d; border-top: 10px solid" >
+        
+    <div class="form-row">
+            <div class="col">
+                <p align="right">TOTAL:</p>
+                <p align="right"><span id="total">DOP $ 0.00</span> </p>
+
+            </div>
+    </div>
+    <div class="form-row">
+            <div class="col">
+                <p align="right">TOTAL IMPUESTO:</p>
+                <p align="right"><span id="total_impuesto">DOP $ 0.00</span><input  type="hidden" id="imp_itbis" name="imp_itbis"></p>
+
+            </div>
+    </div>
+    <div class="form-row">
+        <div class="col">
+            <p align="right">TOTAL PAGAR:</p>
+            <p align="right"><span align="right" id="total_pagar_html">DOP $  0.00</span> <input type="hidden"
+                  id="total_pagar" name="monto"></p>
+        </div>
+    </div>
+    
+
+    </div>
+
    
                     
                     
-                    <div class="form-group">
-                        <h4 class="card-title" >Detalles de venta</h4>
-                        <div class="table-responsive">
-                            <table id="" class="table">
-                                <thead >
-                                    <tr>
-                                        <th >Eliminar</th>
-                                   
-                                    </tr>
-                                    
-                                </thead>
-                                <tbody >
-                                    
-                                    <tr>
-
-                                    <td>Hola</td>
-                                      
-                                          
-                                    </tr>
-                                   
-                                <tfoot>
-                                
-                                    <tr>
-                                        <th colspan="6">
-                                            <p align="right">TOTAL:</p>
-                                        </th>
-                                        <th>
-                                            <p align="right"><span id="total">DOP $ 0.00</span> </p>
-                                        </th>
-                                    </tr>
-                                    <tr>
-                                        <th colspan="6">
-                                            <p align="right">TOTAL IMPUESTO:</p>
-                                        </th>
-                                        <th>
-                                            <p align="right"><span id="total_impuesto">DOP $ 0.00</span><input  type="hidden" id="imp_itbis" name="imp_itbis"></p>
-                                        </th>
-                                    </tr>
-                                    <tr>
-                                        <th colspan="6">
-                                            <p align="right">TOTAL PAGAR:</p>
-                                        </th>
-                                        <th>
-                                            <p align="right"><span align="right" id="total_pagar_html">DOP $  0.00</span> <input type="hidden"
-                                                     id="total_pagar" name="monto"></p>
-                                        </th>
-                                    </tr>
-                                </tfoot>
-                                <tbody>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
+                 
 
                     <div class="card-footer text-muted">
                         <button type="submit" id="facturar" class="btn btn-success float-right">Realizar Cotizacion</button>
