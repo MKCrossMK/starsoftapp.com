@@ -149,19 +149,13 @@ function agregar() {
 
             var fila = '<tr class="selected" id="fila' + cont + '"><td style="padding:0px;"><button class="btn btn-danger delete" onclick="eliminar(' 
             + cont + ');">&#x1f5d1;</button></td><td><div class="form-row"><div class="col"> <input type="hidden" name="product_id[]" value="' + product_id + '">'
-            + '<textarea name="" id="" cols="14" rows="2" style="resize: none; border: 0px" readonly>' + product_name + '</textarea>'+ '<input type="hidden" name="product_name[]" value="' + code 
+            + '<textarea name="" id="" cols="14" rows="2" style="resize: none; border: 0px" disabled>' + product_name + '</textarea>'+ '<input type="hidden" name="product_name[]" value="' + code 
             + '"></div><span style="font-size: 25px; margin: 0px auto;">(</span><div class="col"><input type="hidden" name="code_referencia[]" value="' + code
-            + '"> <input class="form-control" type="text" name="code_referencia[]" value="'+ code + '" style="text-align: center; border: 0px" readonly></div><span style="font-size: 25px; margin: 0px auto">)</span></div>'
+            + '"> <input class="form-control" type="text" name="code_referencia[]" value="'+ code + '" style="text-align: center; border: 0px" disabled></div><span style="font-size: 25px; margin: 0px auto">)</span></div>'
             + '<div class="form-row"><div class="col" style="display: flex"><input type="hidden" name="cantidad[]" value="'+ quantity + '"> <input type="number" value="' + quantity
-            + '" class="form-control" style="width: 50px;border: 0px; text-align: center"  readonly><span style="padding: 1%; margin: 0% auto;font-size: 20px;  ">x </span><input type="hidden" name="precio[]" value="' + parseFloat(price).toFixed(2) 
-            + '"> <input class="form-control" type="number" value="' + parseFloat(price).toFixed(2) + '" style="border: 0px" disabled></div></td></tr>';
-            
-
-    //         <div class="col" style="display: flex; align-items: center; justify-content: center;">
-    //             <span>ITBIS </span> 
-    //             <input type="text"  id="product_name"  class="form-control" value="18" style="border: 0px; text-align: center">% 
-    //         </div>
-    //     </div>
+            + '" class="form-control" style="width: 50px;border: 0px; text-align: center"  disabled><span style="padding: 1%; margin: 0% auto;font-size: 20px;  ">x </span><input type="hidden" name="precio[]" value="' + parseFloat(price).toFixed(2) 
+            + '"> <input class="form-control" type="number" value="' + parseFloat(price).toFixed(2) + '" style="border: 0px" disabled></div><div class="col" style="display: flex; align-items: center; justify-content: center;">' 
+            + '<span>ITBIS </span><input type="hidden" id="prod_itbis" name="prod_itbis[]" value="' + impuesto + '"> <input type="number" value="' + impuesto + '" class="form-control" style="border: 0px; text-align: center" disabled>%</div></div></td></tr>';
 
     //     <div class="form-row" style="display: flex;">
     //         <div class="col" style="display: flex; align-items: center; justify-content: center;">
