@@ -151,8 +151,9 @@ function agregar() {
             + cont + ');">&#x1f5d1;</button></td><td><div class="form-row"><div class="col"> <input type="hidden" name="product_id[]" value="' + product_id + '">'
             + product_name + '><input type="hidden" name="code_referencia[]" value="' + code 
             + '"></div><span style="font-size: 25px; margin: 0px auto;">(</span><div class="col"><input type="hidden" name="code_referencia[]" value="' + code
-            + '"> <input class="form-control" type="text" name="code_referencia[]" value="'+ code + '"disabled></div><span style="font-size: 25px; margin: 0px auto">)</span></div></td></tr>';
+            + '"> <input class="form-control" type="text" name="code_referencia[]" value="'+ code + '" style="text-align: center; border: 0px" readonly></div><span style="font-size: 25px; margin: 0px auto">)</span></div></td></tr>';
 
+           
             cont++;
             limpiar();
             totales();
