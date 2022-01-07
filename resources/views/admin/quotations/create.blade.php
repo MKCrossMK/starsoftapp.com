@@ -106,7 +106,7 @@
         {{-- Product Detail --}}
 
         <div class="card" style="width: 100%;" >
-            <div class="card-header h-25" style="background: #00b19d;">
+            <div style="background: #00b19d;">
                 <h6 style="font: bold; color: white"> <span style="font-size: 20px">&#x1f3f7;</span> Productos a facturar</h6>
             </div>
 
@@ -130,21 +130,21 @@
     <div class="card" style="width: 100%; padding: 2%; border-top-color:#00b19d; border-top: 10px solid" >
         
     <div class="form-row">
-            <div class="col">
+            <div class="col" style="display: flex; justify-content: space-between">
                 <p>TOTAL:</p>
                 <p><span id="total">DOP $ 0.00</span></p>
 
             </div>
     </div>
     <div class="form-row">
-            <div class="col">
+            <div class="col" style="display: flex; justify-content: space-between">
                 <p>TOTAL IMPUESTO:</p>
                 <p><span id="total_impuesto">DOP $ 0.00</span><input type="hidden" id="imp_itbis" name="imp_itbis"></p>
 
             </div>
     </div>
     <div class="form-row">
-        <div class="col">
+        <div class="col" style="display: flex; justify-content: space-between">
             <p>TOTAL PAGAR:</p>
             <p><span id="total_pagar_html">DOP $  0.00</span> <input type="hidden"
                   id="total_pagar" name="monto"></p>
