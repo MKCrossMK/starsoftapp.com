@@ -131,22 +131,22 @@
         
     <div class="form-row">
             <div class="col">
-                <p align="right">TOTAL:</p>
-                <p align="right"><span id="total">DOP $ 0.00</span> </p>
+                <p>TOTAL:</p>
+                <p><span id="total">DOP $ 0.00</span></p>
 
             </div>
     </div>
     <div class="form-row">
             <div class="col">
-                <p align="right">TOTAL IMPUESTO:</p>
-                <p align="right"><span id="total_impuesto">DOP $ 0.00</span><input  type="hidden" id="imp_itbis" name="imp_itbis"></p>
+                <p>TOTAL IMPUESTO:</p>
+                <p><span id="total_impuesto">DOP $ 0.00</span><input type="hidden" id="imp_itbis" name="imp_itbis"></p>
 
             </div>
     </div>
     <div class="form-row">
         <div class="col">
-            <p align="right">TOTAL PAGAR:</p>
-            <p align="right"><span align="right" id="total_pagar_html">DOP $  0.00</span> <input type="hidden"
+            <p>TOTAL PAGAR:</p>
+            <p><span id="total_pagar_html">DOP $  0.00</span> <input type="hidden"
                   id="total_pagar" name="monto"></p>
         </div>
     </div>
