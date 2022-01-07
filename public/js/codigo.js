@@ -148,12 +148,23 @@ function agregar() {
             total = total + subtotal[cont];
 
             var fila = '<tr class="selected" id="fila' + cont + '"><td style="padding:0px;"><button class="btn btn-danger delete" onclick="eliminar(' 
-            + cont + ');">&#x1f5d1;</button></td><td><div class="form-row"><div class="col"> <input type="hidden" name="product_id[]" value="' + product_id 
-            + '"><textarea name="" id="" cols="14" rows="2" style="resize: none; border: 0px" readonly>'+ product_name + '</textarea>' + '<input type="hidden" name="code_referencia[]" value="' + code 
+            + cont + ');">&#x1f5d1;</button></td><td><div class="form-row"><div class="col"> <input type="hidden" name="product_id[]" value="' + product_id + '">'
+            + '<textarea name="" id="" cols="14" rows="2" style="resize: none; border: 0px" readonly>' + product_name + '</textarea>'+ '<input type="hidden" name="code_referencia[]" value="' + code 
             + '"></div><span style="font-size: 25px; margin: 0px auto;">(</span><div class="col"><input type="hidden" name="code_referencia[]" value="' + code
-            + '"> <input class="form-control" type="text" name="code_referencia[]" value="'+ code + '" style="text-align: center; border: 0px; background:white;" readonly></div><span style="font-size: 25px; margin: 0px auto">)</span></div></td></tr>';
+            + '"> <input class="form-control" type="text" name="code_referencia[]" value="'+ code + '" style="text-align: center; border: 0px" readonly></div><span style="font-size: 25px; margin: 0px auto">)</span></div></td></tr>';
 
-           
+            // var fila = '<tr class="selected" id="fila' + cont + '"><td><button type="button" class="btn btn-danger btn-sm" onclick="eliminar(' 
+            // + cont + ');"><i class="fa fa-times fa-2x"></i>X</button></td> <td><input type="hidden" name="product_id[]" value="' + product_id + '">'
+            // + product_name + '> <input type="hidden" name="product_name[]" value="' + product_name 
+            // + '">  <td> <input type="hidden" name="code_referencia[]" value="' + code + '"> <input class="form-control" type="text" name="code_referencia[]" value="'
+            // + code + '"disabled> </td> <td> <input type="hidden" name="precio[]" value="' + parseFloat(price).toFixed(2) 
+            // + '"> <input class="form-control" type="number" value="' + parseFloat(price).toFixed(2)
+            // + '" disabled> </td> <td> <input type="hidden" name="descuento[]" value="' + parseFloat(discount) 
+            // + '"> <input class="form-control" type="number" value="' + parseInt(discount) + '" disabled> </td> <td> <input type="hidden" name="cantidad[]" value="' 
+            // + quantity + '"> <input type="number" value="' + quantity + '" class="form-control" disabled> </td> <td> <input type="hidden" id="prod_itbis" name="prod_itbis[]" value="' 
+            // + impuesto + '"> <input type="number" value="' + impuesto + '" class="form-control" disabled> </td> <td>  <input type="number" value="' + descuento 
+            // + '" class="form-control" disabled> </td>  <input type="hidden" name="total[]" value="' 
+            // +  parseFloat(subtotal[cont]).toFixed(2) + '"> <td align="right">DOP$' + parseFloat(subtotal[cont]).toFixed(2) + '</td></tr>';
             cont++;
             limpiar();
             totales();
