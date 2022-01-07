@@ -225,9 +225,9 @@ function eliminar(index) {
     total = total - subtotal[index];
     total_impuesto = total * impuesto / 100;
     total_pagar_html = total + total_impuesto;
-    $("#total").html("DOP" + total);
-    $("#total_impuesto").html("DOP" + total_impuesto);
-    $("#total_pagar_html").html("DOP" + total_pagar_html);
+    $("#total").html("DOP$"+ ' ' + total);
+    $("#total_impuesto").html("DOP$" + ' ' + total_impuesto);
+    $("#total_pagar_html").html("DOP$" + '+ total_pagar_html);
     $("#total_pagar").val(total_pagar_html.toFixed(2));
     $("#fila" + index).remove();
     evaluar();
