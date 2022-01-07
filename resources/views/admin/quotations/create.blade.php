@@ -29,7 +29,7 @@
                             <input type="text" class="form-control" name="client_id" placeholder="ID" id="cliente_id" required hidden>
    
                         </div>
-                        <hr>
+                        <hr style="margin: 0">
 
                         <div class="form-group col-sm-6 flex-row d-flex">
                             <label for="fecha" class="col-sm-6 col-form-label">Fecha</label>
@@ -40,12 +40,12 @@
                     </div>
 
 
-                    <div class="card" style="width: 100%; padding: 1%; border-top-color:#00b19d; border-top: 10px solid" >
+                    <div class="card" style="width: 100%; padding: 2%; border-top-color:#00b19d; border-top: 10px solid" >
                         
                     <div class="form-row">
                             <div class="col">
                                 <label for="product_name">Producto</label>
-                                <input type="text"  id="product_name"  class="form-control" >
+                                <input type="text"  id="product_name"  class="form-control">
                                 <input type="text"  id="product_id"    class="form-control" hidden >
                             </div>
                             <div class="col">
@@ -100,41 +100,56 @@
                         <div class="form-group" style="text-align: center; margin-top: 2%">
                             <button type="button"  id="agregarproducto" class="btn btn-primary float-center">Agregar producto</button>
                         </div>
-                     
-
+        
                 </div>
         
         {{-- Product Detail --}}
+
+        <div class="card" style="width: 100%;" >
+            <div class="card-header h-25" style="background: #00b19d;">
+                <h6 style="font: bold; color: white"> <span style="font-size: 20px">&#x1f3f7;</span> Productos a facturar</h6>
+            </div>
+
+        <div class="card-body px-0 pb-0">
+            <div class="table-responsive">
+                <table class='table mb-0' id="detalles" >
+                    <tbody>
+                      <tr>
+           
+
+
+                      </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
 
    
                     
                     
                     <div class="form-group">
-                        <h4 class="card-title">Detalles de venta</h4>
+                        <h4 class="card-title" >Detalles de venta</h4>
                         <div class="table-responsive">
-                            <table id="detalles" class="table">
-                                <thead>
+                            <table id="" class="table">
+                                <thead >
                                     <tr>
-                                        <th>Eliminar</th>
-                                        <th>Producto</th>
-                                        <th>Referencia</th>
-                                        <th>Precio_de_Venta</th>
-                                        <th>Descuento</th>
-                                        <th>Cantidad</th>
-                                        <th >ITBIS Impuesto</th>
-                                        <th>Descuento</th>
-                                        <th>SubTotal</th>
+                                        <th >Eliminar</th>
+                                   
                                     </tr>
                                     
                                 </thead>
-                                <tbody>
+                                <tbody >
                                     
                                     <tr>
+
+                                    <td>Hola</td>
                                       
                                           
                                     </tr>
                                    
-                                <tfoot>
+                                {{-- <tfoot>
                                 
                                     <tr>
                                         <th colspan="6">
@@ -161,7 +176,7 @@
                                                      id="total_pagar" name="monto"></p>
                                         </th>
                                     </tr>
-                                </tfoot>
+                                </tfoot> --}}
                                 <tbody>
                                 </tbody>
                             </table>
