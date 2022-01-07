@@ -115,45 +115,6 @@
                 <table class='table mb-0' id="detalles" >
                     <tbody>
                       <tr>
-                          <td style="padding:0px;"><button class="btn btn-danger delete">&#x1f5d1;</button></td>
-                        <td> 
-                        <div class="form-row">
-                            <div class="col">
-                                <textarea name="" id="" cols="14" rows="2" style="resize: none; border: 0px">muffler motores sasdasdawdadsdaa sasdawdwdawda</textarea>
-                                <input type="text"  id="product_id"    class="form-control" hidden >
-                            </div>
-                           <span style="font-size: 25px; margin: 0px auto;">(</span>
-                           <div class="col">
-                                <input type="text" id="code_referencia"  class="form-control" value="ca284841" style="text-align: center; border: 0px"  >
-                            </div>
-                            <span style="font-size: 25px; margin: 0px auto">)</span>
-                        </div>
-
-
-                    <div class="form-row">
-                        <div class="col" style="display: flex">
-                            <input type="text"  id="product_name"  class="form-control" value="1" style="width: 50px;border: 0px; text-align: center">
-                            <span style="padding: 1%; margin: 0% auto;font-size: 20px;  ">x </span> 
-                            <input type="text"  id="product_name"  class="form-control" value="473" style="border: 0px">
-                        </div>
-
-                        <div class="col" style="display: flex; align-items: center; justify-content: center;">
-                            <span>ITBIS </span> 
-                            <input type="text"  id="product_name"  class="form-control" value="18" style="border: 0px; text-align: center">% 
-                        </div>
-                    </div>
-
-                    <div class="form-row" style="display: flex;">
-                        <div class="col" style="display: flex; align-items: center; justify-content: center;">
-                            <span>DESC </span> 
-                            <input type="text"  id="product_name"  class="form-control" value="18" style="border: 0px; text-align: center;width: 50px;">% 
-                        </div>
-                        <div class="col" style="display: flex; align-items: center; justify-content: center;font-weight: bold;background-color: aliceblue">
-                        <span>RD$</span> 
-                            <input type="text"  id="product_name"  class="form-control" value="473" style="border: 0px; text-align: center;background-color: aliceblue">
-                        </div>
-                    </div>
-                </td>
 
 
                       </tr>
