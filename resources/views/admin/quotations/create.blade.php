@@ -2,7 +2,7 @@
 <body >
         
             <div class="card">
-                <a class="btn btn-info"  style="color: white; font-weight: bold" href="{{route('indexquote')}}"" >Lista de Cotizaciones</a>
+            <a class="btn btn-info"  style="color: white; font-weight: bold" href="{{route('indexquote')}}"" >Lista de Cotizaciones</a>
 
         <div class="card-body">
             <h2 style="text-align: center; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">Nueva Cotización</h2>  </div>

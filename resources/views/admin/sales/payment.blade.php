@@ -84,9 +84,9 @@
                                               </div>
 
                                         </a>
-                                    <button type="button" class="btn btn-primary"  data-toggle="modal" data-target="#reportModal"> Pagar</button> 
+                                    <button type="button" class="btn btn-primary"  data-toggle="modal" data-target="#reportModal{{$sale->id}}"> Pagar</button> 
                                         <!-- Modal --> 
-                                        <div class="modal fade" id="reportModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"> 
+                                        <div class="modal fade" id="reportModal{{$sale->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"> 
                                         <div class="modal-dialog" role="document">     
                                        <div class="modal-content"> 
                                            <div class="modal-header"> 
