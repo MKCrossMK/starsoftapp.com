@@ -323,3 +323,11 @@ $(document).ready(function(){
     return true;
   }
   
+
+  function myFunction() {
+    toTop();
+    var element = document.getElementById("cotizacionbody");
+    element.classList.remove("visible");
+    element.classList.add("oculto");
+    
+  } 

@@ -1,11 +1,14 @@
 <x-app-layout>
 <body >
-        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <div class="box">
+           <div style="background: red">
             <div class="card">
             <a class="btn btn-info"  style="color: white; font-weight: bold" href="{{route('indexquote')}}"" >Lista de Cotizaciones</a>
 
         <div class="card-body">
-            <h2 style="text-align: center; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">Nueva Cotización</h2>  </div>
+            <h2 style="text-align: center; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">Nueva Cotización</h2> 
+         </div>
         </div>
         <div class="container" id="saleform" >
                
@@ -96,6 +99,7 @@
 
                         <div class="form-group" style="text-align: center; margin-top: 2%">
                             <button type="button"  id="agregarproducto" class="btn btn-primary float-center">Agregar producto</button>
+                            
                         </div>
         
                 </div>
@@ -126,7 +130,6 @@
 
 
     <div class="card" style="width: 100%; padding: 2%;" >
-        
     <div class="form-row">
             <div class="col" style="display: flex; justify-content: space-between">
                 <p>TOTAL:</p>
@@ -148,15 +151,12 @@
                   id="total_pagar" name="monto"></p>
         </div>
     </div>
-    
-
     </div>
 
    
                     
                     
-                 
-
+            
                     <div class="card-footer text-muted">
                         <button type="submit" id="facturar" class="btn btn-success float-right">Realizar Cotizacion</button>
                          <a href="{{route('indexquote')}}" class="btn btn-danger">
@@ -166,7 +166,29 @@
         
                 </form>
             </div>
-         
+
+        </div>
+    
+        <div class="hidden">Texto de la capa (2)</div>
+    </div>
+    
+    
+
+{{-- Tabla de Productos  --}}
+
+
+
+
+        
+{{-- 
+        <div class="box">
+
+            <img src="http://www.lawebdelprogramador.com/codigo/jquery.preview1/jquery.preview_1.jpg">
+        
+            <div class="hidden">Texto de la capa (2)</div>
+        
+        </div>
+         --}}
         
   
 </body>

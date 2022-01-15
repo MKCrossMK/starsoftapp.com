@@ -158,3 +158,92 @@
   font-weight: bold;
   text-decoration: none
 }
+
+
+
+	
+.dashHome {
+  display: flex;
+  padding: 0.5rem;
+  flex-wrap: wrap;
+ 
+}
+.card-style{
+  background-color: #39aef7;
+  border: solid 10px #dbfae7;
+  font-size: 2rem;
+  color: white;
+  flex: 8 5px;
+  padding: 2rem;
+  margin: 0.5rem;
+}
+.feather-32{
+  width: 32px !important;
+  height: 32px !important;
+  }
+
+
+
+
+
+/*  */
+
+.box {
+
+
+  overflow: hidden;
+
+
+
+
+}
+
+
+
+/* definimos la capa oculta que se movera por la pantalla al pasar el
+
+ raton por encima de la capa "box" */
+
+.box .hidden {
+
+  background: black;
+
+  color:#fff;
+
+  height: 100%;
+
+  width: 100%;
+
+  position: absolute;
+
+  top:200px; /* indicamos que la capa inicialmente el top esta al final de la misma */
+
+  opacity: 0.8;
+
+  -webkit-transition: all 0.3s ease-out;
+
+  -moz-transition: all 0.3s ease-out;
+
+  -ms-transition: all 0.3s ease-out;
+
+  -o-transition: all 0.3s ease-out;
+
+  transition: all 0.3s ease-out;
+
+  padding:10px;
+
+}
+
+
+
+/* definimos la posicion de la capa cuando se pasa por encima de la clase
+
+ box. Como esta definido que tiene una transicion, realizara el movimeinto
+
+ hasta la posicion top=0 */
+
+.box:hover .hidden {
+
+  top: 0px;
+
+}
