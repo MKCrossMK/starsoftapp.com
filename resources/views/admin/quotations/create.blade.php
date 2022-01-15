@@ -2,7 +2,7 @@
 <body >
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <div class="box">
-           <div style="background: red">
+           <div id="cotiza-body">
             <div class="card">
             <a class="btn btn-info"  style="color: white; font-weight: bold" href="{{route('indexquote')}}"" >Lista de Cotizaciones</a>
 
@@ -99,6 +99,7 @@
 
                         <div class="form-group" style="text-align: center; margin-top: 2%">
                             <button type="button"  id="agregarproducto" class="btn btn-primary float-center">Agregar producto</button>
+                            <button type="button"  id="agregar_producto" class="btn btn-primary float-center" onclick="tableProductos()">Agregar Producto dinamico</button>
                             
                         </div>
         
@@ -129,7 +130,7 @@
 
 
 
-    <div class="card" style="width: 100%; padding: 2%;" >
+    <div id="totalprueba" class="card" style="width: 100%; padding: 2%;" >
     <div class="form-row">
             <div class="col" style="display: flex; justify-content: space-between">
                 <p>TOTAL:</p>
@@ -168,8 +169,8 @@
             </div>
 
         </div>
-    
-        <div class="hidden">Texto de la capa (2)</div>
+        <div id="table-productos" class="hidden">Texto de la capa (2) <button onclick="cancelarTableProductos()">Cancelar</button></div>
+ 
     </div>
     
     
@@ -180,15 +181,7 @@
 
 
         
-{{-- 
-        <div class="box">
 
-            <img src="http://www.lawebdelprogramador.com/codigo/jquery.preview1/jquery.preview_1.jpg">
-        
-            <div class="hidden">Texto de la capa (2)</div>
-        
-        </div>
-         --}}
         
   
 </body>

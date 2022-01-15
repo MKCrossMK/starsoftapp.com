@@ -324,10 +324,22 @@ $(document).ready(function(){
   }
   
 
-  function myFunction() {
-    toTop();
-    var element = document.getElementById("cotizacionbody");
-    element.classList.remove("visible");
-    element.classList.add("oculto");
+  function tableProductos() {
+    var element = document.getElementById("table-productos");
+    element.classList.remove("hidden");
+    element.classList.add("productos-visibles");
+    window.scroll(0, 0);
     
   } 
+
+  
+  function cancelarTableProductos() {
+    var element = document.getElementById("table-productos");
+    element.classList.remove("productos-visibles");
+    element.classList.add("hidden");
+    moverseA('totalprueba');
+    
+  } 
+  function moverseA(idDelElemento) {
+    location.hash = "#" + idDelElemento;
+  }
