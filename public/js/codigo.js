@@ -354,6 +354,7 @@ $(document).ready(function(){
     var element = document.getElementById("proditem_facturar");
     element.classList.remove("productos-visibles");
     element.classList.add("hidden");
+    limpiar();
   } 
 
 
