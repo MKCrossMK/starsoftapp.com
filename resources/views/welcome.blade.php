@@ -110,7 +110,7 @@
                     <div class="col-lg-6">
 
                         <div class="mb-5 mb-lg-0 text-center text-lg-start">
-                            <h1 class="display-1 lh-1 mb-3">Bienvenido a su sistema de facturacion</h1>
+                            <h1 class="display-1 lh-1 mb-3">BIENVENIDO</h1>
                         </div>
                     </div>
                     <div class="col-lg-6">
@@ -131,8 +131,8 @@
                             <div class="device-wrapper">
                                 <div class="device" data-device="iPhoneX" data-orientation="portrait" data-color="black">
                                     <div class="screen bg-black">
-                                        <video muted="muted" autoplay="" loop="" style="max-width: 100%; height: 100%"><source 
-                                            src="{{ asset('assets/css/demo-screen.mp4') }}" type="video/mp4" /></video>
+                                        <img src="{{ asset('assets/images/logo/logostar.png') }}" style="width: 100%; height: 100%; border: #1a202c solid" alt="">
+                                        
                                     </div>
                                 </div>
                             </div>
