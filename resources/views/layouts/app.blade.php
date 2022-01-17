@@ -57,7 +57,13 @@
 
                         <li class='sidebar-title'>Main Menu</li>
 
+                        <li class="sidebar-item  ">
+                            <a href="{{ route('home') }}" class='sidebar-link'>
+                                <i data-feather="file-plus" width="20"></i>
+                                <span>Dashboard</span>
+                            </a>
 
+                        </li>
 
                         <li class="sidebar-item ">
                             <a href="{{Route('indexquote')}}" class='sidebar-link'>
@@ -136,7 +142,6 @@
                     
                     
 
-
                         <li class="sidebar-item  ">
                             <a href="table.html" class='sidebar-link'>
                                 <i data-feather="grid" width="20"></i>
@@ -147,13 +152,7 @@
 
 
 
-                        <li class="sidebar-item  ">
-                            <a href="{{ route('home') }}" class='sidebar-link'>
-                                <i data-feather="file-plus" width="20"></i>
-                                <span>Dashboard</span>
-                            </a>
-
-                        </li>
+                     
 
                         <li class="sidebar-item  ">
                             <a href="table-datatable.html" class='sidebar-link'>
