@@ -16,7 +16,7 @@
                             <a href="{{ route('createsale') }}">
                                 <div style="text-align: center">
                                    <i class="feather-32" data-feather="file-plus" style="color: white"></i>
-                                    <h3 class='card-title' style="color: white">Facturacion</h3>
+                                    <h3 class='card-title' style="color: white">Facturar</h3>
                                 </div>                                 
                             </a>          
                         </div>
@@ -25,7 +25,7 @@
                             <a href="{{ route('createquote')}}">
                                 <div style="text-align: center">
                                     <i class="feather-32" data-feather="trello" style="color: white"></i>
-                                    <h3 class='card-title' style="color: white">Cotizaciones</h3>
+                                    <h3 class='card-title' style="color: white">Cotizar</h3>
                                 </div>               
                             </a>          
                         </div>

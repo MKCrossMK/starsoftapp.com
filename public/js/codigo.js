@@ -148,8 +148,8 @@ function agregar() {
             total = total + subtotal[cont];
 
             var fila = '<tr class="selected" id="fila' + cont + '"><td style="padding:0px;"><button class="btn btn-danger delete" onclick="eliminar(' 
-            + cont + ');">&#x1f5d1;</button></td><td><div class="form-row"><div class="col"> <input type="hidden" name="product_id[]" value="' + product_id + '">'
-            + '<textarea name="" id="" cols="14" rows="2" style="resize: none; border: 0px; background-color: white" disabled>' + product_name + '</textarea>'+ '<input type="hidden" name="product_name[]" value="' + code 
+            + cont + ');">-</button></td><td><div class="form-row"><div class="col"> <input type="hidden" name="product_id[]" value="' + product_id + '">'
+            + '<textarea name="" id="" cols="14" rows="2" style="resize: none; font-weight: bold;; border: 0px; background-color: white" disabled>' + product_name + '</textarea>'+ '<input type="hidden" name="product_name[]" value="' + code 
             + '"></div><span style="font-size: 25px; margin: 0px auto;">(</span><div class="col"><input type="hidden" name="code_referencia[]" value="' + code
             + '"> <input class="form-control" type="text" name="code_referencia[]" value="'+ code + '" style="text-align: center; border: 0px;background-color: white" disabled></div><span style="font-size: 25px; margin: 0px auto">)</span></div>'
             + '<div class="form-row"><div class="col" style="display: flex"><input type="hidden" name="cantidad[]" value="'+ quantity + '"> <input type="text" value="' + quantity
@@ -179,6 +179,9 @@ function agregar() {
             totales();
             evaluar();
             $('#detalles').append(fila);
+
+            cancelarTab_Productos();
+            cancelarTableProductos();
         } else {
 
           alert("La cantidad a vender supera el stock.")
@@ -329,17 +332,44 @@ $(document).ready(function(){
     element.classList.remove("hidden");
     element.classList.add("productos-visibles");
     window.scroll(0, 0);
-    
+
   } 
+
+  function tab_Producto() {
+    var element = document.getElementById("proditem_facturar");
+    element.classList.remove("hidden");
+    element.classList.add("productos-visibles");
+    window.scroll(0, 0);
+  } 
+
 
   
   function cancelarTableProductos() {
     var element = document.getElementById("table-productos");
     element.classList.remove("productos-visibles");
     element.classList.add("hidden");
-    moverseA('totalprueba');
-    
   } 
+
+  function cancelarTab_Productos() {
+    var element = document.getElementById("proditem_facturar");
+    element.classList.remove("productos-visibles");
+    element.classList.add("hidden");
+  } 
+
+
   function moverseA(idDelElemento) {
     location.hash = "#" + idDelElemento;
+  }
+
+
+  function producto_facturar(prod_id){
+
+  
+  document.getElementById('product_id').value = document.getElementById('productItem_id' + prod_id).value;
+  document.getElementById('product_name').value = document.getElementById('productItem_desc' + prod_id).value;
+  document.getElementById('code_referencia').value = document.getElementById('productItem_code' + prod_id).value;
+  document.getElementById('stock').value = document.getElementById('productItem_stock' + prod_id ).value;
+  document.getElementById('precio').value = document.getElementById('productItem_precio' + prod_id).value;
+  tab_Producto();
+
   }

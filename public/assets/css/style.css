@@ -56,6 +56,19 @@
     width: 60px;
   }
 
+  .form-control.prodItem{
+    width: 100px;
+  }
+
+  .formatProductInput{
+    border: 0 !important;
+    background: #fff !important;
+    outline: none !important;
+   
+  }
+
+
+
 
   .btn-flotante {
     border-radius: 50%; /* Borde del boton */ 
@@ -184,9 +197,7 @@
 
 
 
-
-
-/*  */
+/* Cargar Productos  con transiciones*/
 
 .box {
 
@@ -202,16 +213,14 @@
 
 }
 
-
 /* definimos la capa oculta que se movera por la pantalla al pasar el
 
  raton por encima de la capa "box" */
 
-.box .hidden {
+.box .hidden  {
 
-  background: black;
+  background: #fff;
 
-  color:#fff;
 
   height: 100%;
 
@@ -221,7 +230,34 @@
 
   top:100%; /* indicamos que la capa inicialmente el top esta al final de la misma */
 
-  opacity: 0.8;
+
+  -webkit-transition: all 0.3s ease-out;
+
+  -moz-transition: all 0.3s ease-out;
+
+  -ms-transition: all 0.3s ease-out;
+
+  -o-transition: all 0.3s ease-out;
+
+  transition: all 0.3s ease-out;
+
+  padding:10px;
+
+}
+
+.box .hiddenprod  {
+
+  background: #fff;
+
+
+  height: 100%;
+
+  width: 100%;
+
+  position: absolute;
+
+  top:100%; /* indicamos que la capa inicialmente el top esta al final de la misma */
+
 
   -webkit-transition: all 0.3s ease-out;
 
@@ -238,12 +274,12 @@
 }
 
 
-
 /* definimos la posicion de la capa cuando se pasa por encima de la clase
 
  box. Como esta definido que tiene una transicion, realizara el movimeinto
 
  hasta la posicion top=0 */
+
 /* 
 .box:hover .hidden {
 
@@ -254,9 +290,8 @@
 
 .productos-visibles {
 
-  background: black;
+  background: #fff;
 
-  color:#fff;
 
   height: 100%;
 
@@ -266,7 +301,6 @@
 
   top:0%; /* indicamos que la capa inicialmente el top esta al final de la misma */
 
-  opacity: 0.8;
 
   -webkit-transition: all 0.3s ease-out;
 
@@ -279,5 +313,29 @@
   transition: all 0.3s ease-out;
 
   padding:10px;
+
+}
+/* Estilos para cotizacion o facturacion en tabla de productos */
+
+.table-products__items{
+  
+  display: flex;
+  justify-content: space-between;
+  
+
+}
+
+
+.table-products__p{
+  
+  float: right;
+  display: flex;
+  align-items: center;
+  word-break:break-all;
+  margin: 0 0 1em 1em;
+
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  margin: 0 auto;
 
 }

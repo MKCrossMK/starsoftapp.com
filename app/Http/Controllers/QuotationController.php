@@ -38,10 +38,11 @@ class QuotationController extends Controller
     public function create()
     {
         $dt = Carbon::now('America/Santo_Domingo')->format('Y-m-d');
+        $products = Product::all();
     
 
 
-        return view('admin.quotations.create', compact('dt'));
+        return view('admin.quotations.create', compact('dt', 'products'));
     }
 
     /**
