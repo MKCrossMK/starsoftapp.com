@@ -128,8 +128,6 @@ var product_name = $('#product_name');
 	
 
 
-
-
 function agregar() {
 
     product_id = $("#product_id").val();
@@ -184,18 +182,18 @@ function agregar() {
             cancelarTableProductos();
         } else {
 
-          alert("La cantidad a vender supera el stock.")
-            // Swal.fire({
-            //     type: 'error',
-            //     text: 'La cantidad a vender supera el stock.',
-            // })
+          
+             Swal.fire({
+                type: 'error',
+                text: 'La cantidad a vender supera el stock.',
+            })
         }
     } else {
       alert("Rellene todos los campos del detalle de la venta.")
-        // Swal.fire({
-        //     type: 'error',
-        //     text: 'Rellene todos los campos del detalle de la venta.',
-        // })
+        Swal.fire({
+            type: 'error',
+            text: 'Rellene todos los campos del detalle de la venta.',
+        })
     }
 }
 function limpiar() {
