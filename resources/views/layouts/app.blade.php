@@ -60,7 +60,7 @@
                         <li class="sidebar-item  ">
                             <a href="{{ route('home') }}" class='sidebar-link'>
                                 <i data-feather="file-plus" width="20"></i>
-                                <span>Dashboard</span>
+                                <span>Pagina Principal</span>
                             </a>
 
                         </li>

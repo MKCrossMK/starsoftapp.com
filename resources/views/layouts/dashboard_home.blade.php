@@ -6,7 +6,7 @@
     
     <div>
         <div style="text-align: center">
-            <h2>Dashboard</h2>
+            <h2>Pagina Principal</h2>
             <p class="text-subtitle text-muted">Bienvenido, elija lo que desea realizar </p>
         </div>
 
