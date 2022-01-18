@@ -79,6 +79,7 @@ class DispatchController extends Controller
     {
         $dispatch->update([
             'status' => $request->input('status'),
+            'update_at' => now(),
         ]);
         return redirect()->route('indexdispatches');
     }

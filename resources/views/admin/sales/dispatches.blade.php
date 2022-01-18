@@ -94,13 +94,15 @@
                                                 @csrf
                                                 @method('PATCH')
                                             <input type="radio" id="entregado{{$sale->id}}" onchange="this.form.submit();"
-                                             name="status" {{$sale->status === "Entregado" ? "disabled" : " "}} value="Entregado">
+                                             name="status" {{$sale->status === "Entregado" ? "disabled" : " "}} value="Entregado"  onclick="
+                                             return confirm('¿Desea hacer la entrega?')">
     
                                             <label for="entregado{{$sale->id}}">Entregado</label><br>
                                             
                                             </form>
     
-                                            <p style="color: black">Estado:  {{$sale->status}}</p>
+                            <p style="color: black">Estado:  {{$sale->status}} <span {{$sale->status === "Entregado" ? "" : "hidden"}}>{{$sale->updated_at}}</span></p>
+                                            
                                         </div>
                                        
                                     </div>
