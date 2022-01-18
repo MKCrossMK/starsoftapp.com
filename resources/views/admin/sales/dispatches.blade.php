@@ -60,13 +60,13 @@
                                 @foreach($dispa as $sale)
                                 <tr>
                                     <td style="height: 70px">
-                                        <div class="contenido" >
+                                        <div class="contenido" style="align-content: center">
 
                                             <div class="izquierda" >
                                             <a  class="btn btnlink" style="border: solid #00b19d 2px; background-color: white" href="{{Route('showdispatch', $sale->id)}}" >
                                                 <div id="content2" style="padding: 1%">
                                                     <div id="left">
-                                                        <div id="object1" ><h6> {{$sale->name_cliente}}</h6></div>
+                                                        <div id="object1"><h6> {{$sale->name_cliente}}</h6></div>
                                                     </div>
                                                     <div id="right">
                                                          <div id="object2">Factura : <h6>{{$sale->no_factura}}</h6></div> 
@@ -79,20 +79,21 @@
                                                   
                                             </a>
                                         </div>
-                                        <di class="derecha" style="margin: 2%">
+                                       
+                                    </div>
+                                    <div style="display: flex; justify-content: space-around; margin-top: 1% ;">
     
-                                            <form action="{{ route('updatedispatch', $sale->id) }}" method="POST">
-                                                @csrf
-                                                @method('PATCH')
-                                            <input type="radio" id="entregado{{$sale->id}}" onchange="this.form.submit();"
-                                             name="status" {{$sale->status === "Entregado" ? "disabled" : " "}} value="Entregado">
+                                        <form action="{{ route('updatedispatch', $sale->id) }}" method="POST">
+                                            @csrf
+                                            @method('PATCH')
+                                        <input type="radio" id="entregado{{$sale->id}}" onchange="this.form.submit();"
+                                         name="status" {{$sale->status === "Entregado" ? "disabled" : " "}} value="Entregado">
 
-                                            <label for="entregado{{$sale->id}}">Entregado</label><br>
-                                            
-                                            </form>
+                                        <label for="entregado{{$sale->id}}">Entregado</label><br>
+                                        
+                                        </form>
 
-                                            <ps style="color: black">Estado:  {{$sale->status}}</p>
-                                        </div>
+                                        <p style="color: black">Estado:  {{$sale->status}}</p>
                                     </div>
                                     </td>
                                 </tr>

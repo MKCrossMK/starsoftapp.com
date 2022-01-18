@@ -41,6 +41,35 @@ function buscarClientes(){
         $("#cedula_rnc").easyAutocomplete(options); 
 }
 
+
+function buscarClientesname(){
+  var options = {
+      url: function(q) {
+          return baseUrl('sale/findclient?q=' + q);
+      },
+
+        getValue: "cedula_rnc",
+        list: {  
+          onSelectItemEvent: function() {
+
+              var selectedItemValue2 = $("#cedula_rnc").getSelectedItemData().name + " " + $("#cedula_rnc").getSelectedItemData().lastname ;
+              document.getElementById("clientename").value = selectedItemValue2;
+
+                   
+            var selectedItemValue3 = $("#cedula_rnc").getSelectedItemData().id;
+            document.getElementById("cliente_id").value = selectedItemValue3;
+
+        
+
+           
+
+            $("#cedula_rnc").val($("#cedula_rnc").getSelectedItemData().cedula_rnc).trigger("change");
+          }
+        }
+  };
+      $("#cedula_rnc").easyAutocomplete(options); 
+}
+
 //Buscar Productos
 function buscarProductos(){
     var options = {
