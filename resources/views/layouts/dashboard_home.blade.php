@@ -13,7 +13,7 @@
 
                     <div class="dashHome">
                         <div class="card-style" >
-                            <a href="{{ route('createsale') }}">
+                            <a href="{{ route('createsale') }}" style="text-decoration:none" >
                                 <div style="text-align: center">
                                    <i class="feather-32" data-feather="file-plus" style="color: white"></i>
                                     <h3 class='card-title' style="color: white">Facturar</h3>
@@ -22,7 +22,7 @@
                         </div>
                 
                         <div class="card-style" >
-                            <a href="{{ route('createquote')}}">
+                            <a href="{{ route('createquote')}}" style="text-decoration:none">
                                 <div style="text-align: center">
                                     <i class="feather-32" data-feather="trello" style="color: white"></i>
                                     <h3 class='card-title' style="color: white">Cotizar</h3>
@@ -31,7 +31,7 @@
                         </div>
                         
                         <div class="card-style" >
-                            <a href="{{ route('indexdispatches') }}">  
+                            <a href="{{ route('indexdispatches') }}" style="text-decoration:none">  
                                 <div style="text-align: center">
                                     <i class="feather-32" data-feather="truck" style="color: white"></i>
                                     <h3 class='card-title' style="color: white">Despachos</h3>
@@ -40,7 +40,7 @@
                         </div>
                         
                         <div class="card-style" >
-                            <a href="{{ route('createcliente') }}">    
+                            <a href="{{ route('createcliente') }}" style="text-decoration:none">    
                                 <div style="text-align: center">
                                     <i class="feather-32" data-feather="user-plus" style="color: white"></i>
                                     <h3 class='card-title' style="color: white">Crear cliente</h3>

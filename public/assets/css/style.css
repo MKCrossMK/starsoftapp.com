@@ -183,7 +183,7 @@
 }
 .card-style{
   background-color: #00b19d;
-  border: solid 10px #dbfae7;
+  border: solid 2px #dbfae7;
   border-radius: 1%;
   font-size: 2rem;
   color: white;
@@ -197,6 +197,9 @@
   height: 32px !important;
   }
 
+  .linksformat{
+    text-decoration: none;
+  }
 
 
 /* Cargar Productos  con transiciones*/
