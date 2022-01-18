@@ -265,7 +265,7 @@
                                 <td class="text-95">{{$quoteDetail->product->precio}}</td>
                                 <td>{{$quoteDetail->descuento}}</td>
                                 <td>{{$quoteDetail->prod_itbis}} %</td>
-                                <td class="text-secondary-d2">{{$quoteDetail->total + ($quoteDetail->total * $quoteDetail->prod_itbis / 100)}}</td>
+                                <td class="text-secondary-d2">{{number_format(($quoteDetail->total + ($quoteDetail->total * $quoteDetail->prod_itbis / 100)), 2)}}</td>
                             </tr> 
                             @endforeach
                             
@@ -290,7 +290,7 @@
 </th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th>  
 <th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th>
     <th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th>                                       
-         <span class="col-7 text-right"> SubTotal:</span> <span class="text-120 text-secondary-d1">$ {{$subtotal}}</span>
+         <span class="col-7 text-right"> SubTotal:</span> <span class="text-120 text-secondary-d1">$ {{ number_format($subtotal, 2)}}</span>
                                             </th>
                                         </table>
 
@@ -307,7 +307,7 @@
 </th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th>  
 <th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th>
 <th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th>   
-                <span class="col-7 text-right"> ITBIS Total: </span> <span class="text-110 text-secondary-d1">$ {{$quotation->itbis}}</span>
+                <span class="col-7 text-right"> ITBIS Total: </span> <span class="text-110 text-secondary-d1">$ {{ number_format($quotation->itbis, 2)}}</span>
                 </th>
 
                                         </table>
@@ -322,7 +322,7 @@
 <th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th></th><th></th><th>
 </th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th>
      
-                                        <span class="total">Total: <span class="text-success-d3 opacity-2">{{$quotation->monto}}</span></span>
+                                        <span class="total">Total: <span class="text-success-d3 opacity-2"> $ {{number_format($quotation->monto, 2)}}</span></span>
                                         </th>
                                         </table>
                                     

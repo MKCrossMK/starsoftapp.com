@@ -228,7 +228,7 @@ hr {
                                 <td class="text-95">{{$saleDetail->product->precio}}</td>
                                 <td>{{$saleDetail->descuento}}</td>
                                 <td>{{$saleDetail->prod_itbis}} %</td>
-                                <td class="text-secondary-d2">{{$saleDetail->total + ($saleDetail->total * $saleDetail->prod_itbis / 100)}}</td>
+                                <td class="text-secondary-d2">{{number_format(($saleDetail->total + ($saleDetail->total * $saleDetail->prod_itbis / 100)), 2)}}</td>
                             </tr> 
                             @endforeach
                             
@@ -248,7 +248,7 @@ hr {
                                         SubTotal:
                                     </div>
                                     <div class="col-5" style="font-family: Georgia, 'Times New Roman', Times, serif">
-                                        <span class="text-120 text-secondary-d1">$ {{$subtotal}}</span>
+                                        <span class="text-120 text-secondary-d1">$ {{ number_format($subtotal, 2)}}</span>
                                     </div>
                                 </div>
     
@@ -257,7 +257,7 @@ hr {
                                         ITBIS Total:
                                     </div>
                                     <div class="col-5" style="font-family: Georgia, 'Times New Roman', Times, serif">
-                                        <span class="text-110 text-secondary-d1">$ {{$sale->itbis}}</span>
+                                        <span class="text-110 text-secondary-d1">$ {{ number_format($sale->itbis, 2)}}</span>
                                     </div>
                                 </div>
     
@@ -266,7 +266,7 @@ hr {
                                        <h1 style="font-family: Georgia, 'Times New Roman', Times, serif">Total:</h1> 
                                     </div>
                                     <div class="col-5">
-                                       <h1> <span class="text-success-d3 opacity-2" style="font-family: Georgia, 'Times New Roman', Times, serif">{{$sale->monto}}</span></h1>
+                                       <h1> <span class="text-success-d3 opacity-2" style="font-family: Georgia, 'Times New Roman', Times, serif">{{ number_format($sale->monto, 2 )}}</span></h1>
                                     </div>
                                 </div>
                             </div>
