@@ -15,7 +15,7 @@
             "zeroRecords":    "No se encontraron registros coincidentes",
             "emptyTable":     "No hay datos disponibles en la tabla",
             "info":           "Mostrando _START_ to _END_ of _TOTAL_ entradas",
-            "searchPlaceholder" : "Buscar factura",
+            "searchPlaceholder" : "Buscar Producto",
             "paginate": {
         "first":      "Primero",
         "last":       "Ultimo",
@@ -147,7 +147,7 @@
                 <div class="card-header" style="background: #00b19d">
                 <div class="d-flex justify-content-between align-items-center" >            
                     <h3 style="font: bold; color: white; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; ">Seleccionar Producto</h3>
-                    <button class="btn " style="font-size: 20px; color: #fff" onclick="cancelarTableProductos()">Cancelar</button>
+                    <button class="btn btn-danger" style="font-size: 20px; color: #fff" onclick="cancelarTableProductos()">Cancelar</button>
                   
                 </div>
 
@@ -209,7 +209,7 @@
                 <div class="card-header" style="background: #00b19d">
                 <div class="d-flex justify-content-between align-items-center" >            
                     <h3 style="font: bold; color: white; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; ">Producto</h3>
-                    <button class="btn " style="font-size: 20px; color: #fff" onclick="cancelarTab_Productos()" style="">Cancelar</button>
+                    <button class="btn btn-danger" style="font-size: 20px; color: #fff" onclick="cancelarTab_Productos()" style="">Cancelar</button>
                   
                 </div>
 
