@@ -260,10 +260,10 @@
                             
                       
                             @foreach($saleDetails as $saleDetail)
-                            <tr>
+                            <tr style="text-align: right">
                                 <td></td>
                                 <td>{{$saleDetail->product->descripcion}}</td>
-                                <td>{{$saleDetail->cantidad}}</td>
+                                <td style="text-align: center">{{$saleDetail->cantidad}}</td>
                                 <td class="text-95">{{$saleDetail->product->precio}}</td>
                                 <td>{{$saleDetail->descuento}}</td>
                                 <td>{{$saleDetail->prod_itbis}} %</td>
@@ -309,28 +309,31 @@
 </th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th>  
 <th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th>
 <th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th>   
-                <span class="col-7 text-right"> ITBIS Total: </span> <span class="text-110 text-secondary-d1">$ {{$sale->itbis}}</span>
+                <span class="col-7 text-right"> Itbis: </span> <span class="text-110 text-secondary-d1">$ {{$sale->itbis}}</span>
                 </th>
 
                                         </table>
                                     </div>
                                 
                                 </div>
-    
-                                <div class="row my-2 align-items-center bgc-primary-l3 p-2">
-                                    <div class="col-7 text-right">
+                                <div class="row my-2">
+                                    <div >
                                         <table>
-<th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th>
+<th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th><th></th><th></th><th></th><th>
+</th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th>
 <th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th></th><th></th><th>
-</th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th>
-     
-                                        <span class="total">Total: <span class="text-success-d3 opacity-2">{{$sale->monto}}</span></span>
-                                        </th>
+</th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th>  
+<th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th>
+<th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th>   
+                <span class="col-7 text-right"> Total: </span> <span class="text-110 text-secondary-d1">$ {{$sale->monto}}</span>
+                </th>
+
                                         </table>
-                                    
                                     </div>
-                               
+                                
                                 </div>
+
+
                             </div>
                         </div>
     

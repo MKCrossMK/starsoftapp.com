@@ -92,8 +92,9 @@ class QuotationController extends Controller
              'descuento' =>$request['descuento'][$i]);
  
              
-             $Sale->quoteDetail()->createMany($data);
     }
+    $Sale->quoteDetail()->createMany($data);
+    
 
     return redirect()->route('indexquote');
 }
