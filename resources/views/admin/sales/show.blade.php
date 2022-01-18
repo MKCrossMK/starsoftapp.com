@@ -243,30 +243,30 @@ hr {
                             </div>
     
                             <div class="col-12 col-sm-5 text-90 order-first order-sm-last">
-                                <div class="row my-2">
+                                <div class="row my-2" style="font-family: Georgia, 'Times New Roman', Times, serif">
                                     <div class="col-7 text-right">
                                         SubTotal:
                                     </div>
-                                    <div class="col-5">
+                                    <div class="col-5" style="font-family: Georgia, 'Times New Roman', Times, serif">
                                         <span class="text-120 text-secondary-d1">$ {{$subtotal}}</span>
                                     </div>
                                 </div>
     
                                 <div class="row my-2">
-                                    <div class="col-7 text-right">
+                                    <div class="col-7 text-right" style="font-family: Georgia, 'Times New Roman', Times, serif">
                                         ITBIS Total:
                                     </div>
-                                    <div class="col-5">
+                                    <div class="col-5" style="font-family: Georgia, 'Times New Roman', Times, serif">
                                         <span class="text-110 text-secondary-d1">$ {{$sale->itbis}}</span>
                                     </div>
                                 </div>
     
                                 <div class="row my-2 align-items-center bgc-primary-l3 p-2">
                                     <div class="col-7 text-right">
-                                       <h1>Total:</h1> 
+                                       <h1 style="font-family: Georgia, 'Times New Roman', Times, serif">Total:</h1> 
                                     </div>
                                     <div class="col-5">
-                                       <h1> <span class="text-success-d3 opacity-2">{{$sale->monto}}</span></h1>
+                                       <h1> <span class="text-success-d3 opacity-2" style="font-family: Georgia, 'Times New Roman', Times, serif">{{$sale->monto}}</span></h1>
                                     </div>
                                 </div>
                             </div>
