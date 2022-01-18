@@ -74,11 +74,19 @@
                                                   
                                                   </div>
 
-                                <div id="object4" style="width: 100%"><p style="color: black">{{$sale->address_municipio .
-                                              " " . $sale->address_sector .  " " .  $sale->address_provincia  }} </p></div>
+                                <div id="object4" style="width: 100%">
+                                <p style="color: black">{{$sale->address_municipio .
+                                              " " . $sale->address_sector .  " " .  $sale->address_provincia  }} </p>
+
+                                               <p style="color: black">{{$sale->bultos_paquetes}} </p>
+                                              
+                                            
+                                            </div>
                                                   
                                             </a>
                                         </div>
+
+                                        
 
                                         <div style="display: flex; justify-content: space-around; margin-top: 1% ;">
     
