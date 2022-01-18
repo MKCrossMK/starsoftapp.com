@@ -8,7 +8,7 @@
   } 
   #content2 { 
     overflow:auto; 
-    width: 320px; 
+    width: 340px; 
   display: flex;
   height: 65px;
   margin-left: -25px;
@@ -37,7 +37,7 @@
 .contenido{ width: 100%; }
 
 .izquierda {
-  width: 320px;
+  width: 340px;
   
 
 }
