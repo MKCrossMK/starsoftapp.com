@@ -6,352 +6,294 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
-        <title>Document</title>
+        <title>Factura</title>
     </head>
     <body>
    
 
     
         <style>
+@font-face {
+  font-family: SourceSansPro;
+  src: url(SourceSansPro-Regular.ttf);
+}
 
-            body{
-                margin-top:20px;
-                color: #484b51;
-            }
-            .text-secondary-d1 {
-                color: #728299!important;
-            }
-            .page-header {
-                margin: 0 0 1rem;
-                padding-bottom: 1rem;
-                padding-top: .5rem;
-                border-bottom: 1px dotted #e2e2e2;
-                display: -ms-flexbox;
-                display: flex;
-                -ms-flex-pack: justify;
-                justify-content: space-between;
-                -ms-flex-align: center;
-                align-items: center;
-            }
-            .page-title {
-                padding: 0;
-                margin: 0;
-                font-size: 1.75rem;
-                font-weight: 300;
-            }
-            .brc-default-l1 {
-                border-color: #dce9f0!important;
-            }
-            
-            .ml-n1, .mx-n1 {
-                margin-left: -.25rem!important;
-            }
-            .mr-n1, .mx-n1 {
-                margin-right: -.25rem!important;
-            }
-            .mb-4, .my-4 {
-                margin-bottom: 1.5rem!important;
-            }
-            .total{
-                font-size: 24px;
-            }
-            
-            hr {
-                margin-top: 1rem;
-                margin-bottom: 1rem;
-                border: 0;
-                border-top: 1px solid rgba(0,0,0,.1);
-            }
-            
-            .text-grey-m2 {
-                color: #888a8d!important;
-            }
-            
-            .text-success-m2 {
-                color: #86bd68!important;
-            }
-            
-            .font-bolder, .text-600 {
-                font-weight: 600!important;
-            }
-            
-            .text-110 {
-                font-size: 110%!important;
-            }
-            .text-blue {
-                color: #478fcc!important;
-            }
-            .pb-25, .py-25 {
-                padding-bottom: .75rem!important;
-            }
-            
-            .pt-25, .py-25 {
-                padding-top: .75rem!important;
-            }
-            .bgc-default-tp1 {
-                background-color: rgba(43, 155, 220, 0.92)!important;
-            }
-            .bgc-default-l4, .bgc-h-default-l4:hover {
-                background-color: #f3f8fa!important;
-            }
-            .page-header .page-tools {
-                -ms-flex-item-align: end;
-                align-self: flex-end;
-            }
-            
-            .btn-light {
-                color: #757984;
-                background-color: #f5f6f9;
-                border-color: #dddfe4;
-            }
-            .w-2 {
-                width: 1rem;
-            }
-            
-            .text-120 {
-                font-size: 120%!important;
-            }
-            .text-primary-m1 {
-                color: #4087d4!important;
-            }
-            
-            .text-danger-m1 {
-                color: #dd4949!important;
-            }
-            .text-blue-m2 {
-                color: #68a3d5!important;
-            }
-            .text-150 {
-                font-size: 150%!important;
-            }
-            .text-60 {
-                font-size: 60%!important;
-            }
-            .text-grey-m1 {
-                color: #7b7d81!important;
-            }
-            .align-bottom {
-                vertical-align: bottom!important;
-            }
-            
-            
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+a {
+  color: #0087C3;
+  text-decoration: none;
+}
+
+body {
+  color: #555555;
+  background: #FFFFFF; 
+  font-family: Arial, sans-serif; 
+  font-size: 14px; 
+  font-family: SourceSansPro;
+}
+
+header {
+  padding: 10px 0;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #AAAAAA;
+}
+
+#logo {
+  float: left;
+  margin-top: 8px;
+}
+
+#logo img {
+  height: 70px;
+}
+
+#company {
+  float: right;
+  text-align: right;
+}
+
+
+#details {
+  margin-bottom: 50px;
+}
+
+#client {
+  padding-left: 6px;
+  border-left: 6px solid #0087C3;
+  float: left;
+}
+
+#client .to {
+  color: #777777;
+}
+
+h2.name {
+  font-size: 1.4em;
+  font-weight: normal;
+  margin: 0;
+}
+
+#invoice {
+  float: right;
+  text-align: right;
+}
+
+#invoice h1 {
+  color: #0087C3;
+  font-size: 2.4em;
+  line-height: 1em;
+  font-weight: normal;
+  margin: 0  0 10px 0;
+}
+
+#invoice .date {
+  font-size: 1.1em;
+  color: #777777;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin-bottom: 20px;
+}
+
+table th,
+table td {
+  padding: 20px;
+  background: #EEEEEE;
+  text-align: center;
+  border-bottom: 1px solid #FFFFFF;
+}
+
+table th {
+  white-space: nowrap;        
+  font-weight: normal;
+}
+
+table td {
+  text-align: right;
+}
+
+table td h3{
+  color: #57B223;
+  font-size: 1.2em;
+  font-weight: normal;
+  margin: 0 0 0.2em 0;
+}
+
+table .no {
+  color: #FFFFFF;
+  font-size: 1.6em;
+  background: #57B223;
+}
+
+table .desc {
+  text-align: left;
+}
+
+table .unit {
+  background: #DDDDDD;
+}
+
+table .qty {
+}
+
+table .total {
+  background: #57B223;
+  color: #FFFFFF;
+}
+
+table td.unit,
+table td.qty,
+table td.total {
+  font-size: 1.2em;
+}
+
+table tbody tr:last-child td {
+  border: none;
+}
+
+table tfoot td {
+  padding: 10px 20px;
+  background: #FFFFFF;
+  border-bottom: none;
+  font-size: 1.2em;
+  white-space: nowrap; 
+  border-top: 1px solid #AAAAAA; 
+}
+
+table tfoot tr:first-child td {
+  border-top: none; 
+}
+
+table tfoot tr:last-child td {
+  color: #57B223;
+  font-size: 1.4em;
+  border-top: 1px solid #57B223; 
+
+}
+
+table tfoot tr td:first-child {
+  border: none;
+}
+
+#thanks{
+  font-size: 2em;
+  margin-bottom: 50px;
+}
+
+#notices{
+  padding-left: 6px;
+  border-left: 6px solid #0087C3;  
+}
+
+#notices .notice {
+  font-size: 1.2em;
+}
+
+footer {
+  color: #777777;
+  width: 100%;
+  height: 30px;
+  position: absolute;
+  bottom: 0;
+  border-top: 1px solid #AAAAAA;
+  padding: 8px 0;
+  text-align: center;
+}
+
+
+
+
                 </style>
                     
- 
-                    
 
-    <div class="page-content container">
-        <div class="page-header text-blue-d2">
-            <h1 class="page-title text-secondary-d1">
-                <small class="page-info">
-                    >> 
-                    Nº Factura : # {{$sale->no_factura}}
-                </small>
-            </h1>
-    
-            <div class="page-tools">
-                <div class="action-buttons">
-                   
-            </div>
+    <header class="clearfix">
+        <div id="logo">
+          <img src={{ asset('assets\images\logo\gtslogo.jpeg') }}">
         </div>
-    
-  
-        <div class="container px-0">
-            <div class="row mt-4">
-                <div class="col-12 col-lg-10 offset-lg-1">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="text-center text-150">
-                                <br><br>
-                                <span class="text-default-d3">GTS</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- .row -->
-    
-                    <hr class="row brc-default-l1 mx-n1 mb-4" />
-    
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div>
-                                <span class="text-sm text-grey-m2 align-middle">A:</span>
-                                <span class="text-600 text-110 text-blue align-middle">{{$sale->client->name . " " . $sale->client->lastname}}</span>
-                            </div>
-                            <div class="text-grey-m2">
-                                <div class="my-1">
-                                    {{$sale->client->address}}
-                                </div>
-                                <div class="my-1">
-                                    <i class="fa fa-phone fa-flip-horizontal text-secondary"></i>  {{$sale->client->phone}}
-                                </div>
-                                <span class="text-sm text-grey-m2 align-middle">RNC:</span>
-                                <span class="my-1"><i class="text-600 text-110 fa-flip-horizontal text-secondary align-middle"></i> <b class="">{{$sale->client->cedula_rnc}}</b></span>
-                            </div>
-                        </div>
-                        <!-- /.col -->
-    
-                        <div class="text-95 col-sm-6 align-self-start d-sm-flex justify-content-end">
-                            <hr class="d-sm-none" />
-                            <div class="text-grey-m2">
-                            
-
-                                <div class="my-2">
-                                    <table>
-<th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th><th></th><th></th><th></th><th>
-</th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th>
-<th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th></th><th></th><th>
-</th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th>  
-<th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th>
-<th></th><th></th><th></th><th><th></th><th></th><th></th><th></th></th><th></th></th><th><th></th><th></th><th></th><th>                                            
-                                    <i class="fa fa-circle text-blue-m2 text-xs mr-1"></i> <span class="text-600 text-90">Fecha :</span> {{$sale->user->name}}
-                                    </th>
-                                </table>
-                                </div>
-    
-                                <div class="my-2">
-                                    <table>
-<th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th><th></th><th></th><th></th><th>
-</th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th>
-<th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th></th><th></th><th>
-</th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th>  
-<th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th>
-<th></th><th></th><th></th><th><th></th><th></th><th></th><th></th></th><th></th></th><th><th></th><th></th><th></th><th>                                            
-                                    <i class="fa fa-circle text-blue-m2 text-xs mr-1"></i> <span class="text-600 text-90">Fecha :</span> {{$sale->fecha}}
-                                    </th>
-                                </table>
-                                </div>
-    
-                                <div class="my-2">
-                                    <table>
-<th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th><th></th><th></th><th></th><th>
-</th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th>
-<th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th></th><th></th><th>
-</th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th>  
-<th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th>
-<th></th><th></th><th></th><th><th></th><th></th><th></th><th></th></th><th></th></th><th><th></th><th></th><th></th><th>       
-                                     <i class="fa fa-circle text-blue-m2 text-xs mr-1"></i> <span class="text-600 text-90">Status:</span> <span class="badge badge-success badge-pill px-25">Facturado</span>
-                                        </th>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /.col -->
-                    </div>
-    
-    
-                    
-                <div class="table-responsive">
-                    <table class="table table-striped table-borderless border-0 border-b-2 brc-default-l1">
-                        <thead class="bg-none bgc-default-tp1">
-                            <tr class="text-white">
-                                <th class="opacity-2">#</th>
-                                <th>Descripcion</th>
-                                <th>Cantidad</th>
-                                <th>Precio</th>
-                                <th>Descuento</th>
-                                <th>ITBIS</th>
-                                <th width="140">SubTotal</th>
-                            </tr>
-                        </thead>
-                    <br>
-                    <br>
-    
-                        <tbody class="text-95 text-secondary-d3" style="height: 10px !important; overflow: scroll; ">
-                            
-                      
-                            @foreach($saleDetails as $saleDetail)
-                            <tr style="text-align: right">
-                                <td></td>
-                                <td>{{$saleDetail->product->descripcion}}</td>
-                                <td style="text-align: center">{{$saleDetail->cantidad}}</td>
-                                <td class="text-95">{{$saleDetail->product->precio}}</td>
-                                <td>{{$saleDetail->descuento}}</td>
-                                <td>{{$saleDetail->prod_itbis}} %</td>
-                                <td class="text-secondary-d2">{{number_format(($saleDetail->total + ($saleDetail->total * $saleDetail->prod_itbis / 100)), 2)}}</td>
-                            </tr> 
-                            @endforeach
-                            
-                        </tbody>
-                    </table>
-                </div>
-    
-
-                <table>
-            
-                </table>
-    
-                        <div class="row">
-                          
-                            <div class="col-12 col-sm-5 text-90 order-first order-sm-last">
-                                <div class="row my-2">
-                                    <div >
-                                        <table>
-<th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th><th></th><th></th><th></th><th>
-</th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th>
-<th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th></th><th></th><th>
-</th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th>  
-<th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th>
-    <th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th>                                       
-         <span class="col-7 text-right"> SubTotal:</span> <span class="text-120 text-secondary-d1">$ {{number_format($subtotal, 2)}}</span>
-                                            </th>
-                                        </table>
-
-                                    </div>
-                                   
-                                </div>
-    
-                                <div class="row my-2">
-                                    <div >
-                                        <table>
-<th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th><th></th><th></th><th></th><th>
-</th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th>
-<th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th></th><th></th><th>
-</th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th>  
-<th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th>
-<th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th>   
-                <span class="col-7 text-right"> Itbis: </span> <span class="text-110 text-secondary-d1">$ {{ number_format($sale->itbis, 2)}}</span>
-                </th>
-
-                                        </table>
-                                    </div>
-                                
-                                </div>
-                                <div class="row my-2">
-                                    <div >
-                                        <table>
-<th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th><th></th><th></th><th></th><th>
-</th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th>
-<th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th></th><th></th><th>
-</th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th>  
-<th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th>
-<th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th><th></th><th></th><th></th><th>   
-                <span class="col-7 text-right"> Total: </span> <span class="text-110 text-secondary-d1">$ {{ number_format($sale->monto, 2)}}</span>
-                </th>
-
-                                        </table>
-                                    </div>
-                                
-                                </div>
-
-
-                            </div>
-                        </div>
-    
-                      
-    <br><br><br>
-                        <div>
-                            <span class="text-secondary-d1 text-105">Tipo Factura: {{$sale->tipo_factura}}</span>
-                            <br>
-                            <span class="text-secondary-d1 text-105">Pago en: {{$sale->t_pago}}</span>
-                          
-                        </div>
-                        
-                       
-                    </div>
-                </div>
-            </div>
+        <div id="company">
+          <h2 class="name">Rudo Motors</h2>
+          <div>Direccion....</div>
+          <div>(800) 000-0000</div>
+          <div>correo@gmail.com</div>
         </div>
-    </div>
+        </div>
+      </header>
+      <main>
+        <div id="details" class="clearfix">
+          <div id="client">
+            <div class="to">Factura a:</div>
+            <h2 class="name">{{$sale->client->name . " " . $sale->client->lastname}}</h2>
+            <div>{{$sale->client->cedula_rnc}}</div>
+            <div class="address">{{$sale->client->address}}</div>
+            <div class="email">{{$sale->client->phone}}</div>
+          </div>
+          <div id="invoice">
+            <h1> Nº Factura >> # {{$sale->no_factura}}</h1>
+            <div>Vendedor: {{$sale->user->name}}</div>
+            <div class="date">Fecha: {{$sale->fecha}}</div>
+            <div><i class="fa fa-circle text-blue-m2 text-xs mr-1"></i> <span class="text-600 text-90">Status:</span> <span class="badge badge-success badge-pill px-25">Facturado</span></div>
+          </div>
+        </div>
+        <table border="0" cellspacing="0" cellpadding="0">
+          <thead>
+            <tr>
+              <th class="no">#</th>
+              <th class="desc">Descripcion</th>
+              <th class="qty">Cantidad</th>
+              <th class="unit">Precio</th>
+              <th>Descuento</th>
+              <th>ITBIS</th>
+              <th class="total">Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            @foreach($saleDetails as $saleDetail)
+            <tr style="text-align: right">
+                <td class="no"></td>
+                <td class="desc">{{$saleDetail->product->descripcion}}</td>
+                <td style="text-align: center">{{$saleDetail->cantidad}}</td>
+                <td class="text-95 unit">{{$saleDetail->product->precio}}</td>
+                <td>{{$saleDetail->descuento}}</td>
+                <td>{{$saleDetail->prod_itbis}} %</td>
+                <td class="text-secondary-d2 total">{{number_format(($saleDetail->total + ($saleDetail->total * $saleDetail->prod_itbis / 100)), 2)}}</td>
+            </tr> 
+            @endforeach
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="3"></td>
+              <td colspan="3">SUBTOTAL</td>
+              <td>$ {{number_format($subtotal, 2)}}</td>
+            </tr>
+            <tr>
+              <td colspan="3"></td>
+              <td colspan="3">ITBIS 18%</td>
+              <td>$ {{ number_format($sale->itbis, 2)}}</td>
+            </tr>
+            <tr>
+              <td colspan="3"></td>
+              <td colspan="3">TOTAL:</td>
+              <td>$ {{ number_format($sale->monto, 2)}}</td>
+            </tr>
+          </tfoot>
+        </table>
+        <div id="thanks">Muchas Gracias!</div>
+        <div id="notices">
+            <div><span class="text-secondary-d1 text-105">Tipo Factura: {{$sale->tipo_factura}}</span></div>
+            <div><span class="text-secondary-d1 text-105">Pago en: {{$sale->t_pago}}</span></div>
+        </div>
+      </main>
+      <footer>
+        La factura se creó en una computadora y es válida sin la firma y el sello.
+      </footer>
     
      
 </body>
