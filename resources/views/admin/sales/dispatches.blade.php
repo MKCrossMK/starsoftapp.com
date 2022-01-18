@@ -60,7 +60,7 @@
                                 @foreach($dispa as $sale)
                                 <tr>
                                     <td style="height: 70px">
-                                        <div class="contenido" style="align-content: center">
+                                        <div class="contenido" style="">
 
                                             <div class="izquierda" >
                                             <a  class="btn btnlink" style="border: solid #00b19d 2px; background-color: white" href="{{Route('showdispatch', $sale->id)}}" >
@@ -79,22 +79,24 @@
                                                   
                                             </a>
                                         </div>
+
+                                        <div style="display: flex; justify-content: space-around; margin-top: 1% ;">
+    
+                                            <form action="{{ route('updatedispatch', $sale->id) }}" method="POST">
+                                                @csrf
+                                                @method('PATCH')
+                                            <input type="radio" id="entregado{{$sale->id}}" onchange="this.form.submit();"
+                                             name="status" {{$sale->status === "Entregado" ? "disabled" : " "}} value="Entregado">
+    
+                                            <label for="entregado{{$sale->id}}">Entregado</label><br>
+                                            
+                                            </form>
+    
+                                            <p style="color: black">Estado:  {{$sale->status}}</p>
+                                        </div>
                                        
                                     </div>
-                                    <div style="display: flex; justify-content: space-around; margin-top: 1% ;">
-    
-                                        <form action="{{ route('updatedispatch', $sale->id) }}" method="POST">
-                                            @csrf
-                                            @method('PATCH')
-                                        <input type="radio" id="entregado{{$sale->id}}" onchange="this.form.submit();"
-                                         name="status" {{$sale->status === "Entregado" ? "disabled" : " "}} value="Entregado">
-
-                                        <label for="entregado{{$sale->id}}">Entregado</label><br>
-                                        
-                                        </form>
-
-                                        <p style="color: black">Estado:  {{$sale->status}}</p>
-                                    </div>
+                                  
                                     </td>
                                 </tr>
                                 @endforeach

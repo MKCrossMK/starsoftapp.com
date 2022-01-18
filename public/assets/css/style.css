@@ -8,7 +8,7 @@
   } 
   #content2 { 
     overflow:auto; 
-    width: 290px; 
+    width: 320px; 
   display: flex;
   height: 65px;
   margin-left: -25px;
@@ -34,7 +34,7 @@
   #left  { }
   #right { } 
 
-.contenido{display: flex; }
+.contenido{ width: 100%; }
 
 .izquierda {
   width: 320px;
