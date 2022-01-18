@@ -243,11 +243,11 @@ hr {
     
                             <div class="col-12 col-sm-5 text-90 order-first order-sm-last">
                                 <div class="row my-2">
-                                    <div class="col-7 text-right">
+                                    <div class="col-7 text-right"  style="font-family: Georgia, 'Times New Roman', Times, serif">
                                         SubTotal:
                                     </div>
                                     <div class="col-5">
-                                        <span class="text-120 text-secondary-d1">$ {{$subtotal}}</span>
+                                        <span class="text-120 text-secondary-d1"  style="font-family: Georgia, 'Times New Roman', Times, serif">$ {{$subtotal}}</span>
                                     </div>
                                 </div>
     
@@ -256,16 +256,16 @@ hr {
                                         ITBIS Total:
                                     </div>
                                     <div class="col-5">
-                                        <span class="text-110 text-secondary-d1">$ {{$quotation->itbis}}</span>
+                                        <span class="text-110 text-secondary-d1"  style="font-family: Georgia, 'Times New Roman', Times, serif">$ {{$quotation->itbis}}</span>
                                     </div>
                                 </div>
     
                                 <div class="row my-2 align-items-center bgc-primary-l3 p-2">
                                     <div class="col-7 text-right">
-                                       <h1>Total:</h1> 
+                                       <h1  style="font-family: Georgia, 'Times New Roman', Times, serif">Total:</h1> 
                                     </div>
                                     <div class="col-5">
-                                       <h1> <span class="text-success-d3 opacity-2">{{$quotation->monto}}</span></h1>
+                                       <h1> <span class="text-success-d3 opacity-2"  style="font-family: Georgia, 'Times New Roman', Times, serif">{{$quotation->monto}}</span></h1>
                                     </div>
                                 </div>
                             </div>
