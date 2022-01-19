@@ -261,6 +261,7 @@
                                         <select class="form-control prodItem formatProductInput"  id="itbis">
                                         <option disabled>ITBIS</option>
                                         <option value="18" selected>18 %</option>
+                                        <option value="0" selected>0 %</option>
                                         </select>
                                     </td>
                                 </tr>
