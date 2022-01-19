@@ -307,6 +307,16 @@ class SaleController extends Controller
                           ->findbyname($request->input('q'));
 
     }
+
+    public function findclientname(Request $request){
+     
+        
+        return $this->buscaCliente
+                          ->findbyced($request->input('q'));
+
+    }
+
+
     public function findproduct(Request $request){
      
         

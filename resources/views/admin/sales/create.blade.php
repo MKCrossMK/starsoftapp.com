@@ -58,7 +58,7 @@
                             </div>
                             <div class="col">
                                 <label  for="cedula_rnc">Nombre </label>
-                                <input type="text" class="form-control" name="cliente_name" style="border: 0px;background: #fff" placeholder="Cliente" id="clientename" required readonly>
+                                <input type="text" class="form-control" name="cliente_name" placeholder="Cliente" id="clientename" required >
                                 <input type="text" class="form-control" name="client_id" placeholder="ID" id="cliente_id" required hidden>
                             </div>
                          </div>

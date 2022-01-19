@@ -73,6 +73,8 @@ Route::patch('/recibo/{sale}', [App\Http\Controllers\SaleController::class, 'upd
 
 Route::get('/sale/findclient', [App\Http\Controllers\SaleController::class, 'findclient'])->middleware(['auth']);
 
+Route::get('/sale/findclientname', [App\Http\Controllers\SaleController::class, 'findclientname'])->middleware(['auth']);
+
 Route::get('/sale/findproduct', [App\Http\Controllers\SaleController::class, 'findproduct'])->middleware(['auth']);
 
 Route::get('/sale/findproductr', [App\Http\Controllers\SaleController::class, 'findproductr'])->middleware(['auth']);

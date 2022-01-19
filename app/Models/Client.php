@@ -33,4 +33,14 @@ class Client extends Model
                 
         return $cliente;
     }
+
+    public function findbyced($q){
+                
+        $cliente = DB::table('clients')
+        ->where(DB::raw("CONCAT(name,' ',lastname)"), 'like', "%$q%")
+        ->get();
+
+                
+        return $cliente;
+    }
 }

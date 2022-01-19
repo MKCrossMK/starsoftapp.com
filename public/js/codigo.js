@@ -6,6 +6,7 @@ $(document).ready(function() {
     buscarClientes();
     buscarProductos();
  buscarProductosRef();
+ buscarClientesname();
 
     evaluar();
 
@@ -21,6 +22,9 @@ function buscarClientes(){
 
           getValue: "cedula_rnc",
           list: {  
+            match: {
+              enabled: false
+          },
             onSelectItemEvent: function() {
 
                 var selectedItemValue2 = $("#cedula_rnc").getSelectedItemData().name + " " + $("#cedula_rnc").getSelectedItemData().lastname ;
@@ -45,29 +49,31 @@ function buscarClientes(){
 function buscarClientesname(){
   var options = {
       url: function(q) {
-          return baseUrl('sale/findclient?q=' + q);
+          return baseUrl('sale/findclientname?q=' + q);
       },
 
-        getValue: "cedula_rnc",
+        getValue: function(element){
+          return element.name+ ' ' +element.lastname;
+       },
         list: {  
           onSelectItemEvent: function() {
 
-              var selectedItemValue2 = $("#cedula_rnc").getSelectedItemData().name + " " + $("#cedula_rnc").getSelectedItemData().lastname ;
-              document.getElementById("clientename").value = selectedItemValue2;
+              var selectedItemValue2 = $("#clientename").getSelectedItemData().cedula_rnc;
+              document.getElementById("cedula_rnc").value = selectedItemValue2;
 
                    
-            var selectedItemValue3 = $("#cedula_rnc").getSelectedItemData().id;
+            var selectedItemValue3 = $("#clientename").getSelectedItemData().id;
             document.getElementById("cliente_id").value = selectedItemValue3;
 
         
 
            
 
-            $("#cedula_rnc").val($("#cedula_rnc").getSelectedItemData().cedula_rnc).trigger("change");
+            $("#clientename").val($("#clientename").getSelectedItemData().name + ' ' + $("#clientename").getSelectedItemData().lastname ).trigger("change");
           }
         }
   };
-      $("#cedula_rnc").easyAutocomplete(options); 
+      $("#clientename").easyAutocomplete(options); 
 }
 
 //Buscar Productos
