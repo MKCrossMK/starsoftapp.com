@@ -27,10 +27,17 @@ class CreateQuotationsTable extends Migration
             $table->decimal('monto');
             $table->decimal('itbis');
             $table->integer('descuento');
+            $table->string('nombre_vendedor');
+            $table->string('nombre_usuario');
+            $table->string('nombre_cliente');
+
+
            
 
             $table->unsignedBigInteger('client_id');
             $table->foreign('client_id')->references('id')->on('clients');
+
+
 
             $table->timestamps();
         });
