@@ -316,6 +316,14 @@ class SaleController extends Controller
 
     }
 
+    public function findclientcompany(Request $request){
+     
+        
+        return $this->buscaCliente
+                          ->findbycompany($request->input('q'));
+
+    }
+
 
     public function findproduct(Request $request){
      

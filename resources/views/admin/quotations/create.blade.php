@@ -56,6 +56,7 @@
                             <input class="format_input" name="cedula_rnc" placeholder="Cedula o RNC"  id="cedula_rnc" onkeypress="return isNumber(event)" required>
 
                             <input type="text" class="format_input" name="cliente_name" placeholder="Nombre de Cliente" id="clientename"  required>
+                            <input type="text" class="format_input" name="cliente_company" placeholder="Compañia" id="clientcompany"  required>
                             <input type="text" class="form-control" name="client_id" placeholder="ID" id="cliente_id" required hidden>
    
                         </div>

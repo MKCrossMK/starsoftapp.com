@@ -10,6 +10,7 @@
             <h3 style="color: white; text-align: center; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">Nuevo Producto</h3>
             </br></br>
             <h5 style="color: white; margin-bottom: 3%">Informacion de Producto</h5>
+            
             <div class="row">
                 <div class="col">
                     <div class="form-group padding-top">

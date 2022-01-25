@@ -19,7 +19,9 @@ class Quotation extends Model
         'itbis',
         'descuento',
         'client_id',
-        'client_name',
+        'nombre_cliente',
+        'nombre_vendedor',
+        'nombre_usuario',
         
 
     ];

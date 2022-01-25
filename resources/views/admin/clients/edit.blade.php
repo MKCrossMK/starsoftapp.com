@@ -28,7 +28,7 @@
                         </div>
                         <div class="col">
                             <div class="form-group padding-top">
-                                <input type="text" name="lastname" class="form-control oval" placeholder="Apellido" value="{{$client->lastname}}"  required />
+                                <input type="text" name="company_name" class="form-control oval" placeholder="Apellido" value="{{$client->company_name}}"  required />
                             </div>
                         </div>
                     </div>

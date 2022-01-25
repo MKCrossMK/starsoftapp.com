@@ -10,10 +10,12 @@
                             <div class="card" style="width:350px;"; height: 317px;">
                                 <div class="card-header" style="text-align: center"><h5>Informacion</h5></div>
                                 <div class="card-body">
-                                  <h1 class="card-title" >{{$client->name . " " . $client->lastname}}</h1>
+                                  <h1 class="card-title" >{{$client->name . " || " . $client->company_name}}</h1>
                                   <p class="card-text">Cedula o RNC : {{$client->cedula_rnc}}</p>
                                   <p class="card-text">Direccion : {{$client->address }}     </p>
                                   <p class="card-text">Telefono : {{$client->phone}}</p>
+                                  <p class="card-text">2do Telefono : {{$client->second_phone}}</p>
+                                  <p class="card-text">3er Telefono : {{$client->third_phone}}</p>
                                   <p>Correo Electronico : {{$client->email}}</p>
                                   <a href="{{Route('indexcliente')}}" class="btn btn-primary" style="width: 100%">Volver</a>
                                 </div>

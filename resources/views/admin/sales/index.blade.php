@@ -71,7 +71,7 @@
                                         <a  class="btn" href="{{Route('showsale', $sale->id)}}">
                                             <div id="content">
                                                 <div id="left">
-                                                   <div id="object1" ><h6> {{$sale->client->name . " " . $sale->client->lastname}}</h6></div>
+                                                   <div id="object1" ><h6> {{$sale->client->name . "||" . $sale->client->company_name}}</h6></div>
                                                    <div id="object2"><p>{{$sale->fecha}}</p></div>
                                                 </div>
                                               

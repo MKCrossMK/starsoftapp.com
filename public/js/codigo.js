@@ -7,6 +7,7 @@ $(document).ready(function() {
     buscarProductos();
  buscarProductosRef();
  buscarClientesname();
+ buscarClientecompany();
 
     evaluar();
 
@@ -27,12 +28,15 @@ function buscarClientes(){
           },
             onSelectItemEvent: function() {
 
-                var selectedItemValue2 = $("#cedula_rnc").getSelectedItemData().name + " " + $("#cedula_rnc").getSelectedItemData().lastname ;
-                document.getElementById("clientename").value = selectedItemValue2;
+              var selectedItemValue2 = $("#cedula_rnc").getSelectedItemData().name + " " + $("#cedula_rnc").getSelectedItemData().lastname ;
+              document.getElementById("clientename").value = selectedItemValue2;
 
                      
               var selectedItemValue3 = $("#cedula_rnc").getSelectedItemData().id;
               document.getElementById("cliente_id").value = selectedItemValue3;
+
+              var selectedItemValue3 = $("#cedula_rnc").getSelectedItemData().company_name;
+              document.getElementById("clientcompany").value = selectedItemValue3;
 
           
 
@@ -58,12 +62,15 @@ function buscarClientesname(){
         list: {  
           onSelectItemEvent: function() {
 
-              var selectedItemValue2 = $("#clientename").getSelectedItemData().cedula_rnc;
-              document.getElementById("cedula_rnc").value = selectedItemValue2;
+            var selectedItemValue2 = $("#clientename").getSelectedItemData().cedula_rnc;
+            document.getElementById("cedula_rnc").value = selectedItemValue2;
 
                    
             var selectedItemValue3 = $("#clientename").getSelectedItemData().id;
             document.getElementById("cliente_id").value = selectedItemValue3;
+
+            var selectedItemValue3 = $("#clientename").getSelectedItemData().company_name;
+            document.getElementById("clientcompany").value = selectedItemValue3;
 
         
 
@@ -75,6 +82,38 @@ function buscarClientesname(){
   };
       $("#clientename").easyAutocomplete(options); 
 }
+
+function buscarClientecompany(){
+  var options = {
+      url: function(q) {
+          return baseUrl('sale/findclientcompany?q=' + q);
+      },
+
+        getValue: "company_name",
+        list: {  
+          onSelectItemEvent: function() {
+
+            var selectedItemValue2 = $("#clientcompany").getSelectedItemData().cedula_rnc;
+            document.getElementById("cedula_rnc").value = selectedItemValue2;
+
+                   
+            var selectedItemValue3 = $("#clientcompany").getSelectedItemData().id;
+            document.getElementById("cliente_id").value = selectedItemValue3;
+
+            var selectedItemValue3 = $("#clientcompany").getSelectedItemData().name + " " + $("#clientcompany").getSelectedItemData().lastname ;
+            document.getElementById("clientename").value = selectedItemValue3;
+
+        
+
+           
+
+            $("#clientcompany").val($("#clientcompany").getSelectedItemData().company_name).trigger("change");
+          }
+        }
+  };
+      $("#clientcompany").easyAutocomplete(options); 
+}
+
 
 //Buscar Productos
 function buscarProductos(){
@@ -140,6 +179,7 @@ function buscarProductosRef(){
   };
       $("#code_referencia").easyAutocomplete(options); 
 }
+
 
 
 
@@ -410,4 +450,25 @@ $(document).ready(function(){
 
   }
 
+  function agregarTelefono(){
+    $('#phone2').toggleClass("phonehidden");
+
+    var x = document.getElementById("btnphone2");
+    if (x.innerHTML === "Agregar segundo telefono") {
+      x.innerHTML = "Eliminar segundo telefono";
+    } else {
+      x.innerHTML = "Agregar segundo telefono";
+    }
+  }
+  
+  function agregarTelefonoT(){
+    $('#phone3').toggleClass("phonehidden");
+
+    var x = document.getElementById("btnphone3");
+    if (x.innerHTML === "Agregar tercer telefono") {
+      x.innerHTML = "Eliminar tercer telefono";
+    } else {
+      x.innerHTML = "Agregar tercer telefono";
+    }
+  }
   

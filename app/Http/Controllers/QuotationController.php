@@ -63,6 +63,8 @@ class QuotationController extends Controller
 
         $Sale = Quotation::create([
              'user_id' => Auth::id(),
+             'nombre_vendedor' => Auth::user()->name,
+             'nombre_usuario' => Auth::user()->name,
             //  'tipo_quote' => 'B01',
             //  'no_quote' => '00001',
             //  'documento' => 'B010001',
@@ -71,6 +73,7 @@ class QuotationController extends Controller
              'itbis' => $request->input('imp_itbis'),
              'descuento' =>  $total_descuento,
              'client_id' => $request->input('client_id'),
+             'nombre_cliente' => $request->input('cliente_name'),
              'created_at' => now(),
              'updated_at' => now(),
          ]);

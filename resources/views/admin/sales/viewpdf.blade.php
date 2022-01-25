@@ -230,7 +230,7 @@ footer {
         <div id="details" class="clearfix">
           <div id="client">
             <div class="to">Factura a:</div>
-            <h2 class="name">{{$sale->client->name . " " . $sale->client->lastname}}</h2>
+            <h2 class="name">{{$sale->client->name . "||" . $sale->client->company_name}}</h2>
             <div>{{$sale->client->cedula_rnc}}</div>
             <div class="address">{{$sale->client->address}}</div>
             <div class="email">{{$sale->client->phone}}</div>

@@ -14,9 +14,12 @@ class Client extends Model
           'id_erp',
           'name',
           'lastname',
+          'company_name',
           'cedula_rnc',
           'address',
           'phone',
+          'second_phone',
+          'third_phone',
           'email',
           'tipo_comprobante',
           'tipo_pago',
@@ -43,4 +46,15 @@ class Client extends Model
                 
         return $cliente;
     }
+
+    public function findbycompany($q){
+                
+        $cliente = DB::table('clients')
+        ->where('company_name', 'like', "%$q%")
+        ->get();
+
+                
+        return $cliente;
+    }
+    
 }

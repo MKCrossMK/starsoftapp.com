@@ -51,15 +51,19 @@
 
                          <hr>
 
-                         <div class="form-row">
+                         <div>
+                            <label style="color: #000;" for="cedula_rnc">Contacto </label>
+                            <input class="form-control" name="cedula_rnc" placeholder="Cedula o RNC"  id="cedula_rnc" onkeypress="return isNumber(event)" required>
+                         </div>
+
+                         <div class="form-row" style="margin-top: 10px">
                             <div class="col">
-                                <label style="color: #000;" for="cedula_rnc">Contacto </label>
-                                <input class="form-control" name="cedula_rnc" placeholder="Cedula o RNC"  id="cedula_rnc" onkeypress="return isNumber(event)" required>
+                                <input type="text" class="form-control" name="cliente_name" placeholder="Nombre de Cliente" id="clientename" required >
+                                <input type="text" class="form-control" name="client_id" placeholder="ID" id="cliente_id" required hidden>
                             </div>
                             <div class="col">
-                                <label  for="cedula_rnc">Nombre </label>
-                                <input type="text" class="form-control" name="cliente_name" placeholder="Cliente" id="clientename" required >
-                                <input type="text" class="form-control" name="client_id" placeholder="ID" id="cliente_id" required hidden>
+                                <input type="text" class="form-control" name="cliente_company" placeholder="Compañia" id="clientcompany"  required>
+                               
                             </div>
                          </div>
    

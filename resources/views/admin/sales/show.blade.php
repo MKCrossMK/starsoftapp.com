@@ -166,7 +166,7 @@ hr {
                         <div class="col-sm-6">
                             <div>
                                 <span class="text-sm text-grey-m2 align-middle">A:</span>
-                                <span class="text-600 text-110 text-blue align-middle">{{$sale->client->name . " " . $sale->client->lastname}}</span>
+                                <span class="text-600 text-110 text-blue align-middle">{{$sale->client->name}}</span>
                             </div>
                             <div class="text-grey-m2">
                                 <div class="my-1">

@@ -19,8 +19,11 @@ class CreateClientsTable extends Migration
             $table->string('cedula_rnc')->unique();
             $table->string('name');
             $table->string('lastname');
+            $table->string('company_name');
             $table->string('address')->nullable();
             $table->string('phone');
+            $table->string('second_phone')->nullable();
+            $table->string('third_phone')->nullable();
             $table->string('email')->nullable();
             $table->string('tipo_comprobante')->nullable();
             $table->integer('vendedor')->nullable();
