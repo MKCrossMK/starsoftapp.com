@@ -91,7 +91,7 @@ class SaleController extends Controller
     {
         $dt = Carbon::now('America/Santo_Domingo')->format('Y-m-d');
 
-        
+        $products = Product::all();
         //Bancos 
         $bancos = DB::table('t_bancos')->get(); 
   
@@ -113,7 +113,7 @@ class SaleController extends Controller
 
 
 
-        return view('admin.sales.create', compact('dt', 'fc', 'fcr', 'consumo', 'fiscal', 'sigConsumo', 'sigFiscal', 'bancos'));
+        return view('admin.sales.create', compact('dt', 'fc', 'fcr', 'consumo', 'fiscal', 'sigConsumo', 'sigFiscal', 'bancos', 'products'));
     }
 
     /**

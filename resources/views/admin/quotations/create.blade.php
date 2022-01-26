@@ -32,7 +32,7 @@
 
 
     <div class="box">
-           <div id="cotiza-body">
+           <div id="invoces-body">
             <div class="card">
             <a class="btn btn-info"  style="color: white; font-weight: bold" href="{{route('indexquote')}}"" >Lista de Cotizaciones</a>
 
@@ -262,7 +262,7 @@
                                         <select class="form-control prodItem formatProductInput"  id="itbis">
                                         <option disabled>ITBIS</option>
                                         <option value="18" selected>18 %</option>
-                                        <option value="0" selected>0 %</option>
+                                        <option value="0">0 %</option>
                                         </select>
                                     </td>
                                 </tr>
