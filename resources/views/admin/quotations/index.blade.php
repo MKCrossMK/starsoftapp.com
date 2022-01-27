@@ -28,6 +28,15 @@
 
     </script>
 
+    
+<style>
+    .my_text
+    {
+        font-family: 'Courier New', Courier, monospace ;
+      
+    }
+</style>
+
         <div class="btn-flotante">
             <a class="btn linkflotante" style="margin-left: 0%" href="{{Route('createquote')}}">+</a>
         </div>
@@ -55,15 +64,15 @@
                                 <tr>
                                     <td>
                                         <a  class="btn" href="{{Route('showquote', $quote->id)}}">
-                                            <div id="content">
+                                            <div id="content" class="my_text">
                                                 <div id="left">
-                                                   <div id="object1" ><h6> {{$quote->client->name . " " . $quote->client->lastname}}</h6></div>
+                                                   <div id="object1" style="font-weight: bold">{{$quote->client->name . " " . $quote->client->lastname}}</div>
                                                    <div id="object2"><p>{{$quote->fecha}}</p></div>
                                                 </div>
                                               
                                                 <div id="right">
                                                    <div id="object3"><p>Nª Cotizacion: {{$quote->no_quote }}</p></div>
-                                                   <div id="object4"> <h6> Monto: {{$quote->monto}}</h6></div>
+                                                   <div id="object4" class="my_text" style="font-weight: bold">  RD$ {{$quote->monto}}</div>
                                                 </div>
                                               </div>
                                         </a>

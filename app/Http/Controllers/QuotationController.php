@@ -26,7 +26,18 @@ class QuotationController extends Controller
      */
     public function index()
     {
-        $quotes = Quotation::all();
+        
+    //     if (Auth::user()->name === 'admin'){
+    //         $quotes = Quotation::all();
+    //     }
+    //     else
+    //     {
+    //         $userid = Auth::user()->id;
+    //         $quotes = Quotation::all()->where('user_id', $userid);
+    //    }
+    $quotes = Quotation::all();
+       
+        
         return view('admin.quotations.index', compact('quotes'));
     }
 
@@ -173,6 +184,11 @@ class QuotationController extends Controller
 
     public function lastsale(){
         return Quotation::latest('id')->first();
+    
+    }
+
+    public function lastquote(){
+        return Quotation::latest('no_quote')->first();
     
     }
 

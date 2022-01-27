@@ -32,6 +32,14 @@
 
     </script>
 
+<style>
+    .my_text
+    {
+        font-family: 'Courier New', Courier, monospace ;
+      
+    }
+</style>
+
 
             <div class="btn-flotante">
                 <a class="btn linkflotante" style="margin-left: 0%" href="{{Route('createsale')}}">+</a>
@@ -69,15 +77,15 @@
                                 <tr>
                                     <td>
                                         <a  class="btn" href="{{Route('showsale', $sale->id)}}">
-                                            <div id="content">
+                                            <div id="content" class="my_text">
                                                 <div id="left">
-                                                   <div id="object1" ><h6> {{$sale->client->name . "||" . $sale->client->company_name}}</h6></div>
+                                                   <div id="object1" style="font-weight: bold">{{$sale->client->name . "||" . $sale->client->company_name}}</div>
                                                    <div id="object2"><p>{{$sale->fecha}}</p></div>
                                                 </div>
                                               
                                                 <div id="right">
                                                    <div id="object3"><p>Nª Factura: {{ $sale->no_factura }}</p></div>
-                                                   <div id="object4"> <h6> Monto: {{$sale->monto}}</h6></div>
+                                                   <div id="object4">RD${{$sale->monto}}</div>
                                                 </div>
                                               </div>
 
