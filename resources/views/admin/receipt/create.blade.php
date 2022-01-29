@@ -105,7 +105,7 @@
                <label for="balance">Monto a Pagar</label>
             </div>
             <div class="col">
-                <input required class="form-control" placeholder="Monto a pagar" type="text" id="balance"  name="balance"  onkeypress="return isNumber(event)">
+                <input  class="form-control" placeholder="Monto a pagar" type="text" id="balance"  name="balance"  onkeypress="return isNumber(event)" required>
             </div>
         </div>
 
@@ -114,7 +114,7 @@
                <label for="balance">Concepto</label>
             </div>
             <div class="col">
-                <textarea name="concepto" id="" ></textarea>
+                <textarea style="text-align: center" name="concepto" id="concepto" required placeholder="Concepto Recibo"></textarea>
             </div>
         </div>
         
