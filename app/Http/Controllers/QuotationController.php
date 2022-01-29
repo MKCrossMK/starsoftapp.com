@@ -48,7 +48,7 @@ class QuotationController extends Controller
      */
     public function create()
     {
-        $dt = Carbon::now('America/Santo_Domingo')->format('d-m-Y');
+        $dt = Carbon::now('America/Santo_Domingo')->format('Y-m-d');
         $products = Product::all();
     
 
