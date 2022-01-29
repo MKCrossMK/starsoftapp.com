@@ -27,15 +27,14 @@ class QuotationController extends Controller
     public function index()
     {
         
-    //     if (Auth::user()->name === 'admin'){
-    //         $quotes = Quotation::all();
-    //     }
-    //     else
-    //     {
-    //         $userid = Auth::user()->id;
-    //         $quotes = Quotation::all()->where('user_id', $userid);
-    //    }
-    $quotes = Quotation::all();
+        if (Auth::user()->name === 'admin'){
+            $quotes = Quotation::all();
+        }
+        else
+        {
+            $userid = Auth::user()->id;
+            $quotes = Quotation::all()->where('user_id', $userid);
+       }
        
         
         return view('admin.quotations.index', compact('quotes'));
