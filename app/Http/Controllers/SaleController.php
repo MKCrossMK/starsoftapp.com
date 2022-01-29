@@ -52,7 +52,7 @@ class SaleController extends Controller
 
     
      
-        return view('admin.sales.index', compact('sales', ));
+        return view('admin.sales.index', compact('sales'));
     }
 
     public function indexpayment(Request $request)

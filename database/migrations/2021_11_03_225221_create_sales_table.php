@@ -15,6 +15,7 @@ class CreateSalesTable extends Migration
     {
         Schema::create('sales', function (Blueprint $table) {
             $table->id();
+            $table->integer('id_erp');
 
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
@@ -39,6 +40,7 @@ class CreateSalesTable extends Migration
             $table->string('no_cheque')->nullable();
             $table->string('banco_cheque')->nullable();
             $table->decimal('balance');
+            $table->integer('registradopor');
 
 
             $table->timestamps();

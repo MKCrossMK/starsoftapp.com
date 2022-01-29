@@ -57,8 +57,6 @@ Route::patch('/actualizarclientes/{client}', [ClientController::class, 'update']
 
 Route::get('/listaventas', [App\Http\Controllers\SaleController::class, 'index'])->name('indexsale')->middleware(['auth']);
 
-Route::get('/listarecibos', [App\Http\Controllers\SaleController::class, 'indexpayment'])->name('indexpaysale')->middleware(['auth']);
-
 Route::get('/detallesventas/{sale}', [App\Http\Controllers\SaleController::class, 'show'])->name('showsale')->middleware(['auth']);
 
 Route::get('/pdf/{sale}', [App\Http\Controllers\SaleController::class, 'pdf'])->name('pdfsale')->middleware(['auth']);
@@ -68,8 +66,6 @@ Route::get('/creandoventa', [App\Http\Controllers\SaleController::class, 'create
 Route::post('/creandoventa', [App\Http\Controllers\SaleController::class, 'store'])->name('storesale')->middleware(['auth']);
 
 Route::get('/editarventa/{sale}', [App\Http\Controllers\SaleController::class, 'edit'])->name('editsale')->middleware(['auth']);
-
-Route::patch('/recibo/{sale}', [App\Http\Controllers\SaleController::class, 'updatePay'])->name('updatepaysale')->middleware(['auth']);
 
 Route::get('/sale/findclient', [App\Http\Controllers\SaleController::class, 'findclient'])->middleware(['auth']);
 
@@ -103,6 +99,8 @@ Route::get('/cotizacion/findclient', [App\Http\Controllers\QuotationController::
 
 Route::get('/cotizacion/findproduct', [App\Http\Controllers\QuotationController::class, 'findproduct'])->middleware(['auth']);
 
+
+
 //Despachos
 
 Route::get('/listadespachos', [App\Http\Controllers\DispatchController::class, 'index'])->name('indexdispatches')->middleware(['auth']);
@@ -112,7 +110,16 @@ Route::patch('/actualizardespachos/{dispatch}', [App\Http\Controllers\DispatchCo
 Route::get('/detallesdespacho/{dispatch}', [App\Http\Controllers\DispatchController::class, 'show'])->name('showdispatch')->middleware(['auth']);
 
 
+//Recibos
 
+Route::get('/listarecibos', [App\Http\Controllers\ReceiptController::class, 'index'])->name('indexreceipt')->middleware(['auth']);
+Route::get('/creandorecibos', [App\Http\Controllers\ReceiptController::class, 'create'])->name('createreceipt')->middleware(['auth']);
+Route::post('/creandorecibos', [App\Http\Controllers\ReceiptController::class, 'store'])->name('storereceipt')->middleware(['auth']);
+
+
+
+
+// Route::patch('/recibo/{receipt}', [App\Http\Controllers\SaleController::class, 'updatePay'])->name('updatepaysale')->middleware(['auth']);
 
 
 
