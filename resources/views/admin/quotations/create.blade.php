@@ -200,7 +200,7 @@ $(document).ready(function() {
                                 @if(!empty($products))
                                 @foreach($products as $product)
                                 <tr>
-                                    <td  class="table-products__items" style="height: 70px" onclick="producto_facturar({{$product->id}})">
+                                    <td  class="table-products__items" style="height: 70px"  onclick="producto_facturar({{$product->id}})">
                             
                                         <div>
                                         <p class="table-products__p">{{$product->descripcion}}</p>
@@ -275,7 +275,7 @@ $(document).ready(function() {
                                     <td class="table-products__items">
                                         <label for="price">Precio </label>
                                         <input type="text" class="form-control prodItem formatProductInput"  id="precio" readonly="readonly" >
-                                        <input type="text"  id="stock"  class="form-control" >
+                                        <input type="text"  id="stock"  class="form-control" hidden>
                                     </td>
                                 </tr>
                                 <tr>

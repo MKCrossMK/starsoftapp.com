@@ -67,6 +67,7 @@ class QuotationController extends Controller
      */
     public function store(Request $request)
     {
+        dd($request);
 
         $fc = DB::table('t_secuencias')->select('f_secuencia')->where('f_id', 1)->first()->f_secuencia;
         

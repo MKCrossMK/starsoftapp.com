@@ -225,18 +225,18 @@ function agregar() {
             total = total + subtotal[cont];
 
             var fila = '<tr class="selected" id="fila' + cont + '"><td style="padding:0px;"><button class="btn btn-danger delete" onclick="eliminar(' 
-            + cont + ');">-</button></td><td><div class="form-row"><div class="col"> <input type="hidden" name="product_id[]" value="' + product_id + '">' + '<input type="hidden" id="istock'+product_id+'" value="' + stock + '>'
-            + '<textarea name="" id="" cols="14" rows="2" style="resize: none; font-weight: bold;; border: 0px; background-color: white" disabled>' + product_name + '</textarea>'+ '<input type="hidden" name="product_name[]" value="' + code 
+            + cont + ');">-</button></td><td><div class="form-row"><div class="col"> <input type="hidden" name="product_id[]" value="' + product_id + '">' + '<input type="hidden" id="istock'+product_id+'" value="' + stock + '">' 
+            + '<textarea cols="14" rows="2" style="resize: none; font-weight: bold; border: 0px; background-color: white" disabled>' + product_name + '</textarea>'+ '<input type="hidden" name="product_name[]" value="' + code 
             + '"></div><span style="font-size: 25px; margin: 0px auto;">(</span><div class="col"><input type="hidden" name="code_referencia[]" value="' + code
             + '"> <input class="form-control" type="text" name="code_referencia[]" value="'+ code + '" style="text-align: center; border: 0px;background-color: white" disabled></div><span style="font-size: 25px; margin: 0px auto">)</span></div>'
-            + '<div class="form-row"><div class="col" style="display: flex"><input type="hidden" id="qtyhidden" name="cantidad[]" value="'+ quantity + '"> <input type="text" value="' + quantity
-            + '" class="form-control" style="width: 50px;border: 0px; text-align: center;background-color: white" id="qtyshow" disabled><span style="padding: 1%; margin: 0% auto;font-size: 20px;  ">x </span><input type="hidden" name="precio[]" value="' + parseFloat(price).toFixed(2) 
+            + '<div class="form-row"><div class="col" style="display: flex"><input type="hidden" id="qtyhidden'+ product_id +'" name="cantidad[]" value="'+ quantity + '"> <input type="text" value="' + quantity
+            + '" class="form-control" style="width: 50px;border: 0px; text-align: center;background-color: white" id="qtyshow'+product_id+'" onkeyup="calculoCambio('+ product_id +')" ><span style="padding: 1%; margin: 0% auto;font-size: 20px;  ">x </span><input type="hidden" id="pricehidden' + product_id + '" name="precio[]" value="' + parseFloat(price).toFixed(2) 
             + '"> <input class="form-control" type="text" value="' + parseFloat(price).toFixed(2) + '" style="border: 0px;background-color: white" disabled></div><div class="col" style="display: flex; align-items: center; justify-content: center;">' 
             + '<span>ITBIS </span><input type="hidden" id="prod_itbis" name="prod_itbis[]" value="' + impuesto + '"> <input type="text" value="' + impuesto + '" class="form-control" style="border: 0px; text-align: center;background-color: white" disabled>%</div></div>'
             + '<div class="form-row" style="display: flex;"><div class="col" style="display: flex; align-items: center; justify-content: center;"><span>DESC </span> ' 
             + ' <input type="hidden" name="descuento[]" value="' + parseFloat(discount) + '"> <input class="form-control" type="text" value="' + parseInt(discount) + '" style="border: 0px; text-align: center;width: 50px;background-color:white;" disabled> % </div>'
             + '<div class="col" style="display: flex; align-items: center; justify-content: center;font-weight: bold;background-color: aliceblue"><span>RD$</span>'
-            + '<input type="hidden" name="total[]" value="'+  parseFloat(subtotal[cont]).toFixed(2) + '"><input type="text"  class="form-control"  value="'+  parseFloat(subtotal[cont]).toFixed(2) + '" style="border: 0px; text-align: center;background-color: aliceblue"></div></div></td></tr>';
+            + '<input type="hidden" id="totalhidden'+ product_id +'" name="total[]" value="'+  parseFloat(subtotal[cont]).toFixed(2) + '"><input type="text" id="totalshow'+ product_id +'" class="form-control"  value="'+  parseFloat(subtotal[cont]).toFixed(2) + '" style="border: 0px; text-align: center;background-color: aliceblue"></div></div></td></tr>';
            
 
             // var fila = '<tr class="selected" id="fila' + cont + '"><td><button type="button" class="btn btn-danger btn-sm" onclick="eliminar(' 
@@ -463,7 +463,7 @@ $(document).ready(function(){
   document.getElementById('stock').value = document.getElementById('productItem_stock' + prod_id ).value;
   document.getElementById('precio').value = document.getElementById('productItem_precio' + prod_id).value;
   tab_Producto();
-
+  calculoCambio(prod_id);
   }
 
   function cliente_facturar(client_id){
@@ -505,7 +505,45 @@ $(document).ready(function(){
       document.getElementById('porciento_descuento').value = 22
     }
   }
+ 
 
+  function calculoCambio(prod_id){
+    var stock = document.getElementById('istock' + prod_id).value;
+    var precio = document.getElementById('pricehidden' + prod_id).value;
+
+    var cantidad = document.getElementById('qtyshow' + prod_id).value;
+
+
+    document.getElementById('qtyhidden'+ prod_id).value = cantidad;
+
+    var total = cantidad * precio ;
+
+
+    document.getElementById('totalshow'+ prod_id).value = parseFloat(total).toFixed(2);
+    document.getElementById('totalhidden'+ prod_id).value = parseFloat(total).toFixed(2);
+
+    if(cantidad > stock){
+      alert('La cantidad a facturar supera el stock')
+      document.getElementById('qtyhidden'+ prod_id).value = 1;
+      document.getElementById('qtyshow'+ prod_id).value = 1;
+    }
+
+    $("#total").html("DOP" + "$" + " " + total.toFixed(2));
+    //Calculo de itbis incorrecto
+
+    total_impuesto = total * 18 / 100;
+    total_pagar = total + total_impuesto;
+    $("#total_impuesto").html("DOP" + "$" + " " +  total_impuesto.toFixed(2));
+    $("#total_pagar_html").html("DOP" + "$"  + " " +  total_pagar.toFixed(2));
+    $("#total_pagar").val(total_pagar.toFixed(2));
+    $("#imp_itbis").val(total_impuesto.toFixed(2));
+
+
+    
+
+
+    
+  }
 
 
 //   $(document).on("change","#qtyshow",function(){
@@ -513,3 +551,5 @@ $(document).ready(function(){
 
     
 //  });
+
+
