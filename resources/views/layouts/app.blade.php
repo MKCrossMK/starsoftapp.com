@@ -31,6 +31,9 @@
     <link rel="shortcut icon" href="{{ asset('assets/images/logo/logostar.jpg') }}" type="image/x-icon">
 
     <link rel="stylesheet" href="{{ asset('bower_components\EasyAutocomplete\dist\easy-autocomplete.min.css') }}">
+
+    
+    
     
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 
@@ -273,8 +276,6 @@
     <script src="{{ asset('bower_components\jquery\dist\jquery.min.js') }}"></script>
 
     <script src="bower_components\EasyAutocomplete\dist\jquery.easy-autocomplete.min.js"></script>
-
-
 
     <script src="{{ asset('assets/js/feather-icons/feather.min.js') }}"></script>
     <script src="{{ asset('assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>

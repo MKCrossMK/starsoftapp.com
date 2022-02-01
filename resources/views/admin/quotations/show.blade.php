@@ -166,7 +166,7 @@ hr {
                         <div class="col-sm-6">
                             <div>
                                 <span class="text-sm text-grey-m2 align-middle">A:</span>
-                                <span class="text-600 text-110 text-blue align-middle">{{$quotation->client->name . "||" . $quotation->client->company_name}}</span>
+                                <span class="text-600 text-110 text-blue align-middle">{{$quotation->client->name . " || " . $quotation->client->company_name}}</span>
                             </div>
                             <div class="text-grey-m2">
                                 <div class="my-1">
@@ -193,7 +193,7 @@ hr {
     
                                 <div class="my-2"><i class="fa fa-circle text-blue-m2 text-xs mr-1"></i> <span class="text-600 text-90">Fecha :</span> {{$quotation->fecha}}</div>
     
-                                <div class="my-2"><i class="fa fa-circle text-blue-m2 text-xs mr-1"></i> <span class="text-600 text-90">Status:</span> <span class="badge badge-success badge-pill px-25">Facturado</span></div>
+                                <div class="my-2"><i class="fa fa-circle text-blue-m2 text-xs mr-1"></i> <span class="text-600 text-90">Status:</span> <span class="badge badge-success badge-pill px-25">Cotizado</span></div>
                             </div>
                         </div>
                         <!-- /.col -->
@@ -225,9 +225,9 @@ hr {
                                 <td>{{$quoteDetail->product->descripcion}}</td>
                                 <td>{{$quoteDetail->cantidad}}</td>
                                 <td class="text-95">{{$quoteDetail->product->precio}}</td>
-                                <td>{{$quoteDetail->descuento}}</td>
+                                <td>{{$quoteDetail->descuento}} %</td>
                                 <td>{{$quoteDetail->prod_itbis}} %</td>
-                                <td class="text-secondary-d2">{{$quoteDetail->total + ($quoteDetail->total * $quoteDetail->prod_itbis / 100)}}</td>
+                                <td class="text-secondary-d2">{{number_format($quoteDetail->total + ($quoteDetail->total * $quoteDetail->prod_itbis / 100))}}</td>
                             </tr> 
                             @endforeach
                             
@@ -247,7 +247,7 @@ hr {
                                         SubTotal:
                                     </div>
                                     <div class="col-5">
-                                        <span class="text-120 text-secondary-d1"  style="font-family: Georgia, 'Times New Roman', Times, serif">$ {{$subtotal}}</span>
+                                        <span class="text-120 text-secondary-d1"  style="font-family: Georgia, 'Times New Roman', Times, serif">$ {{number_format($subtotal)}}</span>
                                     </div>
                                 </div>
     
@@ -265,7 +265,7 @@ hr {
                                        <h1  style="font-family: Georgia, 'Times New Roman', Times, serif">Total:</h1> 
                                     </div>
                                     <div class="col-5">
-                                       <h1> <span class="text-success-d3 opacity-2"  style="font-family: Georgia, 'Times New Roman', Times, serif">{{$quotation->monto}}</span></h1>
+                                       <h1> <span class="text-success-d3 opacity-2"  style="font-family: Georgia, 'Times New Roman', Times, serif">{{number_format($quotation->monto)}}</span></h1>
                                     </div>
                                 </div>
                             </div>

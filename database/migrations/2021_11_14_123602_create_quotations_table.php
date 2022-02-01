@@ -26,7 +26,7 @@ class CreateQuotationsTable extends Migration
             $table->date('fecha');
             $table->decimal('monto');
             $table->decimal('itbis');
-            $table->integer('descuento');
+            $table->decimal('descuento');
             $table->string('nombre_vendedor');
             $table->string('nombre_usuario');
             $table->string('nombre_cliente');

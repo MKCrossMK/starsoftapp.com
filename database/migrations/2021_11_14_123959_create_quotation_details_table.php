@@ -28,8 +28,8 @@ class CreateQuotationDetailsTable extends Migration
             $table->foreign('product_id')->references('id')->on('products');
 
             $table->decimal('precio');
-            $table->integer('cantidad');
-            $table->integer('descuento');
+            $table->decimal('cantidad');
+            $table->decimal('descuento');
             $table->decimal('total');
             $table->integer('prod_itbis');
 

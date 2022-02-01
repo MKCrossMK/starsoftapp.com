@@ -19,7 +19,7 @@ class CreatePurchaseDetailsTable extends Migration
             $table->unsignedBigInteger('product_id');
             $table->foreign('product_id')->references('id')->on('products');
 
-            $table->integer('cantidad');
+            $table->decimal('cantidad');
             $table->decimal('precio');
 
             $table->timestamps();

@@ -28,6 +28,29 @@
     });
 });
 
+
+$(document).ready(function() {
+    $('#clienteTable').DataTable({
+        "language": {
+            "search":         "Buscar:",
+            "lengthMenu":     "Mostrar _MENU_ entradas",
+            "zeroRecords":    "No se encontraron registros coincidentes",
+            "emptyTable":     "No hay datos disponibles en la tabla",
+            "info":           "Mostrando _START_ to _END_ of _TOTAL_ entradas",
+            "searchPlaceholder" : "Buscar Cliente",
+            "paginate": {
+        "first":      "Primero",
+        "last":       "Ultimo",
+        "next":       "Siguiente",
+        "previous":   "Anterior"
+    },
+
+            
+        }
+    });
+});
+
+
     </script>
 
 
@@ -50,23 +73,30 @@
 
                     <div class="card" style="width: 100%; padding: 1%" >
 
-                        <div class="form-inline">
-                            <label style="color: #000;" for="cedula_rnc">Contacto </label>
-                            
-                            <input class="format_input" name="cedula_rnc" placeholder="Cedula o RNC"  id="cedula_rnc" onkeypress="return isNumber(event)" required>
+                
+                            <button type="button" id="agregar_producto" class="btn float-center" style="color: #00b19d;" onclick="tableClients()">
+                                <i data-feather="plus-circle"></i> Seleccionar Cliente
+                            </button>
+                    
 
-                            <input type="text" class="format_input" name="cliente_name" placeholder="Nombre de Cliente" id="clientename"  required>
-                            <input type="text" class="format_input" name="cliente_company" placeholder="Compañia" id="clientcompany"  required>
-                            <input type="text" class="form-control" name="client_id" placeholder="ID" id="cliente_id" required hidden>
-   
+                        <div class="form-row" style="display: flex; margin-top: 10px">
+                            <div class="col">
+                                <input class="form-control" name="cedula_rnc" placeholder="Cedula o RNC"  id="cedula_rnc" onkeypress="return isNumber(event)" readonly required>    
+                             </div>
+                            <div class="col">
+                                <input type="text" class="form-control" name="cliente_name" placeholder="Nombre de Cliente" id="clientename" readonly required>
+                                <input type="text" class="form-control" name="client_id" placeholder="ID" id="cliente_id" required hidden>
+                            </div>
                         </div>
-                        <hr style="margin: 0">
+
+                         
+                        <hr style="margin: 3px">
 
                         <div class="form-group col-sm-6 flex-row d-flex">
                             <label for="fecha" class="col-sm-6 col-form-label">Fecha</label>
                              <input type="" class="form-control" name="fecha" value="{{$dt}}" id="fecha" style="border: 0; text-align: center; background: #fff" readonly>
                     
-                            </div>
+                        </div>
 
                     </div>
 
@@ -211,9 +241,7 @@
                 <div class="d-flex justify-content-between align-items-center" >            
                     <h3 style="font: bold; color: white; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; ">Producto</h3>
                     <button class="btn btn-danger" style="font-size: 20px; color: #fff" onclick="cancelarTab_Productos()" style="">Cancelar</button>
-                  
                 </div>
-
                </div>
 
 
@@ -247,7 +275,7 @@
                                     <td class="table-products__items">
                                         <label for="price">Precio </label>
                                         <input type="text" class="form-control prodItem formatProductInput"  id="precio" readonly="readonly" >
-                                        <input type="text"  id="stock"  class="form-control" hidden>
+                                        <input type="text"  id="stock"  class="form-control" >
                                     </td>
                                 </tr>
                                 <tr>
@@ -267,20 +295,9 @@
                                     </td>
                                 </tr>
                                <tr>
-                                   <td class="table-products__items">
-                                    <label for="descuento">Descuento</label>
-                                    <select class="form-control prodItem formatProductInput"  id="descuento">
-                                        <option disabled>Descuento</option>
-                                        <option value="90">90 %</option>
-                                        <option value="80">80 %</option>
-                                        <option value="50">50 %</option>
-                                        <option value="30">30 %</option>
-                                        <option value="20">20 %</option>
-                                        <option value="10">10 %</option>
-                                        <option value="5">5 %</option>
-                                        <option value="0" selected>0 %</option>
-                                      </select> 
-                                   </td>
+                                <td class="table-products__items">
+                                    <label for="">Descuento</label>
+                                    <input type="number" class="form-control prodItem" value="0" name="descuesto" id="descuento" min="0" max="22" onkeyup="inputdescuento()" required>                                   </td>
                                </tr>
                         
                             </tbody>
@@ -291,6 +308,67 @@
                 <button type="button"  id="agregarproducto" class="btn btn-primary float-center">Agregar producto</button>
             </div>
         </div>
+ 
+
+
+
+        {{-- Cargar Cliente --}}
+
+        <div id="cliente_facturar" class="hidden">
+
+        
+        <div class="card" id = "stores">
+            <div class="card-header" style="background: #00b19d">
+            <div class="d-flex justify-content-between align-items-center" >            
+                <h3 style="font: bold; color: white; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; ">Clientes</h3>
+                <button class="btn btn-danger" style="font-size: 20px; color: #fff" onclick="cancelarTab_Clients()" style="">Cancelar</button>
+            </div>
+            </div>
+
+        <div  class="card-body px-0 pb-0" style="padding: 2%">
+            <div class="table-responsive">
+                <table style=" margin-left:auto; margin-right: auto;" class='table table-striped' id="clienteTable" >
+                   
+                    <thead >
+                        <tr hidden>
+                            <th>Name</th>
+                           
+                        </tr>
+                    </thead>
+                    
+                    <tbody>
+                        @if(!empty($clients))
+                        @foreach($clients as $client)
+                        <tr>
+                            <td  class="table-products__items" style="height: 70px" onclick="cliente_facturar({{$client->id}})">
+                    
+                                <div>
+                                <p style="margin: 0"> Cedula o RNC >> {{$client->cedula_rnc}}</p>
+                                <p class="table-products__p" style="margin: 0">{{$client->name . ' ' . $client->lastname}}</p>
+                                <p style="margin: 0"> Compañia:  {{$client->company_name}}</p>
+                                </div> 
+                                <div hidden>
+                                <input id="clientItem_id{{$client->id}}" type="text" value="{{$client->id}}">
+                                <input id="clientItem_name{{$client->id}}" type="text" value="{{$client->name . ' ' . $client->lastname}} ">
+                                <input id="clientItem_cedrnc{{$client->id}}" type="text" value="{{$client->cedula_rnc}}">
+                                </div>
+
+                            </td>
+                        </tr>
+                        @endforeach
+                        @else
+
+                        <h1 style="text-align: center">No hay datos</h1>
+
+                            
+                        @endif
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
       
         </div>
         </div>

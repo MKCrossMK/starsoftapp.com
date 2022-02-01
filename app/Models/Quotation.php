@@ -22,6 +22,7 @@ class Quotation extends Model
         'nombre_cliente',
         'nombre_vendedor',
         'nombre_usuario',
+        'registradopor'
         
 
     ];

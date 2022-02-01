@@ -1,13 +1,14 @@
 //  Buscar Clientes
 
+
 var self = this;
 
 $(document).ready(function() {
-    buscarClientes();
-    buscarProductos();
- buscarProductosRef();
- buscarClientesname();
- buscarClientecompany();
+//     buscarClientes();
+//     buscarProductos();
+//  buscarProductosRef();
+//  buscarClientesname();
+//  buscarClientecompany();
 
     evaluar();
 
@@ -15,170 +16,171 @@ $(document).ready(function() {
 });
 
 
-function buscarClientes(){
-    var options = {
-        url: function(q) {
-            return baseUrl('sale/findclient?q=' + q);
-        },
+// function buscarClientes(){
+//     var options = {
+//         url: function(q) {
+//             return baseUrl('sale/findclient?q=' + q);
+//         },
 
-          getValue: "cedula_rnc",
-          list: {  
-            match: {
-              enabled: false
-          },
-            onSelectItemEvent: function() {
+//           getValue: "cedula_rnc",
+//           list: {  
+//             match: {
+//               enabled: false
+//           },
+//             onSelectItemEvent: function() {
 
-              var selectedItemValue2 = $("#cedula_rnc").getSelectedItemData().name + " " + $("#cedula_rnc").getSelectedItemData().lastname ;
-              document.getElementById("clientename").value = selectedItemValue2;
+//               var selectedItemValue2 = $("#cedula_rnc").getSelectedItemData().name + " " + $("#cedula_rnc").getSelectedItemData().lastname ;
+//               document.getElementById("clientename").value = selectedItemValue2;
 
                      
-              var selectedItemValue3 = $("#cedula_rnc").getSelectedItemData().id;
-              document.getElementById("cliente_id").value = selectedItemValue3;
+//               var selectedItemValue3 = $("#cedula_rnc").getSelectedItemData().id;
+//               document.getElementById("cliente_id").value = selectedItemValue3;
 
-              var selectedItemValue3 = $("#cedula_rnc").getSelectedItemData().company_name;
-              document.getElementById("clientcompany").value = selectedItemValue3;
+//               var selectedItemValue3 = $("#cedula_rnc").getSelectedItemData().company_name;
+//               document.getElementById("clientcompany").value = selectedItemValue3;
 
           
 
              
 
-              $("#cedula_rnc").val($("#cedula_rnc").getSelectedItemData().cedula_rnc).trigger("change");
-            }
-          }
-    };
-        $("#cedula_rnc").easyAutocomplete(options); 
-}
+//               $("#cedula_rnc").val($("#cedula_rnc").getSelectedItemData().cedula_rnc).trigger("change");
+//             }
+//           }
+//     };
+//         $("#cedula_rnc").easyAutocomplete(options); 
+// }
 
 
-function buscarClientesname(){
-  var options = {
-      url: function(q) {
-          return baseUrl('sale/findclientname?q=' + q);
-      },
+// function buscarClientesname(){
+//   var options = {
+//       url: function(q) {
+//           return baseUrl('sale/findclientname?q=' + q);
+//       },
 
-        getValue: function(element){
-          return element.name+ ' ' +element.lastname;
-       },
-        list: {  
-          onSelectItemEvent: function() {
+//         getValue: function(element){
+//           return element.name+ ' ' +element.lastname;
+//        },
+//         list: {  
+          
+//           onSelectItemEvent: function() {
 
-            var selectedItemValue2 = $("#clientename").getSelectedItemData().cedula_rnc;
-            document.getElementById("cedula_rnc").value = selectedItemValue2;
+//             var selectedItemValue2 = $("#clientename").getSelectedItemData().cedula_rnc;
+//             document.getElementById("cedula_rnc").value = selectedItemValue2;
 
                    
-            var selectedItemValue3 = $("#clientename").getSelectedItemData().id;
-            document.getElementById("cliente_id").value = selectedItemValue3;
+//             var selectedItemValue3 = $("#clientename").getSelectedItemData().id;
+//             document.getElementById("cliente_id").value = selectedItemValue3;
 
-            var selectedItemValue3 = $("#clientename").getSelectedItemData().company_name;
-            document.getElementById("clientcompany").value = selectedItemValue3;
+//             var selectedItemValue3 = $("#clientename").getSelectedItemData().company_name;
+//             document.getElementById("clientcompany").value = selectedItemValue3;
+           
+
+//             $("#clientename").val($("#clientename").getSelectedItemData().name + ' ' + $("#clientename").getSelectedItemData().lastname ).trigger("change");
+//           },
+//           match: {
+//             enabled: true,
+//           }
+//         }
+//   };
+//       $("#clientename").easyAutocomplete(options); 
+// }
+
+// function buscarClientecompany(){
+//   var options = {
+//       url: function(q) {
+//           return baseUrl('sale/findclientcompany?q=' + q);
+//       },
+
+//         getValue: "company_name",
+//         list: {  
+//           onSelectItemEvent: function() {
+
+//             var selectedItemValue2 = $("#clientcompany").getSelectedItemData().cedula_rnc;
+//             document.getElementById("cedula_rnc").value = selectedItemValue2;
+
+                   
+//             var selectedItemValue3 = $("#clientcompany").getSelectedItemData().id;
+//             document.getElementById("cliente_id").value = selectedItemValue3;
+
+//             var selectedItemValue3 = $("#clientcompany").getSelectedItemData().name + " " + $("#clientcompany").getSelectedItemData().lastname ;
+//             document.getElementById("clientename").value = selectedItemValue3;
 
         
 
            
 
-            $("#clientename").val($("#clientename").getSelectedItemData().name + ' ' + $("#clientename").getSelectedItemData().lastname ).trigger("change");
-          }
-        }
-  };
-      $("#clientename").easyAutocomplete(options); 
-}
-
-function buscarClientecompany(){
-  var options = {
-      url: function(q) {
-          return baseUrl('sale/findclientcompany?q=' + q);
-      },
-
-        getValue: "company_name",
-        list: {  
-          onSelectItemEvent: function() {
-
-            var selectedItemValue2 = $("#clientcompany").getSelectedItemData().cedula_rnc;
-            document.getElementById("cedula_rnc").value = selectedItemValue2;
-
-                   
-            var selectedItemValue3 = $("#clientcompany").getSelectedItemData().id;
-            document.getElementById("cliente_id").value = selectedItemValue3;
-
-            var selectedItemValue3 = $("#clientcompany").getSelectedItemData().name + " " + $("#clientcompany").getSelectedItemData().lastname ;
-            document.getElementById("clientename").value = selectedItemValue3;
-
-        
-
-           
-
-            $("#clientcompany").val($("#clientcompany").getSelectedItemData().company_name).trigger("change");
-          }
-        }
-  };
-      $("#clientcompany").easyAutocomplete(options); 
-}
+//             $("#clientcompany").val($("#clientcompany").getSelectedItemData().company_name).trigger("change");
+//           }
+//         }
+//   };
+//       $("#clientcompany").easyAutocomplete(options); 
+// }
 
 
-//Buscar Productos
-function buscarProductos(){
-    var options = {
-        url: function(q) {
-            return baseUrl('sale/findproduct?q=' + q);
-        },
+// //Buscar Productos
+// function buscarProductos(){
+//     var options = {
+//         url: function(q) {
+//             return baseUrl('sale/findproduct?q=' + q);
+//         },
 
-          getValue: "descripcion",
-          list: {  
-            onSelectItemEvent: function() {
+//           getValue: "descripcion",
+//           list: {  
+//             onSelectItemEvent: function() {
 
               
-              var selectedItemValue = $("#product_name").getSelectedItemData().precio;
-              document.getElementById("precio").value = selectedItemValue;
+//               var selectedItemValue = $("#product_name").getSelectedItemData().precio;
+//               document.getElementById("precio").value = selectedItemValue;
 
-              var selectedItemValue2 = $("#product_name").getSelectedItemData().stock ;
-              document.getElementById("stock").value = selectedItemValue2;
+//               var selectedItemValue2 = $("#product_name").getSelectedItemData().stock ;
+//               document.getElementById("stock").value = selectedItemValue2;
               
-              var selectedItemValue3 = $("#product_name").getSelectedItemData().id;
-              document.getElementById("product_id").value = selectedItemValue3;
+//               var selectedItemValue3 = $("#product_name").getSelectedItemData().id;
+//               document.getElementById("product_id").value = selectedItemValue3;
 
-              var selectedItemValue4 = $("#product_name").getSelectedItemData().code;
-              document.getElementById("code_referencia").value = selectedItemValue4;
+//               var selectedItemValue4 = $("#product_name").getSelectedItemData().code;
+//               document.getElementById("code_referencia").value = selectedItemValue4;
 
 
              
-              $("#product_name").val($("#product_name").getSelectedItemData().descripcion).trigger("change");
-            }
-          }
-    };
-        $("#product_name").easyAutocomplete(options); 
-}
+//               $("#product_name").val($("#product_name").getSelectedItemData().descripcion).trigger("change");
+//             }
+//           }
+//     };
+//         $("#product_name").easyAutocomplete(options); 
+// }
 
-function buscarProductosRef(){
-  var options = {
-      url: function(q) {
-          return baseUrl('sale/findproductr?q=' + q);
-      },
+// function buscarProductosRef(){
+//   var options = {
+//       url: function(q) {
+//           return baseUrl('sale/findproductr?q=' + q);
+//       },
 
-        getValue: "code",
-        list: {  
-          onSelectItemEvent: function() {
+//         getValue: "code",
+//         list: {  
+//           onSelectItemEvent: function() {
 
             
-            var selectedItemValue = $("#code_referencia").getSelectedItemData().precio;
-            document.getElementById("precio").value = selectedItemValue;
+//             var selectedItemValue = $("#code_referencia").getSelectedItemData().precio;
+//             document.getElementById("precio").value = selectedItemValue;
 
-            var selectedItemValue2 = $("#code_referencia").getSelectedItemData().stock;
-            document.getElementById("stock").value = selectedItemValue2;
+//             var selectedItemValue2 = $("#code_referencia").getSelectedItemData().stock;
+//             document.getElementById("stock").value = selectedItemValue2;
             
-            var selectedItemValue3 = $("#code_referencia").getSelectedItemData().id;
-            document.getElementById("product_id").value = selectedItemValue3;
+//             var selectedItemValue3 = $("#code_referencia").getSelectedItemData().id;
+//             document.getElementById("product_id").value = selectedItemValue3;
 
-            var selectedItemValue4 = $("#code_referencia").getSelectedItemData().descripcion;
-            document.getElementById("product_name").value = selectedItemValue4;
+//             var selectedItemValue4 = $("#code_referencia").getSelectedItemData().descripcion;
+//             document.getElementById("product_name").value = selectedItemValue4;
 
 
 
-            $("#code_referencia").val($("#code_referencia").getSelectedItemData().code).trigger("change");
-          }
-        }
-  };
-      $("#code_referencia").easyAutocomplete(options); 
-}
+//             $("#code_referencia").val($("#code_referencia").getSelectedItemData().code).trigger("change");
+//           }
+//         }
+//   };
+//       $("#code_referencia").easyAutocomplete(options); 
+// }
 
 
 
@@ -432,6 +434,20 @@ $(document).ready(function(){
     limpiar();
   } 
 
+  function tableClients() {
+    var element = document.getElementById("cliente_facturar");
+    element.classList.remove("hidden");
+    element.classList.add("productos-visibles");
+    window.scroll(0, 0);
+
+  } 
+
+  function cancelarTab_Clients() {
+    var element = document.getElementById("cliente_facturar");
+    element.classList.remove("productos-visibles");
+    element.classList.add("hidden");
+  } 
+
 
   function moverseA(idDelElemento) {
     location.hash = "#" + idDelElemento;
@@ -450,14 +466,24 @@ $(document).ready(function(){
 
   }
 
+  function cliente_facturar(client_id){
+
+    document.getElementById('cliente_id').value = document.getElementById('clientItem_id' + client_id).value;
+    document.getElementById('clientename').value = document.getElementById('clientItem_name' + client_id).value;
+    document.getElementById('cedula_rnc').value = document.getElementById('clientItem_cedrnc' + client_id).value;
+    cancelarTab_Clients();
+    }
+
   function agregarTelefono(){
     $('#phone2').toggleClass("phonehidden");
 
     var x = document.getElementById("btnphone2");
     if (x.innerHTML === "Agregar segundo telefono") {
       x.innerHTML = "Eliminar segundo telefono";
+      document.getElementById('phone2').value = '';
     } else {
       x.innerHTML = "Agregar segundo telefono";
+      document.getElementById('phone2').value = '';
     }
   }
   
@@ -467,11 +493,20 @@ $(document).ready(function(){
     var x = document.getElementById("btnphone3");
     if (x.innerHTML === "Agregar tercer telefono") {
       x.innerHTML = "Eliminar tercer telefono";
+      document.getElementById('phone3').value = '';
     } else {
       x.innerHTML = "Agregar tercer telefono";
+      document.getElementById('phone3').value = '';
     }
   }
-  
+
+  function inputdescuento(){
+    if (document.getElementById('porciento_descuento').value > 22){
+      document.getElementById('porciento_descuento').value = 22
+    }
+  }
+
+
 
 //   $(document).on("change","#qtyshow",function(){
 //     console.log($("#qtyshow").val());

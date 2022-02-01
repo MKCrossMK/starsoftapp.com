@@ -29,6 +29,7 @@ class CreateClientsTable extends Migration
             $table->integer('vendedor')->nullable();
             $table->string('tipo_pago')->nullable();
             $table->decimal('balance')->nullable();
+            $table->decimal('porciento_descuento');
             $table->string('tipo_registro')->nullable();
             $table->timestamps();
         });

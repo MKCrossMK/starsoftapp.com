@@ -6,7 +6,7 @@
            <form action="{{ route('storecliente')}}" method="POST" autocomplete="off">
                 @csrf
             <div class="block" style="background: none">
-            <div class="block-content" style="border-radius: 10px; padding: 5%; background: #10a9d3;">
+            <div class="block-content" style="border-radius: 10px; padding: 5%; background: #00b19d;">
             <h3 style="color: white; text-align: center; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">Nuevo Cliente</h3>
             </br></br>
             <h5 style="color: white; margin-bottom: 3%">Informacion de Cliente</h5>
@@ -79,6 +79,11 @@
                   <option value="Cheque">Cheque</option>     
                   <option value="Tarjeta de Credito">Tarjeta de Credito</option>                      
                  </select>      
+            </div>
+
+            <div class="form-group">
+                <label for="tipo_pago" style="color: #fff; font-weight: bold">Descuento</label>
+                <input type="number" class="form-control prodItem formatProductInput" value="0" name="porciento_descuento" id="porciento_descuento" min="0" max="22" onkeyup="inputdescuento()" required>    
             </div>
 
 

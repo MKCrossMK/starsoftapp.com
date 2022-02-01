@@ -14,6 +14,7 @@ class Product extends Model
 
         'code',
         'descripcion',
+        'referencia_suplidor',
         'precio',
         'costo',
         'stock',

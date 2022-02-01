@@ -11,18 +11,22 @@ class Client extends Model
     use HasFactory;
 
     protected $fillable  = [
-          'id_erp',
-          'name',
-          'lastname',
-          'company_name',
-          'cedula_rnc',
-          'address',
-          'phone',
-          'second_phone',
-          'third_phone',
-          'email',
-          'tipo_comprobante',
-          'tipo_pago',
+        'id_erp',
+        'cedula_rnc',
+        'name',
+        'lastname',
+        'company_name',
+        'address',
+        'phone',
+        'second_phone',
+        'third_phone',
+        'email',
+        'tipo_comprobante',
+        'vendedor',
+        'tipo_pago',
+        'balance',
+        'porciento_descuento',
+        'tipo_registro',
         
     ];
 
@@ -34,7 +38,7 @@ class Client extends Model
         ->get();
 
                 
-        return $cliente;
+        return json_decode( json_encode( $cliente ), true );
     }
 
     public function findbyced($q){
@@ -43,8 +47,9 @@ class Client extends Model
         ->where(DB::raw("CONCAT(name,' ',lastname)"), 'like', "%$q%")
         ->get();
 
-                
-        return $cliente;
+        
+        return json_decode( json_encode( $cliente ), true );
+     
     }
 
     public function findbycompany($q){

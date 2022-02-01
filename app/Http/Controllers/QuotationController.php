@@ -10,6 +10,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 use Barryvdh\DomPDF\Facade as PDF;
+use Illuminate\Support\Facades\DB;
+
 class QuotationController extends Controller
 {
 
@@ -49,10 +51,12 @@ class QuotationController extends Controller
     {
         $dt = Carbon::now('America/Santo_Domingo')->format('Y-m-d');
         $products = Product::all();
+        $userid = Auth::user()->id_erp;
+        $clients = DB::table('clients')->where('vendedor', 0)->orWhere('vendedor', $userid)->get();
     
 
 
-        return view('admin.quotations.create', compact('dt', 'products'));
+        return view('admin.quotations.create', compact('dt', 'products', 'clients'));
     }
 
     /**
@@ -63,6 +67,9 @@ class QuotationController extends Controller
      */
     public function store(Request $request)
     {
+
+        $fc = DB::table('t_secuencias')->select('f_secuencia')->where('f_id', 1)->first()->f_secuencia;
+        
         $userid = Auth::user()->id;
 
         for($i = 0; $i < count($request['product_id']); $i++){
@@ -75,9 +82,8 @@ class QuotationController extends Controller
              'user_id' => Auth::id(),
              'nombre_vendedor' => Auth::user()->name,
              'nombre_usuario' => Auth::user()->name,
-            //  'tipo_quote' => 'B01',
             //  'no_quote' => '00001',
-            //  'documento' => 'B010001',
+             'registradopor' => Auth::user()->id_erp,
              'fecha' => $request->input('fecha'),
              'monto' => $request->input('monto'),
              'itbis' => $request->input('imp_itbis'),

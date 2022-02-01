@@ -228,7 +228,7 @@ text-align: center;
     <div id="details" class="clearfix">
       <div id="client">
         <div class="to">Factura a:</div>
-        <h2 class="name">{{$quotation->client->name . " " . $quotation->client->lastname}}</h2>
+        <h2 class="name">{{$quotation->client->name . " " . $quotation->client->lastname . " || " . $quotation->client->company_name }}</h2>
         <div>{{$quotation->client->cedula_rnc}}</div>
         <div class="address">{{$quotation->client->address}}</div>
         <div class="email">{{$quotation->client->phone}}</div>
@@ -237,7 +237,7 @@ text-align: center;
         <h1> Nº Cotizacion >> # {{$quotation->no_quote}}</h1>
         <div>Vendedor: {{$quotation->user->name}}</div>
         <div class="date">Fecha: {{$quotation->fecha}}</div>
-        <div><i class="fa fa-circle text-blue-m2 text-xs mr-1"></i> <span class="text-600 text-90">Status:</span> <span class="badge badge-success badge-pill px-25">Facturado</span></div>
+        <div><i class="fa fa-circle text-blue-m2 text-xs mr-1"></i> <span class="text-600 text-90">Status:</span> <span class="badge badge-success badge-pill px-25">Cotizado</span></div>
       </div>
     </div>
     <table border="0" cellspacing="0" cellpadding="0">
@@ -259,8 +259,8 @@ text-align: center;
             <td class="no"></td>
             <td class="desc">{{$quoteDetail->product->descripcion}}</td>
             <td class="qty">{{$quoteDetail->cantidad}}</td>
-            <td class="unit">{{$quoteDetail->product->precio}}</td>
-            <td>{{$quoteDetail->descuento}}</td>
+            <td class="unit">{{number_format($quoteDetail->product->precio)}}</td>
+            <td>{{$quoteDetail->descuento}} %</td>
             <td>{{$quoteDetail->prod_itbis}} %</td>
             <td class="total">{{number_format(($quoteDetail->total + ($quoteDetail->total * $quoteDetail->prod_itbis / 100)), 2)}}</td>
         </tr> 
