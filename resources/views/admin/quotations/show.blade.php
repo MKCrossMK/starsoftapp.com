@@ -227,7 +227,7 @@ hr {
                                 <td class="text-95">{{$quoteDetail->product->precio}}</td>
                                 <td>{{$quoteDetail->descuento}} %</td>
                                 <td>{{$quoteDetail->prod_itbis}} %</td>
-                                <td class="text-secondary-d2">{{number_format($quoteDetail->cantidad * }}</td>
+                                <td class="text-secondary-d2">{{number_format($quoteDetail->total + ($quoteDetail->total * $quoteDetail->prod_itbis / 100))}}</td>
                             </tr> 
                             @endforeach
                             

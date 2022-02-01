@@ -205,8 +205,6 @@ var product_name = $('#product_name');
 	
 
 
-
-
 function agregar() {
 
     product_id = $("#product_id").val();
@@ -217,6 +215,7 @@ function agregar() {
     price = $("#precio").val();
     stock = $("#stock").val();
     impuesto = $("#itbis").val();
+    
   
     descuento = $('#descuento').val();
     if (product_id != "" && quantity != "" && quantity > 0 && discount != "" && price != "") {
@@ -539,7 +538,7 @@ $(document).ready(function(){
     $("#imp_itbis").val(total_impuesto.toFixed(2));
 
 
-    
+
 
 
     
