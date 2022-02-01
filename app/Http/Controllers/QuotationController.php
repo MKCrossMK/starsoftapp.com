@@ -29,7 +29,7 @@ class QuotationController extends Controller
     public function index()
     {
         
-        if (Auth::user()->name === 'admin'){
+        if (Auth::user()->role === 1){
             $quotes = Quotation::all();
         }
         else
