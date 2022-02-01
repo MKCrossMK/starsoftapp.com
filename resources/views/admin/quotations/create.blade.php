@@ -204,7 +204,7 @@ $(document).ready(function() {
                             
                                         <div>
                                         <p class="table-products__p">{{$product->descripcion}}</p>
-                                        <p> Ref.:  {{$product->code}}</p>
+                                        <p> Ref.:  {{$product->referencia_suplidor}}</p>
                                         </div> 
                                         <div>       
                                             <p style="font-family:Verdana, Geneva, Tahoma, sans-serif; font-weight: bold;margin: 0 auto;"> RD${{$product->precio}}</p>
