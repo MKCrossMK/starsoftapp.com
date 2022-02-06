@@ -114,10 +114,9 @@ $(document).ready(function() {
                 <table class='table mb-0' id="detalles" >
                     <tbody>
                       
-                      <tr>
-
-
+                      <tr class="item-row">
                       </tr>
+                      
                     </tbody>
                 </table>
             </div>

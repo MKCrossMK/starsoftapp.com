@@ -1,212 +1,9 @@
-//  Buscar Clientes
 
+$(document).ready(function(){
 
-var self = this;
+ 
 
-$(document).ready(function() {
-//     buscarClientes();
-//     buscarProductos();
-//  buscarProductosRef();
-//  buscarClientesname();
-//  buscarClientecompany();
-
-    evaluar();
-
-
-});
-
-
-// function buscarClientes(){
-//     var options = {
-//         url: function(q) {
-//             return baseUrl('sale/findclient?q=' + q);
-//         },
-
-//           getValue: "cedula_rnc",
-//           list: {  
-//             match: {
-//               enabled: false
-//           },
-//             onSelectItemEvent: function() {
-
-//               var selectedItemValue2 = $("#cedula_rnc").getSelectedItemData().name + " " + $("#cedula_rnc").getSelectedItemData().lastname ;
-//               document.getElementById("clientename").value = selectedItemValue2;
-
-                     
-//               var selectedItemValue3 = $("#cedula_rnc").getSelectedItemData().id;
-//               document.getElementById("cliente_id").value = selectedItemValue3;
-
-//               var selectedItemValue3 = $("#cedula_rnc").getSelectedItemData().company_name;
-//               document.getElementById("clientcompany").value = selectedItemValue3;
-
-          
-
-             
-
-//               $("#cedula_rnc").val($("#cedula_rnc").getSelectedItemData().cedula_rnc).trigger("change");
-//             }
-//           }
-//     };
-//         $("#cedula_rnc").easyAutocomplete(options); 
-// }
-
-
-// function buscarClientesname(){
-//   var options = {
-//       url: function(q) {
-//           return baseUrl('sale/findclientname?q=' + q);
-//       },
-
-//         getValue: function(element){
-//           return element.name+ ' ' +element.lastname;
-//        },
-//         list: {  
-          
-//           onSelectItemEvent: function() {
-
-//             var selectedItemValue2 = $("#clientename").getSelectedItemData().cedula_rnc;
-//             document.getElementById("cedula_rnc").value = selectedItemValue2;
-
-                   
-//             var selectedItemValue3 = $("#clientename").getSelectedItemData().id;
-//             document.getElementById("cliente_id").value = selectedItemValue3;
-
-//             var selectedItemValue3 = $("#clientename").getSelectedItemData().company_name;
-//             document.getElementById("clientcompany").value = selectedItemValue3;
-           
-
-//             $("#clientename").val($("#clientename").getSelectedItemData().name + ' ' + $("#clientename").getSelectedItemData().lastname ).trigger("change");
-//           },
-//           match: {
-//             enabled: true,
-//           }
-//         }
-//   };
-//       $("#clientename").easyAutocomplete(options); 
-// }
-
-// function buscarClientecompany(){
-//   var options = {
-//       url: function(q) {
-//           return baseUrl('sale/findclientcompany?q=' + q);
-//       },
-
-//         getValue: "company_name",
-//         list: {  
-//           onSelectItemEvent: function() {
-
-//             var selectedItemValue2 = $("#clientcompany").getSelectedItemData().cedula_rnc;
-//             document.getElementById("cedula_rnc").value = selectedItemValue2;
-
-                   
-//             var selectedItemValue3 = $("#clientcompany").getSelectedItemData().id;
-//             document.getElementById("cliente_id").value = selectedItemValue3;
-
-//             var selectedItemValue3 = $("#clientcompany").getSelectedItemData().name + " " + $("#clientcompany").getSelectedItemData().lastname ;
-//             document.getElementById("clientename").value = selectedItemValue3;
-
-        
-
-           
-
-//             $("#clientcompany").val($("#clientcompany").getSelectedItemData().company_name).trigger("change");
-//           }
-//         }
-//   };
-//       $("#clientcompany").easyAutocomplete(options); 
-// }
-
-
-// //Buscar Productos
-// function buscarProductos(){
-//     var options = {
-//         url: function(q) {
-//             return baseUrl('sale/findproduct?q=' + q);
-//         },
-
-//           getValue: "descripcion",
-//           list: {  
-//             onSelectItemEvent: function() {
-
-              
-//               var selectedItemValue = $("#product_name").getSelectedItemData().precio;
-//               document.getElementById("precio").value = selectedItemValue;
-
-//               var selectedItemValue2 = $("#product_name").getSelectedItemData().stock ;
-//               document.getElementById("stock").value = selectedItemValue2;
-              
-//               var selectedItemValue3 = $("#product_name").getSelectedItemData().id;
-//               document.getElementById("product_id").value = selectedItemValue3;
-
-//               var selectedItemValue4 = $("#product_name").getSelectedItemData().code;
-//               document.getElementById("code_referencia").value = selectedItemValue4;
-
-
-             
-//               $("#product_name").val($("#product_name").getSelectedItemData().descripcion).trigger("change");
-//             }
-//           }
-//     };
-//         $("#product_name").easyAutocomplete(options); 
-// }
-
-// function buscarProductosRef(){
-//   var options = {
-//       url: function(q) {
-//           return baseUrl('sale/findproductr?q=' + q);
-//       },
-
-//         getValue: "code",
-//         list: {  
-//           onSelectItemEvent: function() {
-
-            
-//             var selectedItemValue = $("#code_referencia").getSelectedItemData().precio;
-//             document.getElementById("precio").value = selectedItemValue;
-
-//             var selectedItemValue2 = $("#code_referencia").getSelectedItemData().stock;
-//             document.getElementById("stock").value = selectedItemValue2;
-            
-//             var selectedItemValue3 = $("#code_referencia").getSelectedItemData().id;
-//             document.getElementById("product_id").value = selectedItemValue3;
-
-//             var selectedItemValue4 = $("#code_referencia").getSelectedItemData().descripcion;
-//             document.getElementById("product_name").value = selectedItemValue4;
-
-
-
-//             $("#code_referencia").val($("#code_referencia").getSelectedItemData().code).trigger("change");
-//           }
-//         }
-//   };
-//       $("#code_referencia").easyAutocomplete(options); 
-// }
-
-
-
-
-/////////////////////////////////////
-// Codigo detalles de factura
-
-$(document).ready(function () {
-    $("#agregarproducto").click(function () {
-        agregar();
-        evaluar();
-    });
-});
-
-var cont = 1;
-total = 0;
-subtotal = [];
-$("#guardar").hide();
-
-
-var product_name = $('#product_name');
-	
-
-
-function agregar() {
-
+  $('#agregarproducto').click(function(){
     product_id = $("#product_id").val();
     product_name = $("#product_name").val();
     code = $("#code_referencia").val();
@@ -215,102 +12,137 @@ function agregar() {
     price = $("#precio").val();
     stock = $("#stock").val();
     impuesto = $("#itbis").val();
-    
+
   
-    descuento = $('#descuento').val();
     if (product_id != "" && quantity != "" && quantity > 0 && discount != "" && price != "") {
         if (parseInt(stock) >= parseInt(quantity)) {
-            subtotal[cont] = (parseInt(quantity) *  parseInt(price) ) - (parseInt(discount) * parseInt(quantity) *  parseInt(price)  / 100 );
-            total = total + subtotal[cont];
+  $('.item-row:last').after('<tr class="item-row"><td style="padding:0px;"><button class="btn btn-danger delete">-</button></td><td><div class="form-row"><div class="col"> <input type="hidden" name="product_id[]" value="' + product_id + '">' + '<input type="hidden" class="itemstock" id="itemstock" value="' + stock + '">' 
+          + '<textarea cols="14" rows="2" style="resize: none; font-weight: bold; border: 0px; background-color: white" disabled>' + product_name + '</textarea>'+ '<input type="hidden" name="product_name[]" value="' + product_name 
+          + '"></div><span style="font-size: 25px; margin: 0px auto;">(</span><div class="col"><input type="hidden" name="code_referencia[]" value="' + code
+          + '"> <input class="form-control" type="text" name="code_referencia[]" value="'+ code + '" style="text-align: center; border: 0px;background-color: white" disabled></div><span style="font-size: 25px; margin: 0px auto">)</span></div>'
+          + '<div class="form-row"><div class="col" style="display: flex"><input type="hidden" class="qtyhidden" id="qtyhidden" name="cantidad[]" value="'+ quantity + '"> <input type="tel" value="' + quantity
+          + '" class="form-control qtyshow" style="width: 50px;border: 0px; text-align: center;background-color: white" id="qtyshow" required><span style="padding: 1%; margin: 0% auto;font-size: 20px;  ">x </span><input type="hidden" id="pricehidden" name="precio[]" value="' + parseFloat(price).toFixed(2) 
+          + '"> <input class="form-control priceshow" type="text" id="priceshow" value="' + parseFloat(price).toFixed(2) + '" style="border: 0px;background-color: white" disabled></div><div class="col" style="display: flex; align-items: center; justify-content: center;">' 
+          + '<span>ITBIS </span><input type="hidden" class="prod_itbis" id="prod_itbis" name="prod_itbis[]" value="' + impuesto + '"> <input type="text" value="' + impuesto + '" class="form-control" style="border: 0px; text-align: center;background-color: white" disabled>%</div></div>'
+          + '<div class="form-row" style="display: flex;"><div class="col" style="display: flex; align-items: center; justify-content: center;"><span>DESC </span> ' 
+          + ' <input type="hidden" class="discounthidden" name="descuento[]" value="' + parseFloat(discount) + '"> <input class="form-control discountshow" type="tel" value="' + parseInt(discount) + '" style="border: 0px; text-align: center;width: 50px;background-color:white;" required> % </div>'
+          + '<div class="col" style="display: flex; align-items: center; justify-content: center;font-weight: bold;background-color: aliceblue"><span>RD$</span>'
+          + '<input type="hidden" class="totalhidden" name="total[]"><input type="tel" id="totalshow" class="form-control totalshow"  style="border: 0px; text-align: center;background-color: aliceblue" readonly></div></div></td></tr>');
+  bind();
+  cancelarTableProductos();
+  cancelarTab_Productos();
 
-            var fila = '<tr class="selected" id="fila' + cont + '"><td style="padding:0px;"><button class="btn btn-danger delete" onclick="eliminar(' 
-            + cont + ');">-</button></td><td><div class="form-row"><div class="col"> <input type="hidden" name="product_id[]" value="' + product_id + '">' + '<input type="hidden" id="istock'+product_id+'" value="' + stock + '">' 
-            + '<textarea cols="14" rows="2" style="resize: none; font-weight: bold; border: 0px; background-color: white" disabled>' + product_name + '</textarea>'+ '<input type="hidden" name="product_name[]" value="' + code 
-            + '"></div><span style="font-size: 25px; margin: 0px auto;">(</span><div class="col"><input type="hidden" name="code_referencia[]" value="' + code
-            + '"> <input class="form-control" type="text" name="code_referencia[]" value="'+ code + '" style="text-align: center; border: 0px;background-color: white" disabled></div><span style="font-size: 25px; margin: 0px auto">)</span></div>'
-            + '<div class="form-row"><div class="col" style="display: flex"><input type="hidden" id="qtyhidden'+ product_id +'" name="cantidad[]" value="'+ quantity + '"> <input type="text" value="' + quantity
-            + '" class="form-control" style="width: 50px;border: 0px; text-align: center;background-color: white" id="qtyshow'+product_id+'" onkeyup="calculoCambio('+ product_id +')" ><span style="padding: 1%; margin: 0% auto;font-size: 20px;  ">x </span><input type="hidden" id="pricehidden' + product_id + '" name="precio[]" value="' + parseFloat(price).toFixed(2) 
-            + '"> <input class="form-control" type="text" value="' + parseFloat(price).toFixed(2) + '" style="border: 0px;background-color: white" disabled></div><div class="col" style="display: flex; align-items: center; justify-content: center;">' 
-            + '<span>ITBIS </span><input type="hidden" id="prod_itbis" name="prod_itbis[]" value="' + impuesto + '"> <input type="text" value="' + impuesto + '" class="form-control" style="border: 0px; text-align: center;background-color: white" disabled>%</div></div>'
-            + '<div class="form-row" style="display: flex;"><div class="col" style="display: flex; align-items: center; justify-content: center;"><span>DESC </span> ' 
-            + ' <input type="hidden" name="descuento[]" value="' + parseFloat(discount) + '"> <input class="form-control" type="text" value="' + parseInt(discount) + '" style="border: 0px; text-align: center;width: 50px;background-color:white;" disabled> % </div>'
-            + '<div class="col" style="display: flex; align-items: center; justify-content: center;font-weight: bold;background-color: aliceblue"><span>RD$</span>'
-            + '<input type="hidden" id="totalhidden'+ product_id +'" name="total[]" value="'+  parseFloat(subtotal[cont]).toFixed(2) + '"><input type="text" id="totalshow'+ product_id +'" class="form-control"  value="'+  parseFloat(subtotal[cont]).toFixed(2) + '" style="border: 0px; text-align: center;background-color: aliceblue"></div></div></td></tr>';
-           
+} else {
 
-            // var fila = '<tr class="selected" id="fila' + cont + '"><td><button type="button" class="btn btn-danger btn-sm" onclick="eliminar(' 
-            // + cont + ');"><i class="fa fa-times fa-2x"></i>X</button></td> <td><input type="hidden" name="product_id[]" value="' + product_id + '">'
-            // + product_name + '> <input type="hidden" name="product_name[]" value="' + product_name 
-            // + '">  <td> <input type="hidden" name="code_referencia[]" value="' + code + '"> <input class="form-control" type="text" name="code_referencia[]" value="'
-            // + code + '"disabled> </td> <td> <input type="hidden" name="precio[]" value="' + parseFloat(price).toFixed(2) 
-            // + '"> <input class="form-control" type="number" value="' + parseFloat(price).toFixed(2)
-            // + '" disabled> </td> <td> <input type="hidden" name="descuento[]" value="' + parseFloat(discount) 
-            // + '"> <input class="form-control" type="number" value="' + parseInt(discount) + '" disabled> </td> <td> <input type="hidden" name="cantidad[]" value="' 
-            // + quantity + '"> <input type="number" value="' + quantity + '" class="form-control" disabled> </td> <td> <input type="hidden" id="prod_itbis" name="prod_itbis[]" value="' 
-            // + impuesto + '"> <input type="number" value="' + impuesto + '" class="form-control" disabled> </td> <td>  <input type="number" value="' + descuento 
-            // + '" class="form-control" disabled> </td>  <input type="hidden" name="total[]" value="' 
-            // +  parseFloat(subtotal[cont]).toFixed(2) + '"> <td align="right">DOP$' + parseFloat(subtotal[cont]).toFixed(2) + '</td></tr>';
-            cont++;
-            limpiar();
-            totales();
-            evaluar();
-            $('#detalles').append(fila);
+            alert("La cantidad a vender supera el stock.")
+              // Swal.fire({
+              //     type: 'error',
+              //     text: 'La cantidad a vender supera el stock.',
+              // })
+          }
+      } else {
+        alert("Rellene todos los campos del detalle de la venta.")
+          // Swal.fire({
+          //     type: 'error',
+          //     text: 'Rellene todos los campos del detalle de la venta.',
+          // })
+      }
 
-            cancelarTab_Productos();
-            cancelarTableProductos();
-        } else {
+})
+bind();
 
-          alert("La cantidad a vender supera el stock.")
-            // Swal.fire({
-            //     type: 'error',
-            //     text: 'La cantidad a vender supera el stock.',
-            // })
-        }
-    } else {
-      alert("Rellene todos los campos del detalle de la venta.")
-        // Swal.fire({
-        //     type: 'error',
-        //     text: 'Rellene todos los campos del detalle de la venta.',
-        // })
-    }
+ function bind(){
+  $('.priceshow').keyup(update_price);
+
+  $('.qtyshow').keyup(update_price);
+  
+  $('.discountshow').keyup(update_price);
+
+  $('.priceshow').trigger('keyup', update_price);
+
+  $('.qtyshow').trigger('keyup', update_price);
+
+  $('.discountshow').trigger('keyup', update_price);
+  }
+
+
+function  update_price(){
+  var row =  $(this).parents('.item-row');
+
+  var stock = row.find('.itemstock').val();
+  var cost =  row.find('.priceshow').val();
+  var qty =  row.find('.qtyshow').val();
+  var desc = row.find('.discountshow').val();
+
+
+  if(row.find('.discountshow').val() > 22 ){
+    row.find('.discountshow').val(22);
+  }
+
+  console.log(qty ,stock);
+
+  row.find('.discounthidden').val(row.find('.discountshow').val());
+  row.find('.pricehidden').val(row.find('.priceshow').val());
+  row.find('.qtyhidden').val(row.find('.qtyshow').val()) ;
+
+  var total_precio = qty * cost - ((qty * cost) * ( desc /100));
+
+  var impu = total_precio / (1 + 18 / 100);
+
+  var  total_impuesto = impu * (18 / 100);
+
+  console.log(total_impuesto.toFixed(2));
+
+  row.find('.impuesto').html(total_impuesto.toFixed(2));
+
+  row.find('.totalshow').val(total_precio);
+  row.find('.totalhidden').val(total_precio);
+
+  update_total();
+
+  }
+
+
+function update_total(){
+
+  var total = 0 ; 
+  var tax = 0;
+  $('.totalshow').each(function(i){
+    price =  $(this).val();
+      if(price > 0){
+        total += Number(price);
+      }
+  });
+  total_imp = total / (1 + 18 / 100);
+  total_impuesto = total_imp * (18 / 100)
+
+ 
+
+    $("#total").html("DOP" + "$" + " " + total.toFixed(2));
+    $("#total_impuesto").html("DOP" + "$" + " " +  total_impuesto.toFixed(2));
+    $("#total_pagar_html").html("DOP" + "$"  + " " +  total.toFixed(2));
+    $("#total_pagar").val(total.toFixed(2));
+    $("#imp_itbis").val(total_impuesto.toFixed(2));
 }
+
+$(document.body).on('click', '.delete' ,function(){
+    $(this).parents('.item-row').remove();
+    update_total() ;
+    
+  })
+
+})
+
 function limpiar() {
     $("#product_name").val("");
     $("#code_referencia").val("");
     $("#stock").val("");
     $("#precio").val("");
     $("#cantidad").val("1");
+    $("#descuento").val("0")
 }
-function totales() {
-    $("#total").html("DOP" + "$" + " " + total.toFixed(2));
 
-    //Calculo de itbis incorrecto
 
-    total_impuesto = total * impuesto / 100;
-    total_pagar = total + total_impuesto;
-    $("#total_impuesto").html("DOP" + "$" + " " +  total_impuesto.toFixed(2));
-    $("#total_pagar_html").html("DOP" + "$"  + " " +  total_pagar.toFixed(2));
-    $("#total_pagar").val(total_pagar.toFixed(2));
-    $("#imp_itbis").val(total_impuesto.toFixed(2));
-}
-function evaluar() {
-    if (total > 0) {
-        $("#facturar").prop('disabled', false);
-    } else {
-        $("#facturar").prop('disabled', true);
-    }
-}
-function eliminar(index) {
-    total = total - subtotal[index];
-    total_impuesto = total * impuesto / 100;
-    total_pagar_html = total + total_impuesto;
-    $("#total").html("DOP$"+ ' ' + total);
-    $("#total_impuesto").html("DOP$" + ' ' + total_impuesto);
-    $("#total_pagar_html").html("DOP$" + ' ' + total_pagar_html);
-    $("#total_pagar").val(total_pagar_html.toFixed(2));
-    $("#fila" + index).remove();
-    evaluar();
-}
 
 //Tipo de factura
 
@@ -462,7 +294,7 @@ $(document).ready(function(){
   document.getElementById('stock').value = document.getElementById('productItem_stock' + prod_id ).value;
   document.getElementById('precio').value = document.getElementById('productItem_precio' + prod_id).value;
   tab_Producto();
-  calculoCambio(prod_id);
+
   }
 
   function cliente_facturar(client_id){
@@ -506,49 +338,5 @@ $(document).ready(function(){
   }
  
 
-  function calculoCambio(prod_id){
-    var stock = document.getElementById('istock' + prod_id).value;
-    var precio = document.getElementById('pricehidden' + prod_id).value;
-
-    var cantidad = document.getElementById('qtyshow' + prod_id).value;
-
-
-    document.getElementById('qtyhidden'+ prod_id).value = cantidad;
-
-    var total = cantidad * precio ;
-
-
-    document.getElementById('totalshow'+ prod_id).value = parseFloat(total).toFixed(2);
-    document.getElementById('totalhidden'+ prod_id).value = parseFloat(total).toFixed(2);
-
-    if(cantidad > stock){
-      alert('La cantidad a facturar supera el stock')
-      document.getElementById('qtyhidden'+ prod_id).value = 1;
-      document.getElementById('qtyshow'+ prod_id).value = 1;
-    }
-
-    $("#total").html("DOP" + "$" + " " + total.toFixed(2));
-    //Calculo de itbis incorrecto
-
-    total_impuesto = total * 18 / 100;
-    total_pagar = total + total_impuesto;
-    $("#total_impuesto").html("DOP" + "$" + " " +  total_impuesto.toFixed(2));
-    $("#total_pagar_html").html("DOP" + "$"  + " " +  total_pagar.toFixed(2));
-    $("#total_pagar").val(total_pagar.toFixed(2));
-    $("#imp_itbis").val(total_impuesto.toFixed(2));
-
-
-
-
-
-    
-  }
-
-
-//   $(document).on("change","#qtyshow",function(){
-//     console.log($("#qtyshow").val());
-
-    
-//  });
 
 
