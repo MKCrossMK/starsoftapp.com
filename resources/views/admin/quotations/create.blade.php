@@ -350,6 +350,7 @@ $(document).ready(function() {
                                 <input id="clientItem_id{{$client->id}}" type="text" value="{{$client->id}}">
                                 <input id="clientItem_name{{$client->id}}" type="text" value="{{$client->name . ' ' . $client->lastname}} ">
                                 <input id="clientItem_cedrnc{{$client->id}}" type="text" value="{{$client->cedula_rnc}}">
+                                <input id="clientItem_desc{{$client->id}}" type="text" value="{{$client->porciento_descuento}}">
                                 </div>
 
                             </td>

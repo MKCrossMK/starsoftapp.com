@@ -2,6 +2,32 @@
 <x-app-layout>
     <x-slot name="header">
     </x-slot>
+
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js" defer></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css" defer>
+    
+    <script>
+        $(document).ready(function() {
+    $('#quoteTable').DataTable({
+        "language": {
+            "search":         "Buscar:",
+            "lengthMenu":     "Mostrar _MENU_ entradas",
+            "zeroRecords":    "No se encontraron registros coincidentes",
+            "emptyTable":     "No hay datos disponibles en la tabla",
+            "info":           "Mostrando _START_ to _END_ of _TOTAL_ entradas",
+            "searchPlaceholder" : "Buscar factura",
+            "paginate": {
+        "first":      "Primero",
+        "last":       "Ultimo",
+        "next":       "Siguiente",
+        "previous":   "Anterior"
+    },   
+         
+        } 
+    });
+});
+
+    </script>
             
             
             <div style="margin-top: 1%" class="card" id = "stores">
@@ -13,7 +39,7 @@
                 </div>
                 <div class="card-body px-0 pb-0">
                     <div class="table-responsive">
-                        <table class='table mb-0' id="table1">
+                        <table class='table mb-0' id="quoteTable">
                             <thead>
                                 <tr>
                                     <th>Cedula</th>
@@ -36,7 +62,6 @@
                                     <td>{{ $cli->phone}}</td>
                                     <td>{{ $cli->email}}</td>
                                     <td> <a href="{{ route('editcliente', $cli->id) }}" class="btn btn-info" >Editar</a></td>
-                                    <td>
                                       
                                 </tr>
                                 @endforeach
@@ -51,7 +76,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+    
         
 </x-app-layout>
 

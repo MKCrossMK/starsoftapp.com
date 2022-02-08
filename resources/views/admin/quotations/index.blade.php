@@ -9,7 +9,6 @@
     <script>
         $(document).ready(function() {
     $('#quoteTable').DataTable({
-        "order": [[ 3, "desc" ]],
         "language": {
             "search":         "Buscar:",
             "lengthMenu":     "Mostrar _MENU_ entradas",
@@ -22,8 +21,9 @@
         "last":       "Ultimo",
         "next":       "Siguiente",
         "previous":   "Anterior"
-    },            
-        }
+    },   
+         
+        } 
     });
 });
 
@@ -41,8 +41,6 @@
         <div class="btn-flotante">
             <a class="btn linkflotante" style="margin-left: 0%" href="{{Route('createquote')}}">+</a>
         </div>
-
-
           
             <div style="margin-top: 1%" class="card" id = "stores">
                 <div class="card-header d-flex justify-content-between align-items-center" style="background: #00b19d">

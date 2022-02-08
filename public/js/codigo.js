@@ -302,6 +302,7 @@ $(document).ready(function(){
     document.getElementById('cliente_id').value = document.getElementById('clientItem_id' + client_id).value;
     document.getElementById('clientename').value = document.getElementById('clientItem_name' + client_id).value;
     document.getElementById('cedula_rnc').value = document.getElementById('clientItem_cedrnc' + client_id).value;
+    document.getElementById('descuento').value = document.getElementById('clientItem_desc' + client_id).value;
     cancelarTab_Clients();
     }
 
