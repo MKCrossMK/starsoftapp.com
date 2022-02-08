@@ -30,12 +30,12 @@ class QuotationController extends Controller
     {
         
         if (Auth::user()->role === 1){
-            $quotes = Quotation::all();
+            $quotes = Quotation::orderBy('id', 'desc')->get();
         }
         else
         {
             $userid = Auth::user()->id;
-            $quotes = Quotation::all()->where('user_id', $userid);
+            $quotes = Quotation::orderBy('id', 'desc')->where('user_id', $userid)->get();
        }
        
         

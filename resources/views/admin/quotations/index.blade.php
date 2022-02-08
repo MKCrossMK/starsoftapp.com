@@ -9,6 +9,7 @@
     <script>
         $(document).ready(function() {
     $('#quoteTable').DataTable({
+        "order": [[ 3, "desc" ]],
         "language": {
             "search":         "Buscar:",
             "lengthMenu":     "Mostrar _MENU_ entradas",
