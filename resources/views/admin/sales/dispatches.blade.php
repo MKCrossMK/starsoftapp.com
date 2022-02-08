@@ -26,7 +26,11 @@
     },
 
             
-        }
+        }, "aoColumns": [
+           
+           { "orderSequence": [ "desc" ] },
+        
+       ]
 
     });
 });
@@ -49,8 +53,8 @@
                         <table style=" margin-left:auto; margin-right: auto;" class='table table-striped' id="saleTable" >
                            
                             <thead >
-                                <tr hidden>
-                                    <th>Name</th>
+                                <tr >
+                                    <th>Despacho</th>
                                    
                 
                                 </tr>

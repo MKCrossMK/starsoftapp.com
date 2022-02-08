@@ -8,7 +8,7 @@
     
     <script>
         $(document).ready(function() {
-    $('#quoteTable').DataTable({
+   var tableclient = $('#quoteTable').DataTable({
         "language": {
             "search":         "Buscar:",
             "lengthMenu":     "Mostrar _MENU_ entradas",
@@ -21,10 +21,14 @@
         "last":       "Ultimo",
         "next":       "Siguiente",
         "previous":   "Anterior"
-    },   
+    }
          
-        } 
-    });
+        },      "aoColumns": [
+           
+            { "orderSequence": [ "desc" ] },
+         
+        ]
+    })
 });
 
     </script>
@@ -53,8 +57,8 @@
                     <div class="table-responsive">
                         <table class='table mb-0' id="quoteTable">
                             <thead>
-                                <tr hidden>  
-                                    <th>Cliente</th>
+                                <tr>  
+                                    <th>Cotizacion</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -65,8 +69,9 @@
                                         <a  class="btn" href="{{Route('showquote', $quote->id)}}">
                                             <div id="content" class="my_text">
                                                 <div id="left">
+                                                    <div id="object2"><p>{{$quote->fecha}}</p></div>
                                                    <div id="object1" style="font-weight: bold">{{$quote->client->name . " " . $quote->client->lastname}}</div>
-                                                   <div id="object2"><p>{{$quote->fecha}}</p></div>
+                                                  
                                                 </div>
                                               
                                                 <div id="right">
