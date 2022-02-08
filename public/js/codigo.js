@@ -139,7 +139,6 @@ function limpiar() {
     $("#stock").val("");
     $("#precio").val("");
     $("#cantidad").val("1");
-    $("#descuento").val("0")
 }
 
 
