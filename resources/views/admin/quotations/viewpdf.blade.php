@@ -280,6 +280,11 @@ text-align: center;
         </tr>
         <tr>
           <td colspan="3"></td>
+          <td colspan="3">DESCUENTO</td>
+          <td>$ {{ number_format($quotation->descuento, 2)}}</td>
+        </tr>
+        <tr>
+          <td colspan="3"></td>
           <td colspan="3">TOTAL:</td>
           <td>$ {{ number_format($quotation->monto, 2)}}</td>
         </tr>
