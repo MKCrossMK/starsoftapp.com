@@ -87,7 +87,7 @@ class QuotationController extends Controller
              'fecha' => $request->input('fecha'),
              'monto' => $request->input('monto'),
              'itbis' => $request->input('imp_itbis'),
-             'descuento' =>  $total_descuento,
+             'descuento' => $request->input('total_descuento'),
              'client_id' => $request->input('client_id'),
              'nombre_cliente' => $request->input('cliente_name'),
              'created_at' => now(),
