@@ -138,6 +138,13 @@ $(document).ready(function() {
             </div>
     </div>
     <div class="form-row">
+        <div class="col" style="display: flex; justify-content: space-between">
+            <p>TOTAL DESCUENTO:</p>
+            <p><span id="total_desc">DOP $ 0.00</span><input type="hidden" id="total_descuento" name="total_descuento"></p>
+
+        </div>
+</div>
+    <div class="form-row">
             <div class="col" style="display: flex; justify-content: space-between">
                 <p>TOTAL IMPUESTO:</p>
                 <p><span id="total_impuesto">DOP $ 0.00</span><input type="hidden" id="imp_itbis" name="imp_itbis"></p>

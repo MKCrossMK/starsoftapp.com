@@ -27,7 +27,7 @@ $(document).ready(function(){
           + '<div class="form-row" style="display: flex;"><div class="col" style="display: flex; align-items: center; justify-content: center;"><span>DESC </span> ' 
           + ' <input type="hidden" class="discounthidden" name="descuento[]" value="' + parseFloat(discount) + '"> <input class="form-control discountshow" type="tel" value="' + parseInt(discount) + '" style="border: 0px; text-align: center;width: 50px;background-color:white;" required> % </div>'
           + '<div class="col" style="display: flex; align-items: center; justify-content: center;font-weight: bold;background-color: aliceblue"><span>RD$</span>'
-          + '<input type="hidden" class="totalhidden" name="total[]"><input type="tel" id="totalshow" class="form-control totalshow"  style="border: 0px; text-align: center;background-color: aliceblue" readonly></div></div></td></tr>');
+          + ' <input type="hidden" class="sumadiscounthidden" name="totaldiscount[]"><input type="hidden" class="totalhidden" name="total[]"><input type="tel" id="totalshow" class="form-control totalshow"  style="border: 0px; text-align: center;background-color: aliceblue" readonly></div></div></td></tr>');
   bind();
   cancelarTableProductos();
   cancelarTab_Productos();
@@ -86,6 +86,7 @@ function  update_price(){
   row.find('.qtyhidden').val(row.find('.qtyshow').val()) ;
 
   var total_precio = qty * cost - ((qty * cost) * ( desc /100));
+  var total_desc = ((qty * cost) * ( desc /100));
 
   var impu = total_precio / (1 + 18 / 100);
 
@@ -94,7 +95,8 @@ function  update_price(){
   console.log(total_impuesto.toFixed(2));
 
   row.find('.impuesto').html(total_impuesto.toFixed(2));
-
+  
+  row.find('.sumadiscounthidden').val(total_desc);
   row.find('.totalshow').val(total_precio);
   row.find('.totalhidden').val(total_precio);
 
@@ -106,6 +108,7 @@ function  update_price(){
 function update_total(){
 
   var total = 0 ; 
+  var desc = 0;
   var tax = 0;
   $('.totalshow').each(function(i){
     price =  $(this).val();
@@ -113,6 +116,16 @@ function update_total(){
         total += Number(price);
       }
   });
+
+  $('.sumadiscounthidden').each(function(i){
+    descount =  $(this).val();
+      if(descount > 0){
+        desc += Number(descount);
+      }
+  });
+
+
+
   total_imp = total / (1 + 18 / 100);
   total_impuesto = total_imp * (18 / 100)
 
@@ -120,9 +133,15 @@ function update_total(){
 
     $("#total").html("DOP" + "$" + " " + total.toFixed(2));
     $("#total_impuesto").html("DOP" + "$" + " " +  total_impuesto.toFixed(2));
+    $("#total_desc").html("DOP" + "$" + " " +  desc.toFixed(2));
     $("#total_pagar_html").html("DOP" + "$"  + " " +  total.toFixed(2));
+
+
     $("#total_pagar").val(total.toFixed(2));
     $("#imp_itbis").val(total_impuesto.toFixed(2));
+    $("#total_descuento").val(desc.toFixed(2));
+
+    
 }
 
 $(document.body).on('click', '.delete' ,function(){
