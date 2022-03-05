@@ -52,7 +52,7 @@ class QuotationController extends Controller
         $dt = Carbon::now('America/Santo_Domingo')->format('Y-m-d');
         $products = Product::all();
         $userid = Auth::user()->id_erp;
-        $clients = DB::table('clients')->where('vendedor', 0)->orWhere('vendedor', $userid)->orWhere('vendedor', null)->get();
+        $clients = DB::table('clients')->where('vendedor', 1)->orWhere('vendedor', $userid)->orWhere('vendedor', null)->get();
     
 
 
