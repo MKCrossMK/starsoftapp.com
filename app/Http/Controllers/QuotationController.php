@@ -49,13 +49,11 @@ class QuotationController extends Controller
      */
     public function create()
     {
-        $dt = Carbon::now('America/Santo_Domingo')->format('Y-m-d');
+        $dt = Carbon::now('America/Santo_Domingo')->format('d-m-Y');
         $products = Product::all();
         $userid = Auth::user()->id_erp;
         $clients = DB::table('clients')->where('vendedor', 1)->orWhere('vendedor', $userid)->orWhere('vendedor', null)->get();
     
-
-
         return view('admin.quotations.create', compact('dt', 'products', 'clients'));
     }
 

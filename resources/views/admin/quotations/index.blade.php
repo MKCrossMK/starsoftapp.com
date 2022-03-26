@@ -68,15 +68,15 @@
                                     <td>
                                         <a  class="btn" href="{{Route('showquote', $quote->id)}}">
                                             <div id="content" class="my_text">
-                                                <div id="left">
-                                                    <div id="object2"><p>{{$quote->fecha}}</p></div>
-                                                   <div id="object1" style="font-weight: bold">{{$quote->client->name . " " . $quote->client->lastname}}</div>
-                                                  
+                                                <div id="left" >
+                                                    <div id="object1" style="font-weight: bold">{{$quote->client->name . " " . $quote->client->lastname}}</div>
+                                                   <div id="object2" style="margin-bottom:0px ;"><p>{{$quote->fecha}}</p></div>
+                                                   
                                                 </div>
                                               
                                                 <div id="right">
-                                                   <div id="object3"><p>Nª Cotizacion: {{$quote->no_quote }}</p></div>
-                                                   <div id="object4" class="my_text" style="font-weight: bold">  RD$ {{number_format($quote->monto)}}</div>
+                                                   <div id="object3"><p style="margin-bottom: 0;">Nª Cotizacion: {{$quote->no_quote }}</p></div>
+                                                   <div id="object4" class="my_text" style="font-weight: bold;">RD$ {{number_format($quote->monto)}}</div>
                                                 </div>
                                               </div>
                                         </a>

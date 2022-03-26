@@ -2,7 +2,7 @@
     overflow:auto; 
     width: 290px; 
   display: flex;
-  height: 65px;
+  height: 50px;
   margin-left: -30px;
 
   } 
@@ -20,7 +20,7 @@
   #content { 
     overflow:auto; 
     width: 320px; 
-    height: 80px;
+    height: 50px;
   display: flex;
 
 

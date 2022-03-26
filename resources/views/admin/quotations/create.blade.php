@@ -81,10 +81,10 @@ $(document).ready(function() {
 
                         <div class="form-row" style="display: flex; margin-top: 10px">
                             <div class="col">
-                                <input class="form-control" name="cedula_rnc" placeholder="Cedula o RNC"  id="cedula_rnc" onkeypress="return isNumber(event)" readonly required>    
+                                <input type="text" class="form-control" name="cliente_name" placeholder="Nombre de Cliente" id="clientename" readonly required>
                              </div>
                             <div class="col">
-                                <input type="text" class="form-control" name="cliente_name" placeholder="Nombre de Cliente" id="clientename" readonly required>
+                                <input class="form-control" name="cedula_rnc" placeholder="Cedula o RNC"  id="cedula_rnc" onkeypress="return isNumber(event)" readonly required>    
                                 <input type="text" class="form-control" name="client_id" placeholder="ID" id="cliente_id" required hidden>
                             </div>
                         </div>
@@ -94,7 +94,7 @@ $(document).ready(function() {
 
                         <div class="form-group col-sm-6 flex-row d-flex">
                             <label for="fecha" class="col-sm-6 col-form-label">Fecha</label>
-                             <input type="" class="form-control" name="fecha" value="{{$dt}}" id="fecha" style="border: 0; text-align: center; background: #fff" readonly>
+                             <input type="" class="form-control" name="fecha" value="{{ $dt}}" id="fecha" style="border: 0; text-align: center; background: #fff" readonly>
                     
                         </div>
 
