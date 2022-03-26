@@ -166,7 +166,8 @@ $(document).ready(function() {
             
                     <div class="card-footer text-muted">
                         <button type="submit" id="facturar" class="btn btn-success float-right">Realizar Cotizacion</button>
-                         <a href="{{route('indexquote')}}" class="btn btn-danger">
+                         <a href="{{route('indexquote')}}" class="btn btn-danger" onclick="
+                         return confirm('¿Desea salir?')">
                             Cancelar
                          </a>
                     </div>

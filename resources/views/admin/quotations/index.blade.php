@@ -69,9 +69,8 @@
                                         <a  class="btn" href="{{Route('showquote', $quote->id)}}">
                                             <div id="content" class="my_text">
                                                 <div id="left" >
+                                                    <div id="object2"><p style="margin-bottom: 0;">{{$quote->fecha}}</p></div>
                                                     <div id="object1" style="font-weight: bold">{{$quote->client->name . " " . $quote->client->lastname}}</div>
-                                                   <div id="object2" style="margin-bottom:0px ;"><p>{{$quote->fecha}}</p></div>
-                                                   
                                                 </div>
                                               
                                                 <div id="right">
