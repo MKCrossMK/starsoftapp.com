@@ -295,8 +295,8 @@ $(document).ready(function() {
                                         <label for="itbis">Impuesto || ITBIS </label>
                                         <select class="form-control prodItem formatProductInput"  id="itbis">
                                         <option disabled>ITBIS</option>
-                                        <option value="18" selected>18 %</option>
-                                        <option value="0">0 %</option>
+                                        <option value="18" >18 %</option>
+                                        <option value="0" selected>0 %</option>
                                         </select>
                                     </td>
                                 </tr>
