@@ -111,6 +111,7 @@ function update_total(){
   var total = 0 ; 
   var desc = 0;
   var tax = 0;
+
   $('.totalshow').each(function(i){
     price =  $(this).val();
       if(price > 0){
@@ -125,10 +126,20 @@ function update_total(){
       }
   });
 
+  $('.prod_itbis').each(function(i){
+    impuesto =  $(this).val();
+      if(impuesto === 18){
+        tax = 18;
+      }
+      else {
+        tax = 0;
+      }
+  });
 
 
-  total_imp = total / (1 + 18 / 100);
-  total_impuesto = total_imp * (18 / 100)
+
+  total_imp = total / (1 + tax / 100);
+  total_impuesto = total_imp * (tax / 100)
 
  
 
