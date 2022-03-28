@@ -128,7 +128,7 @@ function update_total(){
 
   $('.prod_itbis').each(function(i){
     impuesto =  $(this).val();
-      if(impuesto == 18){
+      if(impuesto > 0){
         tax = 18;
       }
       else {
