@@ -73,13 +73,14 @@ function  update_price(){
   var cost =  row.find('.priceshow').val();
   var qty =  row.find('.qtyshow').val();
   var desc = row.find('.discountshow').val();
+  var itbis = row.find('.prod_itbis').val();
 
 
   if(row.find('.discountshow').val() > 22 ){
     row.find('.discountshow').val(22);
   }
 
-  console.log(qty ,stock);
+  // console.log(qty ,stock);
 
   row.find('.discounthidden').val(row.find('.discountshow').val());
   row.find('.pricehidden').val(row.find('.priceshow').val());
@@ -88,9 +89,9 @@ function  update_price(){
   var total_precio = qty * cost - ((qty * cost) * ( desc /100));
   var total_desc = ((qty * cost) * ( desc /100));
 
-  var impu = total_precio / (1 + 18 / 100);
+  var impu = total_precio / (1 + itbis / 100);
 
-  var  total_impuesto = impu * (18 / 100);
+  var  total_impuesto = impu * (itbis / 100);
 
   console.log(total_impuesto.toFixed(2));
 
