@@ -282,7 +282,7 @@ $(document).ready(function() {
                                     <td class="table-products__items">
                                         <label for="colors">Color</label>
                                         <select class="form-control prodItem formatProductInput" id="colors">
-                                        <option disabled selected>Colores</option>
+                                        <option disabled selected value="">Colores</option>
                                         @foreach ($colors as $color)
                                             <option value="{{$color->f_id}}">{{$color->f_descripcion}}</option>
                                         @endforeach

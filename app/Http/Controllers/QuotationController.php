@@ -69,6 +69,7 @@ class QuotationController extends Controller
      */
     public function store(Request $request)
     {
+    
 
         $fc = DB::table('t_secuencias')->select('f_secuencia')->where('f_id', 1)->first()->f_secuencia;
         
@@ -111,7 +112,7 @@ class QuotationController extends Controller
              'prod_itbis' => $request['prod_itbis'][$i],
              'total' => $request['total'][$i],
              'descuento' =>$request['descuento'][$i],
-             'prod_color' => $request['prod_color'][$i]);
+             'prod_color' => $request['prod_color'][$i],);
              
  
              

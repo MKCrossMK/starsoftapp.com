@@ -15,7 +15,7 @@ $(document).ready(function(){
     color = $('#colors').val();
 
   
-    if (product_id != "" && quantity != "" && quantity > 0 && discount != "" && price != "") {
+    if (product_id != "" && quantity != "" && quantity > 0 && discount != "" && price != "" && color != null && color != "") {
         // if (parseInt(stock) >= parseInt(quantity)) {
   $('.item-row:last').after('<tr class="item-row"><td style="padding:0px;"><button class="btn btn-danger delete">-</button></td><td><div class="form-row"><div class="col"> <input type="hidden" name="product_id[]" value="' + product_id + '">' + '<input type="hidden" class="itemstock" id="itemstock" value="' + stock + '">' 
           + '<textarea cols="14" rows="2" style="resize: none; font-weight: bold; border: 0px; background-color: white" disabled>' + product_name + '</textarea>'+ '<input type="hidden" name="product_name[]" value="' + product_name 
