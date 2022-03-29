@@ -12,7 +12,7 @@
                                 <div class="card-body">
                                   <h1 class="card-title" >{{$client->name . " || " . $client->company_name}}</h1>
                                   <p class="card-text">Cedula o RNC : {{$client->cedula_rnc}}</p>
-                                  <p class="card-text">Direccion : {{$quotation->client->address . " " . $quotation->client->province}}   </p>
+                                  <p class="card-text">Direccion : {{$quotation->client->address . " " . $quotation->client->provinces->id}}   </p>
                                   <p class="card-text">Telefono : {{$client->phone}}</p>
                                   <p class="card-text">2do Telefono : {{$client->second_phone}}</p>
                                   <p class="card-text">3er Telefono : {{$client->third_phone}}</p>

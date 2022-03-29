@@ -4,7 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Facades\DB;
+use PhpParser\Node\Expr\FuncCall;
 
 class Client extends Model
 {
@@ -60,6 +62,12 @@ class Client extends Model
 
                 
         return $cliente;
+    }
+
+    public function provinces($id) {
+        $provincia = DB::table('t_provincia')->select('f_descripcion')->where('f_id', $id)->get();
+
+        return $provincia;
     }
     
 }

@@ -37,7 +37,15 @@
                         <div class="form-group">
                             <input type="text" name="address" class="form-control " placeholder="Direccion" value="{{$client->address}}"  required/>
                         </div>
-            
+
+                        <div class="form-group">
+                            <select class="form-control" name="province"  id="province">
+                            <option disabled selected>Provincia</option>
+                            @foreach ($provinces as $province)
+                             <option  value="{{$province->f_id}}" {{$client->provinces->id === "Efectivo" ? 'selected' : ''}}>{{$province->f_descripcion}}</option>     
+                            @endforeach
+                           </select>      
+                        </div>
             
                         
                         <div class="form-group">
@@ -80,17 +88,8 @@
             
                         <div class="form-group">
                             <label for="tipo_pago" style="color: #fff; font-weight: bold">Descuento</label>
-                              <select class="form-control" name="porciento_descuento"  id="porciento_descuento">
-                              <option disabled >Porciento de Descuento</option>
-                              <option value="50" {{$client->porciento_descuento === "50" ? 'selected' : ''}} >50 %</option>     
-                              <option value="40" {{$client->porciento_descuento === "40" ? 'selected' : ''}}>40 %</option>    
-                              <option value="30" {{$client->porciento_descuento === "30" ? 'selected' : ''}}>30 %</option>     
-                              <option value="20" {{$client->porciento_descuento === "20" ? 'selected' : ''}}>20 %</option>    
-                              <option value="10" {{$client->porciento_descuento === "10" ? 'selected' : ''}}>10 %</option>  
-                              <option value="5" {{$client->porciento_descuento === "5" ? 'selected' : ''}}>5 %</option>                     
-                             </select>      
+                            <input type="number" class="form-control prodItem formatProductInput" value="{{$client->porciento_descuento}}" name="porciento_descuento" id="porciento_descuento" min="0" max="22" onkeyup="inputdescuento()" required>    
                         </div>
-            
 
               
                     

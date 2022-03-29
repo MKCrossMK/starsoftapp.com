@@ -7,7 +7,11 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'GTS-Starsoft.com') }}</title>
+    <title>{{ config('app.name', 'StarsoftApp') }}</title>
+
+    <link rel="icon" type="image/png" href="{{ asset('assets\images\logo\logostar.png') }}" sizes="16x16">
+    <link rel="icon" type="image/png" href="{{ asset('assets\images\logo\logostar.png') }}" sizes="32x32">
+    <link rel="icon" type="image/png" href="{{ asset('assets\images\logo\logostar.png') }}" sizes="96x96">
     
 
     <!-- Scripts -->
