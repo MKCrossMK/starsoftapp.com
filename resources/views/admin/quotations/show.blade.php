@@ -170,7 +170,7 @@ hr {
                             </div>
                             <div class="text-grey-m2">
                                 <div class="my-1">
-                                    {{$quotation->client->address}}
+                                    {{$quotation->client->address . " " . $quotation->client->province}} 
                                 </div>
                                 <div class="my-1">
                                     <i class="fa fa-phone fa-flip-horizontal text-secondary"></i>  {{$quotation->client->phone}}

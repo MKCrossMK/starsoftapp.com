@@ -230,7 +230,7 @@ text-align: center;
         <div class="to">Factura a:</div>
         <h2 class="name">{{$quotation->client->name . " " . $quotation->client->lastname . " || " . $quotation->client->company_name }}</h2>
         <div>{{$quotation->client->cedula_rnc}}</div>
-        <div class="address">{{$quotation->client->address}}</div>
+        <div class="address">{{$quotation->client->address . " " . $quotation->client->province}} </div>
         <div class="email">{{$quotation->client->phone}}</div>
       </div>
       <div id="invoice">

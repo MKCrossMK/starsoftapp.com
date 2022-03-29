@@ -45,6 +45,7 @@
                                     <th>Cedula</th>
                                     <th>Nombre</th>
                                     <th>Direccion</th>
+                                    <th>Provincia</th>
                                     <th>Telefono</th>
                                     <th>Correo Electronico</th>
                                     {{-- @if ( Auth::user()->role_id == 1) --}}
@@ -59,6 +60,7 @@
                                     <td>{{ $cli->cedula_rnc}}</td>
                                     <td><a href="{{Route('showcliente', $cli->id)}}">{{ $cli->name . " || " . $cli->company_name}}</a></td>
                                     <td>{{ $cli->address}}</td>
+                                    <td>{{ $cli->province}} </td>
                                     <td>{{ $cli->phone}}</td>
                                     <td>{{ $cli->email}}</td>
                                     <td> <a href="{{ route('editcliente', $cli->id) }}" class="btn btn-info" >Editar</a></td>
