@@ -280,6 +280,17 @@ $(document).ready(function() {
                                 </tr>
                                 <tr>
                                     <td class="table-products__items">
+                                        <label for="colors">Color</label>
+                                        <select class="form-control prodItem formatProductInput" id="colors">
+                                        <option disabled selected>Colores</option>
+                                        @foreach ($colors as $color)
+                                            <option value="{{$color->f_descripcion}}">{{$color->f_descripcion}}</option>
+                                        @endforeach
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="table-products__items">
                                         <label for="price">Precio </label>
                                         <input type="text" class="form-control prodItem formatProductInput"  id="precio" readonly="readonly" >
                                         <input type="text"  id="stock"  class="form-control" hidden>

@@ -33,7 +33,8 @@ class CreateQuotationDetailsTable extends Migration
             $table->decimal('total');
             $table->integer('prod_itbis');
 
-            
+            $table->string('prod_color');
+       
             $table->timestamps();
         });
     }

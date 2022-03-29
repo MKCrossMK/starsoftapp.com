@@ -12,15 +12,16 @@ $(document).ready(function(){
     price = $("#precio").val();
     stock = $("#stock").val();
     impuesto = $("#itbis").val();
+    color = $('#colors').val();
 
   
     if (product_id != "" && quantity != "" && quantity > 0 && discount != "" && price != "") {
         // if (parseInt(stock) >= parseInt(quantity)) {
   $('.item-row:last').after('<tr class="item-row"><td style="padding:0px;"><button class="btn btn-danger delete">-</button></td><td><div class="form-row"><div class="col"> <input type="hidden" name="product_id[]" value="' + product_id + '">' + '<input type="hidden" class="itemstock" id="itemstock" value="' + stock + '">' 
           + '<textarea cols="14" rows="2" style="resize: none; font-weight: bold; border: 0px; background-color: white" disabled>' + product_name + '</textarea>'+ '<input type="hidden" name="product_name[]" value="' + product_name 
-          + '"></div><span style="font-size: 25px; margin: 0px auto;">(</span><div class="col"><input type="hidden" name="code_referencia[]" value="' + code
+          + '"></div><span style="font-size: 25px; margin: 0px auto;">(</span><div class="col"><input type="hidden" class="colorhidden" id="colorhidden" name="prod_color[]" value="'+ color + '"><input type="hidden" name="code_referencia[]" value="' + code
           + '"> <input class="form-control" type="text" name="code_referencia[]" value="'+ code + '" style="text-align: center; border: 0px;background-color: white" disabled></div><span style="font-size: 25px; margin: 0px auto">)</span></div>'
-          + '<div class="form-row"><div class="col" style="display: flex"><input type="hidden" class="qtyhidden" id="qtyhidden" name="cantidad[]" value="'+ quantity + '"> <input type="tel" value="' + quantity
+          + '<div class="form-row"><div class="col" style="display: flex"><input type="hidden" class="qtyhidden" id="qtyhidden" name="cantidad[]" value="'+ quantity + '"><input type="hidden" class="qtyhidden" id="qtyhidden" name="cantidad[]" value="'+ quantity + '"> <input type="tel" value="' + quantity
           + '" class="form-control qtyshow" style="width: 50px;border: 0px; text-align: center;background-color: white" id="qtyshow" required><span style="padding: 1%; margin: 0% auto;font-size: 20px;  ">x </span><input type="hidden" id="pricehidden" name="precio[]" value="' + parseFloat(price).toFixed(2) 
           + '"> <input class="form-control priceshow" type="text" id="priceshow" value="' + parseFloat(price).toFixed(2) + '" style="border: 0px;background-color: white" disabled></div><div class="col" style="display: flex; align-items: center; justify-content: center;">' 
           + '<span>ITBIS </span><input type="hidden" class="prod_itbis" id="prod_itbis" name="prod_itbis[]" value="' + impuesto + '"> <input type="text" value="' + impuesto + '" class="form-control" style="border: 0px; text-align: center;background-color: white" disabled>%</div></div>'

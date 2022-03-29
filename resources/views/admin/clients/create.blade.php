@@ -36,7 +36,14 @@
                 <input type="text" name="address" class="form-control " placeholder="Direccion"  required/>
             </div>
 
-
+            <div class="form-group">
+                  <select class="form-control" name="province"  id="province">
+                  <option disabled selected>Provincia</option>
+                  @foreach ($provinces as $province)
+                   <option  value="{{$province->f_descripcion}}">{{$province->f_descripcion}}</option>     
+                  @endforeach
+                 </select>      
+            </div>
             
             <div class="form-group">
                 <input class="form-control" type="text" name="phone" id="phone" placeholder="Telefono" maxlength="10" onkeypress="return isNumber(event)" required>

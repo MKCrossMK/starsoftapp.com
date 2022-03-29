@@ -22,6 +22,7 @@ class quotationDetails extends Model
         'descuento',
         'total',
         'prod_itbis',
+        'prod_color',
     ];
 
 

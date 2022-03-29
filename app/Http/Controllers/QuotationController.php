@@ -53,10 +53,12 @@ class QuotationController extends Controller
         $products = Product::all();
         $userid = Auth::user()->id_erp;
         $clients = DB::table('clients')->where('vendedor', 1)->orWhere('vendedor', $userid)->orWhere('vendedor', null)->get();
+
+        $colors =DB::table('t_colores')->get();
     
 
 
-        return view('admin.quotations.create', compact('dt', 'products', 'clients'));
+        return view('admin.quotations.create', compact('dt', 'products', 'clients', 'colors'));
     }
 
     /**
@@ -108,7 +110,9 @@ class QuotationController extends Controller
              'precio' => $request['precio'][$i], 
              'prod_itbis' => $request['prod_itbis'][$i],
              'total' => $request['total'][$i],
-             'descuento' =>$request['descuento'][$i]);
+             'descuento' =>$request['descuento'][$i],
+             'prod_color' => $request['prod_color'][$i]);
+             
  
              
     }

@@ -34,13 +34,15 @@ class ClientController extends Controller
     {
         $id_erp = DB::table('t_ncf')->get();
 
+        $provinces = DB::table('t_provincia')->get();
+
         $id_consumo = $id_erp[0]->f_codigo;
         $id_fiscal = $id_erp[1]->f_codigo;
 
 
 
 
-        return view('admin.clients.create', compact('id_consumo', 'id_fiscal'));
+        return view('admin.clients.create', compact('id_consumo', 'id_fiscal', 'provinces'));
     }
 
     /**
