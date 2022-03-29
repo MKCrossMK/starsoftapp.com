@@ -97,7 +97,10 @@ class ClientController extends Controller
         $id_consumo = $id_erp[0]->f_codigo;
         $id_fiscal = $id_erp[1]->f_codigo;
 
-        return view('admin.clients.edit', compact('client', 'id_consumo', 'id_fiscal'));
+        $provinces = DB::table('t_provincia')->get();
+
+
+        return view('admin.clients.edit', compact('client', 'id_consumo', 'id_fiscal', 'provinces'));
     }
 
     /**
