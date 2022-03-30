@@ -29,6 +29,7 @@ class Client extends Model
         'balance',
         'porciento_descuento',
         'tipo_registro',
+        'province',
         
     ];
 
@@ -64,10 +65,8 @@ class Client extends Model
         return $cliente;
     }
 
-    public function provinces($id) {
-        $provincia = DB::table('t_provincia')->select('f_descripcion')->where('f_id', $id)->get();
-
-        return $provincia;
+    public function clientprovince() {
+        return $this->BelongsTo(Province::class, 'province', 'id');
     }
     
 }

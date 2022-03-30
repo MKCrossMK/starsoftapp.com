@@ -245,6 +245,7 @@ text-align: center;
         <tr>
           <th class="no">#</th>
           <th class="desc">Descripcion</th>
+          <th>Color</th>
           <th class="qty">Cantidad</th>
           <th class="unit">Precio</th>
           <th>Descuento</th>
@@ -258,6 +259,7 @@ text-align: center;
         <tr>
             <td class="no"></td>
             <td class="desc">{{$quoteDetail->product->descripcion}}</td>
+            <td>{{$quoteDetail->prod_color}}</td>
             <td class="qty">{{$quoteDetail->cantidad}}</td>
             <td class="unit">{{number_format($quoteDetail->product->precio)}}</td>
             <td>{{$quoteDetail->descuento}} %</td>

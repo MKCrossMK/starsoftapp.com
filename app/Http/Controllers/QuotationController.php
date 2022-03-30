@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Client;
+use App\Models\Color;
 use App\Models\Product;
 use App\Models\Quotation;
 use Carbon\Carbon;
@@ -54,7 +55,7 @@ class QuotationController extends Controller
         $userid = Auth::user()->id_erp;
         $clients = DB::table('clients')->where('vendedor', 1)->orWhere('vendedor', $userid)->orWhere('vendedor', null)->get();
 
-        $colors =DB::table('t_colores')->get();
+        $colors = Color::all();;
     
 
 
@@ -69,6 +70,7 @@ class QuotationController extends Controller
      */
     public function store(Request $request)
     {
+       
     
 
         $fc = DB::table('t_secuencias')->select('f_secuencia')->where('f_id', 1)->first()->f_secuencia;
@@ -136,7 +138,9 @@ class QuotationController extends Controller
         $subtotal = 0;
         $quoteDetails = $quotation->quoteDetail;
         foreach ($quoteDetails as $quoteDetail) {
-            $subtotal += $quoteDetail->cantidad * $quoteDetail->precio - $quoteDetail->descuento;
+            $totalDetail = $quoteDetail->cantidad * $quoteDetail->precio ;
+            // $desc =  $totalDetail * ($quoteDetail->descuento / 100);
+            $subtotal += $totalDetail ;
         }
         return view('admin.quotations.show', compact('quotation', 'quoteDetails', 'subtotal'));
 
@@ -209,7 +213,9 @@ class QuotationController extends Controller
         $subtotal = 0;
         $quoteDetails = $quotation->quoteDetail;
         foreach ($quoteDetails as $quoteDetail) {
-            $subtotal += $quoteDetail->cantidad * $quoteDetail->precio - $quoteDetail->descuento;
+            $totalDetail = $quoteDetail->cantidad * $quoteDetail->precio ;
+            // $desc =  $totalDetail * ($quoteDetail->descuento / 100);
+            $subtotal += $totalDetail ;
         }
         
 

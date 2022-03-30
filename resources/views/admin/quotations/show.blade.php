@@ -207,6 +207,7 @@ hr {
                             <tr class="text-white">
                                 <th class="opacity-2">#</th>
                                 <th>Descripcion</th>
+                                <th>Color</th>
                                 <th>Cantidad</th>
                                 <th>Precio</th>
                                 <th>Descuento</th>
@@ -223,6 +224,7 @@ hr {
                                 
                                 <td></td>
                                 <td>{{$quoteDetail->product->descripcion}}</td>
+                                <td>{{$quoteDetail->prod_color}}</td>
                                 <td>{{$quoteDetail->cantidad}}</td>
                                 <td class="text-95">{{$quoteDetail->product->precio}}</td>
                                 <td>{{$quoteDetail->descuento}} %</td>

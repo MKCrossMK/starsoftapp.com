@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\Client\StoreRequest;
 use App\Http\Requests\Client\UpdateRequest;
 use App\Models\Client;
+use App\Models\Province;
 use Facade\Ignition\Exceptions\ViewException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -21,8 +22,9 @@ class ClientController extends Controller
      */
     public function index()
     {
+        $provinces = Province::all();
         $client = Client::all();
-        return view('admin.clients.index', compact('client'));
+        return view('admin.clients.index', compact('client', 'provinces'));
     }
 
     /**
@@ -97,7 +99,7 @@ class ClientController extends Controller
         $id_consumo = $id_erp[0]->f_codigo;
         $id_fiscal = $id_erp[1]->f_codigo;
 
-        $provinces = DB::table('t_provincia')->get();
+        $provinces =  Province::all();
 
 
         return view('admin.clients.edit', compact('client', 'id_consumo', 'id_fiscal', 'provinces'));

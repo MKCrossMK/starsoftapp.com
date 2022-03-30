@@ -284,7 +284,7 @@ $(document).ready(function() {
                                         <select class="form-control prodItem formatProductInput" id="colors">
                                         <option disabled selected value="">Colores</option>
                                         @foreach ($colors as $color)
-                                            <option value="{{$color->f_id}}">{{$color->f_descripcion}}</option>
+                                            <option value="{{$color->id}}">{{$color->descripcion}}</option>
                                         @endforeach
                                         </select>
                                     </td>

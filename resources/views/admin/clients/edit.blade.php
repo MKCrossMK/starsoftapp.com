@@ -42,7 +42,7 @@
                             <select class="form-control" name="province"  id="province">
                             <option disabled selected>Provincia</option>
                             @foreach ($provinces as $province)
-                             <option  value="{{$province->f_id}}" {{$client->province ===  $province->f_id ? 'selected' : ''}}>{{$province->f_descripcion}}</option>     
+                             <option  value="{{$province->id}}" {{$client->province ===  $province->id ? 'selected' : ''}}>{{$province->descripcion}}</option>     
                             @endforeach
                            </select>      
                         </div>

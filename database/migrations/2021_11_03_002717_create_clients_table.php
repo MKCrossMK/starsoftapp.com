@@ -32,6 +32,11 @@ class CreateClientsTable extends Migration
             $table->decimal('balance')->nullable();
             $table->decimal('porciento_descuento');
             $table->string('tipo_registro')->nullable();
+
+            $table->unsignedBigInteger('province');
+            $table->foreign('province')->references('id')->on('provinces');
+
+
             $table->timestamps();
         });
     }
