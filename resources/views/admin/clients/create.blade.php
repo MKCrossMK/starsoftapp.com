@@ -37,7 +37,7 @@
             </div>
 
             <div class="form-group">
-                  <select class="form-control" name="province"  id="province">
+                  <select class="form-control" name="province"  id="province" required>
                   <option disabled selected>Provincia</option>
                   @foreach ($provinces as $province)
                    <option  value="{{$province->id}}">{{$province->descripcion}}</option>     
@@ -70,7 +70,7 @@
 
             <div class="form-group">
                 <label for="tipo_comprobante" style="color: #fff; font-weight: bold">Tipo de Comprobante</label>
-                  <select class="form-control" name="tipo_comprobante"  id="tipo_comprobante">
+                  <select class="form-control" name="tipo_comprobante"  id="tipo_comprobante" required>
                   <option disabled>Tipo de Comprobante</option>
                   <option  value="{{$id_consumo}}">Factura de Consumo</option>     
                   <option value="{{$id_fiscal}}">Factura Valida Credito Fiscal</option>                     
@@ -79,7 +79,7 @@
 
             <div class="form-group">
                 <label for="tipo_pago" style="color: #fff; font-weight: bold">Tipo de pago</label>
-                  <select class="form-control" name="tipo_pago"  id="tipo_pago">
+                  <select class="form-control" name="tipo_pago"  id="tipo_pago" required>
                   <option disabled>Tipo de Pago</option>
                   <option  value="Efectivo" >Efectivo</option>     
                   <option value="Transferencia">Transferencia</option>    

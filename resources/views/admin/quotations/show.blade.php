@@ -224,7 +224,7 @@ hr {
                                 
                                 <td></td>
                                 <td>{{$quoteDetail->product->descripcion}}</td>
-                                <td>{{$quoteDetail->prod_color}}</td>
+                                <td>{{$quoteDetail->color->descripcion}}</td>
                                 <td>{{$quoteDetail->cantidad}}</td>
                                 <td class="text-95">{{$quoteDetail->product->precio}}</td>
                                 <td>{{$quoteDetail->descuento}} %</td>

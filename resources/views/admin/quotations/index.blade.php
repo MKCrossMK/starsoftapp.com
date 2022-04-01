@@ -15,7 +15,7 @@
             "zeroRecords":    "No se encontraron registros coincidentes",
             "emptyTable":     "No hay datos disponibles en la tabla",
             "info":           "Mostrando _START_ to _END_ of _TOTAL_ entradas",
-            "searchPlaceholder" : "Buscar factura",
+            "searchPlaceholder" : "Buscar cotizacion",
             "paginate": {
         "first":      "Primero",
         "last":       "Ultimo",

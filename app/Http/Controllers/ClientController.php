@@ -22,9 +22,8 @@ class ClientController extends Controller
      */
     public function index()
     {
-        $provinces = Province::all();
         $client = Client::all();
-        return view('admin.clients.index', compact('client', 'provinces'));
+        return view('admin.clients.index')->with('client', $client);
     }
 
     /**
@@ -36,7 +35,7 @@ class ClientController extends Controller
     {
         $id_erp = DB::table('t_ncf')->get();
 
-        $provinces = DB::table('t_provincia')->get();
+        $provinces = Province::all();
 
         $id_consumo = $id_erp[0]->f_codigo;
         $id_fiscal = $id_erp[1]->f_codigo;

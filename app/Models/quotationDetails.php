@@ -33,6 +33,12 @@ class quotationDetails extends Model
 
     public function quote(){
         return $this->belongsTo(Quotation::class);
+    
     }
+
+    public function color(){
+        return $this->belongsTo(Color::class, 'prod_color', 'id');
+    }
+
 
 }

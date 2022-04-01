@@ -15,6 +15,10 @@ class ColorSeeder extends Seeder
     public function run()
     {
         Color::create([
+            'descripcion' => 'NINGUNO',
+        ]);
+
+        Color::create([
             'descripcion' => 'AMARILLO',
         ]);
 

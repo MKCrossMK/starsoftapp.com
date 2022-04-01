@@ -15,6 +15,10 @@ class ProvinceSeeder extends Seeder
     public function run()
     {
         Province::create([
+            'descripcion' => 'NO ESPECIFICADA',
+        ]);
+
+        Province::create([
             'descripcion' => 'DISTRITO  NACIONAL',
         ]);
 
