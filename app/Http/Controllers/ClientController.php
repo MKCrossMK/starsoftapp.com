@@ -23,7 +23,8 @@ class ClientController extends Controller
     public function index()
     {
         $client = Client::all();
-        return view('admin.clients.index')->with('client', $client);
+        $provinces = Province::all();
+        return view('admin.clients.index', compact('client', 'provinces'));
     }
 
     /**

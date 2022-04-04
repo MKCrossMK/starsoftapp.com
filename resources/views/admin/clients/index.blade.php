@@ -60,7 +60,13 @@
                                     <td>{{ $cli->cedula_rnc}}</td>
                                     <td><a href="{{Route('showcliente', $cli->id)}}">{{ $cli->name . " || " . $cli->company_name}}</a></td>
                                     <td>{{ $cli->address}}</td>
-                                    <td>{{ $cli->province}} </td>
+                                    
+                                    @foreach ($provinces as $province)
+                                     @if ($province->id == $cli->province)
+                                     <td>{{ $province->descripcion}} </td>
+                                     @endif
+                                        
+                                    @endforeach
                                     {{-- <td>{{ $cli->clientprovince->descripcion}} </td> --}}
                                     <td>{{ $cli->phone}}</td>
                                     <td>{{ $cli->email}}</td>
