@@ -13,7 +13,6 @@ $(document).ready(function(){
     stock = $("#stock").val();
     impuesto = $("#itbis").val();
     color = $('#colors').val();
-
   
     if (product_id != "" && quantity != "" && quantity > 0 && discount != "" && price != "" && color != null && color != "") {
         // if (parseInt(stock) >= parseInt(quantity)) {
@@ -32,6 +31,8 @@ $(document).ready(function(){
   bind();
   cancelarTableProductos();
   cancelarTab_Productos();
+  getFocus();
+
 
 //    else {
 
@@ -49,8 +50,11 @@ $(document).ready(function(){
           // })
       }
 
+   
+
 })
 bind();
+
 
  function bind(){
   $('.priceshow').keyup(update_price);
@@ -64,6 +68,9 @@ bind();
   $('.qtyshow').trigger('keyup', update_price);
 
   $('.discountshow').trigger('keyup', update_price);
+
+ 
+
   }
 
 
@@ -154,6 +161,7 @@ function update_total(){
     $("#imp_itbis").val(total_impuesto.toFixed(2));
     $("#total_descuento").val(desc.toFixed(2));
 
+  
     
 }
 
@@ -311,10 +319,13 @@ $(document).ready(function(){
   } 
 
 
-  function moverseA(idDelElemento) {
-    location.hash = "#" + idDelElemento;
+ function getFocus() {
+   var x = $('#agregar_producto').position();
+   window.scrollTo(  0, 10000);
+    
+    
   }
-
+  
 
   function producto_facturar(prod_id){
 

@@ -120,14 +120,14 @@ text-align: right;
 
 table td h3{
 color: #57B223;
-font-size: 1.2em;
+font-size: 1em;
 font-weight: normal;
 margin: 0 0 0.2em 0;
 }
 
 table .no {
 color: #FFFFFF;
-font-size: 1.6em;
+font-size: 8px;
 background: #57B223;
 }
 
@@ -150,7 +150,7 @@ color: #FFFFFF;
 table td.unit,
 table td.qty,
 table td.total {
-font-size: 1.2em;
+font-size: 1em;
 }
 
 table tbody tr:last-child td {
@@ -161,7 +161,7 @@ table tfoot td {
 padding: 10px 20px;
 background: #FFFFFF;
 border-bottom: none;
-font-size: 1.2em;
+font-size: 1em;
 white-space: nowrap; 
 border-top: 1px solid #AAAAAA; 
 }
@@ -172,7 +172,7 @@ border-top: none;
 
 table tfoot tr:last-child td {
 color: #57B223;
-font-size: 1.4em;
+font-size: 1em;
 border-top: 1px solid #57B223; 
 
 }
@@ -205,6 +205,7 @@ border-top: 1px solid #AAAAAA;
 padding: 8px 0;
 text-align: center;
 }
+
 
 
 
@@ -254,10 +255,12 @@ text-align: center;
         </tr>
       </thead>
       <tbody>
-      
+        <?php
+        $count = 0;
+        ?>
         @foreach($quoteDetails as $quoteDetail)
         <tr>
-            <td class="no"></td>
+            <td class="no">{{$count = $count + 1}}</td>
             <td class="desc">{{$quoteDetail->product->descripcion}}</td>
             <td>{{$quoteDetail->color->descripcion}}</td>
             <td class="qty">{{$quoteDetail->cantidad}}</td>

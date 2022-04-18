@@ -137,12 +137,13 @@ class QuotationController extends Controller
         
         $subtotal = 0;
         $quoteDetails = $quotation->quoteDetail;
+        // $count = count($quoteDetails);
         foreach ($quoteDetails as $quoteDetail) {
             $totalDetail = $quoteDetail->cantidad * $quoteDetail->precio ;
             // $desc =  $totalDetail * ($quoteDetail->descuento / 100);
             $subtotal += $totalDetail ;
         }
-        return view('admin.quotations.show', compact('quotation', 'quoteDetails', 'subtotal'));
+        return view('admin.quotations.show', compact('quotation', 'quoteDetails', 'subtotal',));
 
     }
 

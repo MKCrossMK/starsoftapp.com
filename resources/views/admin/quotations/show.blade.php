@@ -221,11 +221,13 @@ hr {
     
                         <tbody class="text-95 text-secondary-d3" style="height: 10px !important; overflow: scroll; ">
                             <tr></tr>
-                      
+                      <?php
+                      $count = 0;
+                      ?>
                             @foreach($quoteDetails as $quoteDetail)
                             <tr>
                                 
-                                <td></td>
+                                <td>{{$count = $count + 1}}</td>
                                 <td>{{$quoteDetail->product->descripcion}}</td>
                                 <td>{{$quoteDetail->color->descripcion}}</td>
                                 <td>{{$quoteDetail->cantidad}}</td>

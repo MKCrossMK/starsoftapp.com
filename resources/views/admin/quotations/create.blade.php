@@ -65,7 +65,7 @@ $(document).ready(function() {
         </div>
         <div class="container" id="saleform" >
                
-              <form action="{{ route('storequote') }}" method="POST" autocomplete="off">
+              <form name="quoteform" action="{{ route('storequote') }}" method="POST" autocomplete="off">
                 @csrf
         
 
@@ -121,7 +121,7 @@ $(document).ready(function() {
                 </table>
             </div>
         </div>
-        <button type="button" id="agregar_producto" class="btn float-center" style="color: #00b19d;" onclick="tableProductos()">
+        <button type="button" id="agregar_producto" class="btn float-center prod_addedd" style="color: #00b19d;" onclick="tableProductos()">
             <i data-feather="plus-circle"></i> Agregar Producto
         </button>
         
@@ -166,7 +166,7 @@ $(document).ready(function() {
             
                     <div class="card-footer text-muted">
                         <button type="submit" id="facturar" class="btn btn-success float-right">Realizar Cotizacion</button>
-                         <a href="{{route('indexquote')}}" class="btn btn-danger" onclick="
+                         <a id="goupbtn" href="{{route('indexquote')}}" class="btn btn-danger" onclick="
                          return confirm('¿Desea salir?')">
                             Cancelar
                          </a>
